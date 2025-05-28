@@ -1,9 +1,8 @@
-/* Base styles */
 body {
   margin: 0;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
-  background-color: #fff;
-  color: #333;
+  background-color: #FFFFFF;  /* white background */
+  color: #010101;  /* dark almost black text */
 }
 
 header.site-header {
@@ -11,19 +10,21 @@ header.site-header {
   justify-content: space-between;
   align-items: flex-start;
   padding: 1rem 2rem;
-  background-color: #f8f9fa;
-  border-bottom: 1px solid #ddd;
+  background-color: #236192;  /* primary blue header background */
+  color: #FFFFFF;  /* white text in header */
+  border-bottom: 3px solid #AD7C59; /* warm brown/gold border for accent */
 }
 
 .site-header .left h1 {
   margin: 0;
   font-size: 1.5rem;
+  color: #FFFFFF;
 }
 
 .site-header .left h2 {
   margin: 0;
   font-size: 1rem;
-  color: #555;
+  color: #AD7C59;  /* gold/brown subtitle */
 }
 
 .site-header nav ul {
@@ -36,35 +37,55 @@ header.site-header {
 
 .site-header nav a {
   text-decoration: none;
-  color: #0077cc;
-  font-weight: 500;
-  transition: background-color 0.3s ease;
+  color: #FFFFFF;  /* white links in header */
+  font-weight: 600;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
 }
 
 .site-header nav a:hover,
 .site-header nav a:focus {
+  background-color: #C8102E;  /* bright red highlight on hover */
+  color: #FFFFFF;
+}
+
+/* Main content */
+main {
+  padding: 2rem;
+  color: #010101; /* dark text */
+}
+
+/* Section headings */
+main h3 {
+  color: #236192; /* primary blue for headings */
+  border-bottom: 2px solid #AD7C59;
+  padding-bottom: 0.25rem;
+  margin-bottom: 1rem;
+}
+
+/* Links inside main content */
+main a {
+  color: #236192;
   text-decoration: underline;
 }
 
-/* Main content and footer */
-main {
-  padding: 2rem;
+main a:hover,
+main a:focus {
+  color: #C8102E;
 }
 
-section {
-  margin-bottom: 2rem;
-}
-
+/* Footer */
 footer {
   text-align: center;
   padding: 1rem;
-  background-color: #f1f1f1;
+  background-color: #AD7C59;  /* warm brown/gold footer background */
+  color: #FFFFFF;
   font-size: 0.9rem;
-  color: #666;
-  border-top: 1px solid #ddd;
+  border-top: 3px solid #010101;
 }
 
-/* Responsive styles for smaller screens */
+/* Responsive styles */
 @media (max-width: 600px) {
   header.site-header {
     flex-direction: column;
@@ -91,12 +112,14 @@ footer {
     font-size: 1.1rem;
     padding: 10px 15px;
     border-radius: 5px;
-    background-color: #e6f0ff;
+    background-color: #e6f0ff;  /* subtle lighter background for tap area */
+    color: #236192;
   }
 
   .site-header nav a:hover,
   .site-header nav a:focus {
-    background-color: #cce0ff;
+    background-color: #C8102E;
+    color: #FFFFFF;
     text-decoration: none;
   }
 }
