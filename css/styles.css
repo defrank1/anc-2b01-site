@@ -1,0 +1,369 @@
+* {
+  font-family: sans-serif;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+#map-container {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+}
+
+/* styles for search bar*/
+.mapboxgl-ctrl-geocoder {
+  position: relative;
+  top: 10px;
+  left: 10px;
+  z-index: 1;
+}
+
+/* add a floating sidebar in the top left and style each element in it */
+.sidebar {
+  position: absolute;
+  width: 400px;
+  height: 60%;
+  z-index: 10;
+  background: #fff;
+  padding: 12px;
+  border-radius: 15px;
+  margin-top: 15px;
+  margin-left: 15px;
+  font-family: sans-serif;
+  font-size: 13px;
+  overflow: auto;
+  border: 5px solid black;
+}
+
+.title {
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+#sidebar-body {
+
+  font-family: sans-serif;
+  font-size: 15px;
+}
+
+.call-to-action {
+  font-style: italic;
+  font-size: 15px;
+  font-weight: bold;
+}
+
+/* button style */
+/* Beautiful button from https://getcssscan.com/css-buttons-examples */
+.red-button {
+  align-items: center;
+  background-color: #BF0D3E;
+  border: 2px solid #111;
+  border-radius: 8px;
+  box-sizing: border-box;
+  color: #ffffff;
+  cursor: pointer;
+  display: flex;
+  font-family: Inter, sans-serif;
+  font-size: 20px;
+  font-size-adjust: 10px;
+  height: 48px;
+  justify-content: center;
+  align-items: center;
+  line-height: 24px;
+  max-width: 100%;
+  padding: 10px 10px;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.red-button:hover {
+  background-color: #16437E;
+  color: #ffffff;
+}
+
+.red-button:active {
+  background: #16437E;
+  color: rgb(255, 255, 255, .7);
+}
+
+.red-button:disabled {
+  cursor: not-allowed;
+  background: rgba(0, 0, 0, .08);
+  color: rgba(0, 0, 0, .3);
+}
+
+/*blue button for the "take me home" button */
+.blue-button {
+  align-items: normal;
+  background-color: #16437E;
+  border: 2px solid #111;
+  border-radius: 8px;
+  box-sizing: border-box;
+  color: #ffffff;
+  cursor: pointer;
+  display: flex;
+  font-family: Inter, sans-serif;
+  font-size: 15px;
+  font-size-adjust: 10px;
+  height: 36px;
+  justify-content: normal;
+  line-height: 18px;
+  max-width: 100%;
+  padding: 7.5px 7.5px;
+  position: relative;
+  text-align: normal;
+  text-decoration: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.blue-button:hover {
+  background-color: #BF0D3E;
+  color: #ffffff;
+}
+
+.blue-button:active {
+  background: #09223b;
+  color: rgb(255, 255, 255, .7);
+}
+
+.blue-button:disabled {
+  cursor: not-allowed;
+  background: rgba(0, 0, 0, .08);
+  color: rgba(0, 0, 0, .3);
+}
+
+
+/* add an "info panel" circle in the bottom left and style each element in it */
+#info-panel-container {
+  position: fixed;
+  bottom: 50px;
+  left: 100px;
+  font-family: sans-serif;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-bottom: 10px;
+  border-radius: 250px;
+  width: 200px;
+  height: 200px;
+  background: #BF0D3E;
+}
+
+#percent-callout-number {
+  margin-top: 25px;
+  font-size: 40px;
+  font-weight: bold;
+  color: #fff;
+  text-align: center;
+}
+
+#percent-callout-text {
+  text-align: center;
+  font-size: 16px;
+  padding-left: 10px;
+  padding-right: 10px;
+  color: #fff;
+  font-style: italic;
+}
+
+/* add a legend  in the bottom right and style each element in it */
+#legend-container {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  border: 1px solid #ccc;
+  background-color: #f9f9f9;
+  font-family: sans-serif;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-bottom: 10px;
+  border-radius: 15px;
+  border: 3px solid black;
+}
+
+.legend-item {
+  margin-bottom: 2px;
+  display: flex;
+  align-items: center;
+}
+
+.legend-color {
+  width: 20px;
+  height: 10px;
+  margin-right: 10px;
+  border: 1px solid #ccc;
+}
+
+.legend-label {
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.legend-description {
+  font-weight: lighter;
+  margin-bottom: 3px;
+}
+
+.legend-note {
+  font-size: 12px;
+}
+
+.single-station {
+  background-image: url('../img/single-station.png');
+  background-size: cover;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.transfer-station {
+  background-image: url('../img/transfer-station.png');
+  background-size: cover;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.mapboxgl-ctrl-geocoder {
+  min-width: 100%;
+  position: relative;
+  background-color: #fff;
+  border-radius: 4px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 768px) {
+
+  /* Sidebar adjustments */
+  .sidebar {
+    width: 30%;
+    max-height: 450px;
+    /* Reduced height */
+    padding: 10px;
+    /* Adjusted padding */
+    margin-top: 2%;
+    margin-left: 2%;
+    font-size: 10px;
+  }
+
+  /* Title adjustments */
+  .title {
+    font-size: 15px;
+  }
+
+  /* Button adjustments */
+  .red-button,
+  .blue-button {
+    font-size: 10px;
+    /* Smaller font size for buttons */
+    height: 30px;
+    /* Reduced button height */
+    padding: 6px 6px;
+    /* Reduced button padding */
+    font-weight: bold;
+    line-height: 10px;
+  }
+
+  /*info opanel adjustments*/
+  #info-panel-container {
+    position: fixed;
+    bottom: 4%;
+    left: 4%;
+    font-family: sans-serif;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 10px;
+    border-radius: 15px;
+    width: 30%;
+    height: 150px;
+    background: #BF0D3E;
+  }
+
+  #percent-callout-number {
+    font-size: 25px;
+    margin-top: 7px;
+    font-weight: bold;
+    color: #fff;
+    text-align: center;
+
+  }
+
+  #percent-callout-text {
+    text-align: center;
+    font-size: 11px;
+    padding-left: 3px;
+    padding-right: 3px;
+    margin-bottom: 7px;
+    overflow: auto;
+    color: #fff;
+    font-style: italic;
+  }
+
+  /* add a legend  in the bottom right and style each element in it */
+  #legend-container {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #f9f9f9;
+    font-family: sans-serif;
+    padding-left: 8px;
+    padding-right: 8px;
+    padding-bottom: 8px;
+    border-radius: 15px;
+    border: 3px solid black;
+    overflow: auto;
+    max-width: 25%;
+    height: 150px;
+  }
+
+  .legend-item {
+    margin-bottom: 2px;
+    display: flex;
+    align-items: center;
+  }
+
+  .legend-color {
+    width: 20px;
+    height: 10px;
+    margin-right: 7px;
+    border: 1px solid #ccc;
+  }
+
+  .legend-label {
+    font-size: 10px;
+    font-weight: bold;
+    line-height: 10px;
+  }
+
+  .legend-description {
+    font-weight: lighter;
+    margin-bottom: 3px;
+    line-height: 10px;
+  }
+
+  .legend-note {
+    font-size: 10px;
+  }
+
+  /* mobile style for search bar*/
+  .mapboxgl-ctrl-geocoder {
+    position: relative;
+    top: 10px;
+    max-width: 40%;
+    left: 10px;
+    z-index: 1;
+  }
+
+}

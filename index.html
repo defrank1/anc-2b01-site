@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>TOO RCW</title> <!--this is the title in the browser tab bar-->
+    <meta name="viewport" content="initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no">
+    <link href="https://api.mapbox.com/mapbox-gl-js/v3.2.0/mapbox-gl.css" rel="stylesheet"> <!-- Mapbox GL JS -->
+    <link href="https://api.mapbox.com/search-js/v1.0.0-beta.21/web.css" rel="stylesheet"> <!-- Search JS CSS -->
+    <link href="css/styles.css" rel="stylesheet"> <!--link to CSS-->
+
+</head>
+
+<body>
+    <!-- floating sidebar -->
+    <div class="sidebar">
+        <div class="title">
+            Transit-Oriented Opportunity in Rock Creek West <!--this is the title in the sidebar-->
+        </div>
+        <div id="sidebar-body"> <!--this is the paragraph/body with a call to action in the sidebar-->
+            <p>This is a map of Rock Creek West, the wealthiest of Washington, DC's ten planning areas. Five Washington
+                metro stations on
+                the Red Line
+                are in Rock Creek West.
+
+            <p>You can see the 15-minute walking radius from each station, and the intended future land use for each
+                area, according to DC's <a
+                    href="https://planning.dc.gov/sites/default/files/dc/sites/op/2021CompPlanLandUse.pdf"
+                    target="_blank">Comprehensive Plan</a>.</p>
+            <p>Rock Creek West has built <a href="https://open.dc.gov/36000by2025/" target="_blank"> just 5% of DC's
+                    total new housing units since 2019</a>, in large part because of
+                the planning area's low residential land use density.</p>
+
+            <div class="call-to-action">
+                Click on each station button below to learn more about residential land use in Rock Creek West.
+
+            </div>
+
+            <p>
+
+        </div>
+        <hr />
+        <p></p>
+        <!-- the section with buttons to control the map view -->
+        <div class="button-area"><!--These buttons use flyTo() and fitBounds() to control the map view.--></div>
+        <button class="red-button" id="friendship-button">Friendship Heights</button>
+        <p></p>
+        <button class="red-button" id="tenleytown-button">Tenleytown-AU</button>
+        <p></p>
+        <button class="red-button" id="vanness-button">Van Ness-UDC</button>
+        <p></p>
+        <button class="red-button" id="cleveland-button">Cleveland Park</button>
+        <p></p>
+        <button class="red-button" id="woodley-button">Woodley Park</button>
+        <p></p>
+        <hr />
+
+        <!--This button toggles the visibility of the station boundary line and fill layers using setLayoutProperty()-->
+        <div class="button-area"> </div>
+
+        <button class="blue-button" id="take-home-button">Zoom Out</button>
+        <p></p>
+
+        <!---source code link-->
+        <div class="source-code"> <a href="https://github.com/defrank1/class-3-project" target="_blank">Source Code</a>
+        </div>
+    </div>
+
+    <!-- map container div -->
+    <div id="map-container"></div>
+    <div id="search-container">
+        <input type="text" id="search-input" placeholder="Search for a location" />
+    </div>
+    <script src="https://api.mapbox.com/mapbox-gl-js/v3.3.0/mapbox-gl.js"></script> <!-- Load Mapbox GL JS -->
+    <script id="search-js" defer src="https://api.mapbox.com/search-js/v1.0.0-beta.21/web.js"></script>
+    <!-- Load Mapbox Search JS -->
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"
+        integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
+
+    <!-- legend -->
+    <div id="legend-container">
+        <h2><u></u></h2>
+        <div class="legend-item">
+            <div class="legend-color" style="background-color: #ffffcc;"></div>
+            <div class="legend-label">Low Density:
+                <div class="legend-description">Single family detached/semi-detached housing</div>
+            </div>
+        </div>
+        <div class="legend-item">
+            <div class="legend-color" style="background-color: #fed98e;"></div>
+            <div class="legend-label">Moderate Density:
+                <div class="legend-description">Row houses and low-rise garden apartments</div>
+            </div>
+        </div>
+        <div class="legend-item">
+            <div class="legend-color" style="background-color: #41b6c4;"></div>
+            <div class="legend-label">Medium Density:
+                <div class="legend-description">Mid-rise apartments</div>
+            </div>
+        </div>
+        <div class="legend-item">
+            <div class="legend-color" style="background-color: #225ea8;"></div>
+            <div class="legend-label">High Density:
+                <div class="legend-description">High-rise apartments</div>
+            </div>
+        </div>
+        <div class="legend-note"><i>Note: Defines areas generally, but not exclusively.</i></div>
+
+    </div>
+    <!-- info panel -->
+    <div id="info-panel-container">
+        <div id="percent-callout-number">74%</div>
+        <!--Click a station on the map, the low_density_percent from the geojson data will be displayed here.-->
+        <div id="percent-callout-text">of residential land within a 15-minute walk of the Red Line stations in Rock
+            Creek West is intended for low density.</div>
+        <!--Click a station on the map, the station_name from the geojson data will be displayed here.-->
+    </div>
+
+    <script src="https://api.mapbox.com/mapbox-gl-js/v3.2.0/mapbox-gl.js"></script> <!--Include mapBox GL JS here-->
+    <script src="js/station-data.js"></script> <!--this is the STATION SCRIPT-->
+    <script src="js/line-data.js"></script> <!--this is the LINE SCRIPT-->
+    <script src="js/scripts.js"></script> <!--this is the LOCAL JS SCRIPT-->
+
+</body>
+
+</html>
