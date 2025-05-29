@@ -1,53 +1,58 @@
-/* Reset */
+/* === Basic Reset === */
+/* Remove default spacing and ensure consistent sizing */
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
+/* === Body Styling === */
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   background-color: #FFFFFF;
   color: #010101;
   line-height: 1.6;
-  padding: 1rem;
-  padding-top: 100px; /* space for sticky header */
 }
 
-/* Sticky header */
+/* === Sticky Header === */
 .site-header {
-  position: fixed;
+  position: fixed; /* Keep header stuck at the top */
   top: 0;
   left: 0;
   right: 0;
-  background-color: #236192; /* blue background */
+  background-color: #236192; /* Navy blue background */
   color: white;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-between; /* Split nav and title */
   align-items: center;
   flex-wrap: wrap;
   padding: 1rem 2rem;
-  border-bottom: 3px solid #C8102E;
-  z-index: 1000;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  border-bottom: 5px solid #AD7C59; /* Red underline */
+  z-index: 1000; /* Ensure it's above all other content */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Soft shadow */
 }
+
+/* === Header Typography === */
 
 .left h1 {
   font-size: 2rem;
   font-weight: 700;
   color: white;
-  margin-bottom: 0.2rem;
+  margin-top: -0.5rem;
+  margin-bottom: 0rem;
 }
 
-.left h2 {
+.left .subtitle { /* The word "ANC 2B01" typography*/
   font-size: 1rem;
   font-style: italic;
   font-weight: 400;
   color: white;
-  margin-top: 0;
+margin-top: -0.5rem;
+  margin-bottom: 0.75rem; /* 👈 minimize space below */
+
 }
 
-/* Navigation */
+/* === Navigation Styles === */
 nav.right ul {
   list-style: none;
   display: flex;
@@ -59,16 +64,16 @@ nav.right ul li a {
   color: white;
   font-weight: 600;
   font-size: 1rem;
-  transition: color 0.3s ease;
+  transition: color 0.3s ease; /* Smooth hover effect */
 }
 
 nav.right ul li a:hover,
 nav.right ul li a:focus {
-  color: #AD7C59; /* gold highlight on hover */
+  color: #AD7C59; /* Gold color on hover/focus */
   outline: none;
 }
 
-/* Responsive nav for mobile */
+/* === Mobile Responsive Header === */
 @media (max-width: 600px) {
   .site-header {
     flex-direction: column;
@@ -86,14 +91,27 @@ nav.right ul li a:focus {
   }
 }
 
-/* Main content headers */
+/* === Spacer Element === */
+/* Spacer fills height of header to push content down */
+.header-spacer {
+  width: 100%;
+  /* height is set dynamically by JavaScript */
+}
+
+/* === Main Sections === */
+/* scroll-margin-top offsets anchor target when using fixed header */
+main section {
+  padding: 2rem 0;
+  scroll-margin-top: 120px;
+}
+
 main section h3 {
   color: #236192;
   margin-bottom: 0.5rem;
   font-weight: 700;
 }
 
-/* Map image styling */
+/* === Map Image === */
 .map-image {
   width: 33%;
   max-width: 400px;
@@ -104,7 +122,7 @@ main section h3 {
   border-radius: 4px;
 }
 
-/* Full width map on small screens */
+/* === Image Resizing for Small Screens === */
 @media (max-width: 600px) {
   .map-image {
     width: 100%;
@@ -112,11 +130,75 @@ main section h3 {
   }
 }
 
-/* Footer */
+/* === Footer === */
 footer {
-  text-align: center;
-  font-size: 0.9rem;
-  color: #AD7C59;
-  padding: 1rem 0;
-  border-top: 1px solid #C8102E;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: #236192; /* Navy blue background */
+  color: white;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 1rem 2rem;
+  border-top: 5px solid #AD7C59; /* gold underline */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Soft shadow */
 }
+
+.map-container {
+  max-width: 800px;
+  margin: 2rem auto;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border: 1px solid #ddd;
+}
+
+/* code for the OpenANC map container */
+
+.map-container {
+  max-width: 800px;
+  margin: 2rem auto;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border: 1px solid #ddd;
+}
+
+#map {
+  width: 100%;
+  height: 600px;
+}
+/*softer back ground color */
+
+body {
+  font-family: 'Inter', sans-serif;
+  color: #333;
+  line-height: 1.6;
+}
+
+body {
+  background-color: #f9fafb;
+}
+
+h1, h2, h3 {
+  color: #1f2937; /* A modern dark-gray */
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #1f2937;
+  transition: color 0.2s;
+}
+
+nav ul li a:hover {
+  color: #2563eb; /* A nice blue hover color */
+}
+
+/*section dividers -- very soft lines between sections */
+
+section {
+  border-bottom: 1px solid #e5e7eb;
+  padding-bottom: 2rem;
+}
+
