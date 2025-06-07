@@ -1,18 +1,44 @@
-// Adjust .header-spacer height to match fixed header height dynamically
-document.addEventListener('DOMContentLoaded', () => {
-  const header = document.querySelector('.site-header');
-  const spacer = document.querySelector('.header-spacer');
+// Set your Mapbox access token
+mapboxgl.accessToken = 'pk.eyJ1IjoiZGVmcmFuazEiLCJhIjoiY2x1bHZ0OWJyMHlhdjJrcDFsZzlwc3ZxMSJ9.XD1OM3LMVn2qoX9QMqR5Vg';
 
-  function adjustSpacerHeight() {
-    if (header && spacer) {
-      const height = header.offsetHeight;
-      spacer.style.height = height + 'px';
-    }
-  }
+// Initialize the map
+const map = new mapboxgl.Map({
+  container: 'map', // ID of the element in your HTML
+  style: 'mapbox://styles/mapbox/light-v10',
+  center: [-77.042, 38.912], // approximate center of ANC 2B01
+  zoom: 15
+});
 
-  // Initial adjustment
-  adjustSpacerHeight();
+map.on('load', () => {
+  // Load the full ANC 2022 GeoJSON from OpenANC GitHub
+  map.addSource('ancs', {
+    type: 'geojson',
+    data: 'https://raw.githubusercontent.com/devinbrady/openanc/main/data/anc_2022.geojson'
+  });
 
-  // Re-adjust on window resize
-  window.addEventListener('resize', adjustSpacerHeight);
+  // Add the ANC boundaries layer but filter to only ANC 2B01
+  map.addLayer({
+    id: 'anc-2b01-fill',
+    type: 'fill',
+    source: 'ancs',
+    paint: {
+      'fill-color': '#0074D9',
+      'fill-opacity': 0.3
+    },
+    filter: ['==', ['get', 'SMD_ID'], '2B01']
+  });
+
+  map.addLayer({
+    id: 'anc-2b01-outline',
+    type: 'line',
+    source: 'ancs',
+    paint: {
+      'line-color': '#0074D9',
+      'line-width': 2
+    },
+    filter: ['==', ['get', 'SMD_ID'], '2B01']
+  });
+
+  // Add zoom controls
+  map.addControl(new mapboxgl.NavigationControl(), 'top-right');
 });
