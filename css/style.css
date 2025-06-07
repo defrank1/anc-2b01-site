@@ -8,30 +8,37 @@
 
 /* === Body Styling === */
 body {
-font-family: 'Montserrat', sans-serif;  
-background-color: #FFFFFF;
+  font-family: 'Montserrat', sans-serif;
+  background-color: #FFFFFF;
   color: #010101;
   line-height: 1.6;
   padding-left: 1rem;
-  padding-right: 1rem; /* optional */
+  padding-right: 1rem;
+  /* optional */
 }
 
 /* === Sticky Header === */
 .site-header {
-  position: fixed; /* Keep header stuck at the top */
+  position: fixed;
+  /* Keep header stuck at the top */
   top: 0;
   left: 0;
   right: 0;
-  background-color: #236192; /* Navy blue background */
+  background-color: #236192;
+  /* Navy blue background */
   color: white;
   display: flex;
-  justify-content: space-between; /* Split nav and title */
+  justify-content: space-between;
+  /* Split nav and title */
   align-items: center;
   flex-wrap: wrap;
   padding: 1rem 2rem;
-  border-bottom: 5px solid #AD7C59; /* Red underline */
-  z-index: 1000; /* Ensure it's above all other content */
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Soft shadow */
+  border-bottom: 5px solid #AD7C59;
+  /* Red underline */
+  z-index: 1000;
+  /* Ensure it's above all other content */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  /* Soft shadow */
 }
 
 /* === Header Typography === */
@@ -44,13 +51,15 @@ background-color: #FFFFFF;
   margin-bottom: 0rem;
 }
 
-.left .subtitle { /* The word "ANC 2B01" typography*/
+.left .subtitle {
+  /* The word "ANC 2B01" typography*/
   font-size: 1rem;
   font-style: italic;
   font-weight: 400;
   color: white;
-margin-top: -0.5rem;
-  margin-bottom: 0.75rem; /* 👈 minimize space below */
+  margin-top: -0.5rem;
+  margin-bottom: 0.75rem;
+  /* 👈 minimize space below */
 
 }
 
@@ -66,12 +75,14 @@ nav.right ul li a {
   color: white;
   font-weight: 600;
   font-size: 1rem;
-  transition: color 0.3s ease; /* Smooth hover effect */
+  transition: color 0.3s ease;
+  /* Smooth hover effect */
 }
 
 nav.right ul li a:hover,
 nav.right ul li a:focus {
-  color: #AD7C59; /* Gold color on hover/focus */
+  color: #AD7C59;
+  /* Gold color on hover/focus */
   outline: none;
 }
 
@@ -82,12 +93,14 @@ nav.right ul li a:focus {
     align-items: flex-start;
     padding: 1rem;
   }
+
   nav.right ul {
     flex-direction: column;
     gap: 0.8rem;
     margin-top: 0.5rem;
     width: 100%;
   }
+
   nav.right ul li a {
     font-size: 1.1rem;
   }
@@ -137,14 +150,17 @@ footer {
   top: 0;
   left: 0;
   right: 0;
-  background-color: #236192; /* Navy blue background */
+  background-color: #236192;
+  /* Navy blue background */
   color: white;
   display: flex;
   align-items: center;
   flex-wrap: wrap;
   padding: 1rem 2rem;
-  border-top: 5px solid #AD7C59; /* gold underline */
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Soft shadow */
+  border-top: 5px solid #AD7C59;
+  /* gold underline */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  /* Soft shadow */
 }
 
 .map-container {
@@ -171,10 +187,14 @@ footer {
   width: 100%;
   height: 600px;
 }
+
 /*softer back ground color */
 
-h1, h2, h3 {
-  color: #1f2937; /* A modern dark-gray */
+h1,
+h2,
+h3 {
+  color: #1f2937;
+  /* A modern dark-gray */
 }
 
 nav ul li a {
@@ -184,7 +204,8 @@ nav ul li a {
 }
 
 nav ul li a:hover {
-  color: #2563eb; /* A nice blue hover color */
+  color: #2563eb;
+  /* A nice blue hover color */
 }
 
 /*section dividers -- very soft lines between sections */
@@ -197,10 +218,12 @@ section {
 /*container settings, to limit the max width and center the containers */
 
 .container {
-  max-width: 900px;   /* or 800px, or whatever fits your design */
+  max-width: 500px;
+  /* or 800px, or whatever fits your design */
   margin-left: auto;
   margin-right: auto;
-  padding-left: 1rem;  /* some horizontal padding for small screens */
+  padding-left: 1rem;
+  /* some horizontal padding for small screens */
   padding-right: 1rem;
 }
 
@@ -211,9 +234,9 @@ section {
 }
 
 .bg-light {
-  background-color: #27d16e;
+  background-color: #aea6e0;
 }
 
 .bg-lighter {
-  background-color: #7dca86;
+  background-color: #86bfcc;
 }
