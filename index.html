@@ -11,6 +11,9 @@
 
   <!-- Main CSS -->
   <link rel="stylesheet" href="css/style.css" />
+
+  <!-- Mapbox GL JS CSS -->
+  <link href="https://api.mapbox.com/mapbox-gl-js/v2.15.0/mapbox-gl.css" rel="stylesheet" />
 </head>
 
 <body>
@@ -42,68 +45,64 @@
     <!-- Section describing what an ANC is -->
     <section id="whats-an-anc" class="section-band bg-light">
       <div class="container">
-      <h3>What's an ANC?</h3>
-      <p>An ANC is a non-partisan, neighborhood body made up of locally elected representatives called Advisory
-        Neighborhood Commissioners. They are a unique feature of the District's Home Rule Charter, and they began
-        operating in 1976.</p>
-      <p>Also, check out <i>The 51st’s</i> <a
-          href="https://51st.news/what-are-washington-dc-advisory-neighborhood-commissions-anc/">article explaining
-          ANCs</a> for more context.</p>
+        <h3>What's an ANC?</h3>
+        <p>An ANC is a non-partisan, neighborhood body made up of locally elected representatives called Advisory
+          Neighborhood Commissioners. They are a unique feature of the District's Home Rule Charter, and they began
+          operating in 1976.</p>
+        <p>Also, check out <i>The 51st’s</i> <a
+            href="https://51st.news/what-are-washington-dc-advisory-neighborhood-commissions-anc/">article explaining
+            ANCs</a> for more context.</p>
       </div>
     </section>
 
     <!-- Section for ANC district details -->
     <section id="anc" class="section-band bg-lighter">
       <div class="container">
-      <h3>About ANC 2B01</h3>
-      <p>ANC 2B01 is one of nine single-member districts (SMD) in <a
-          href="https://www.dupontcircleanc.net/wordpress/">ANC 2B</a>, which covers the Dupont Circle neighborhood.</p>
-      <p>ANC 2B01 includes portions of 21st Street, Connecticut Avenue, 20th Street, 19th Street, 18th Street, New
-        Hampshire Avenue, Swann Street, S Street, Riggs Place, and R Street between Florida Avenue and Q Street.</p>
-      <p></p>
-      <p>To check whether you live in ANC 2B01, enter your address in the provided field in the map below:</p>
+        <h3>About ANC 2B01</h3>
+        <p>ANC 2B01 is one of nine single-member districts (SMD) in <a
+            href="https://www.dupontcircleanc.net/wordpress/">ANC 2B</a>, which covers the Dupont Circle neighborhood.</p>
+        <p>ANC 2B01 includes portions of 21st Street, Connecticut Avenue, 20th Street, 19th Street, 18th Street, New
+          Hampshire Avenue, Swann Street, S Street, Riggs Place, and R Street between Florida Avenue and Q Street.</p>
 
-      <!-- ✅ START EMBEDDED MAP IFRAME -->
-      <div style="
-        max-width: 800px;
-        margin: 2rem auto;
-        border-radius: 16px;
-        overflow: hidden;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-        border: 1px solid #ddd;
-      ">
-        <iframe src="https://openanc.org/browse/maps/anc-2b01?embed=true&viewbox=-77.05,38.90,-77.03,38.92" width="100%"
-          height="500" frameborder="0" allowfullscreen title="ANC 2B01 Map">
-        </iframe>
-      </div>
-      <!-- ✅ END EMBEDDED MAP IFRAME -->
+        <p>To check whether you live in ANC 2B01, enter your address in the provided field in the map below:</p>
 
-      <p>Notable places in ANC 2B01 include Dupont Coffee Collective (formerly Firehook Bakery), the Dupont Hotel,
-        Kramers bookstore, Dupont Underground, the National Museum of American Jewish Military History, and more!</p>
+        <!-- REPLACED IFRAME with Mapbox Map container -->
+        <div id="map" style="
+          max-width: 800px;
+          height: 500px;
+          margin: 2rem auto;
+          border-radius: 16px;
+          overflow: hidden;
+          box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+          border: 1px solid #ddd;
+        "></div>
+
+        <p>Notable places in ANC 2B01 include Dupont Coffee Collective (formerly Firehook Bakery), the Dupont Hotel,
+          Kramers bookstore, Dupont Underground, the National Museum of American Jewish Military History, and more!</p>
       </div>
     </section>
 
     <!-- Personal background -->
     <section id="about" class="section-band bg-light">
       <div class="container">
-      <h3>About Me</h3>
-      <p>Brief bio and background.</p>
+        <h3>About Me</h3>
+        <p>Brief bio and background.</p>
       </div>
     </section>
 
     <!-- Contact details -->
     <section id="contact" class="section-band bg-lighter">
       <div class="container">
-      <h3>Contact Commissioner DeFrank</h3>
-      <p>Please reach me at TK TK. Or TK TK.</p>
+        <h3>Contact Commissioner DeFrank</h3>
+        <p>Please reach me at TK TK. Or TK TK.</p>
       </div>
     </section>
 
     <!-- Current priorities or actions taken -->
     <section id="initiatives" class="section-band bg-light">
       <div class="container">
-      <h3>Community Initiatives</h3>
-      <p>My overarching priorities are: TK TK TK.</p>
+        <h3>Community Initiatives</h3>
+        <p>My overarching priorities are: TK TK TK.</p>
       </div>
     </section>
   </main>
@@ -115,6 +114,25 @@
 
   <!-- JavaScript for dynamically adjusting spacer height -->
   <script src="js/main.js"></script>
+
+  <!-- Mapbox GL JS -->
+  <script src="https://api.mapbox.com/mapbox-gl-js/v2.15.0/mapbox-gl.js"></script>
+
+  <!-- Your Mapbox map initialization -->
+  <script>
+    mapboxgl.accessToken = 'pk.eyJ1IjoiZGVmcmFuazEiLCJhIjoiY2x1bHZ0OWJyMHlhdjJrcDFsZzlwc3ZxMSJ9.XD1OM3LMVn2qoX9QMqR5Vg';
+
+    const map = new mapboxgl.Map({
+      container: 'map', // container ID
+      style: 'mapbox://styles/mapbox/streets-v11', // stylesheet location
+      center: [-77.038659, 38.931567], // starting position [lng, lat] (DC area)
+      zoom: 13 // starting zoom
+    });
+
+    // Add zoom and rotation controls to the map.
+    map.addControl(new mapboxgl.NavigationControl());
+  </script>
+
 </body>
 
 </html>
