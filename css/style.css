@@ -218,7 +218,7 @@ section {
 /*container settings, to limit the max width and center the containers */
 
 .container {
-  max-width: 00px;
+  max-width: 500px;
   /* or 800px, or whatever fits your design */
   margin-left: auto;
   margin-right: auto;
