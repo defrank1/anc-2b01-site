@@ -8,10 +8,10 @@
 
 /* === Body Styling === */
 body {
-font-family: 'Montserrat', sans-serif;  background-color: #FFFFFF;
+font-family: 'Montserrat', sans-serif;  
+background-color: #FFFFFF;
   color: #010101;
   line-height: 1.6;
-  font-family: 'Inter', sans-serif;
   padding-left: 1rem;
   padding-right: 1rem; /* optional */
 }
