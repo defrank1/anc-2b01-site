@@ -12,9 +12,6 @@ body {
   background-color: #FFFFFF;
   color: #010101;
   line-height: 1.6;
-  padding-left: 1rem;
-  padding-right: 1rem;
-  /* optional */
 }
 
 /* === Sticky Header === */
@@ -218,7 +215,7 @@ section {
 /*container settings, to limit the max width and center the containers */
 
 .container {
-  max-width: 500px;
+  max-width: 800px;
   /* or 800px, or whatever fits your design */
   margin-left: auto;
   margin-right: auto;
