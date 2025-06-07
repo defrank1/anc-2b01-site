@@ -194,3 +194,26 @@ section {
   padding-bottom: 2rem;
 }
 
+/*container settings, to limit the max width and center the containers */
+
+.container {
+  max-width: 900px;   /* or 800px, or whatever fits your design */
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;  /* some horizontal padding for small screens */
+  padding-right: 1rem;
+}
+
+/* background colors for sections using section classes */
+
+.section-band {
+  padding: 3rem 0;
+}
+
+.bg-light {
+  background-color: #27d16e;
+}
+
+.bg-lighter {
+  background-color: #7dca86;
+}
