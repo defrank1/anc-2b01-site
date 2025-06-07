@@ -1,10 +1,18 @@
-// Wait until page is fully loaded
-window.addEventListener('load', () => {
-  const header = document.querySelector('.site-header'); // Select the fixed header
-  const spacer = document.querySelector('.header-spacer'); // Select the spacer below it
+// Adjust .header-spacer height to match fixed header height dynamically
+document.addEventListener('DOMContentLoaded', () => {
+  const header = document.querySelector('.site-header');
+  const spacer = document.querySelector('.header-spacer');
 
-  // Set spacer height equal to header height to push main content below
-  if (header && spacer) {
-    spacer.style.height = header.offsetHeight + 'px';
+  function adjustSpacerHeight() {
+    if (header && spacer) {
+      const height = header.offsetHeight;
+      spacer.style.height = height + 'px';
+    }
   }
+
+  // Initial adjustment
+  adjustSpacerHeight();
+
+  // Re-adjust on window resize
+  window.addEventListener('resize', adjustSpacerHeight);
 });
