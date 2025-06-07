@@ -31,7 +31,7 @@ body {
   flex-wrap: wrap;
   padding: 1rem 2rem;
   border-bottom: 5px solid #AD7C59;
-  /* Red underline */
+  /* gold underline */
   z-index: 1000;
   /* Ensure it's above all other content */
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
@@ -40,16 +40,17 @@ body {
 
 /* === Header Typography === */
 
+  /* The word "Andrew DeFrank" typography*/
 .left h1 {
   font-size: 2rem;
   font-weight: 700;
   color: white;
-  margin-top: -0.5rem;
+  margin-top: -0.75rem;
   margin-bottom: 0rem;
 }
 
 .left .subtitle {
-  /* The word "ANC 2B01" typography*/
+  /* The word "Commissioner ANC 2B01" typography*/
   font-size: 1rem;
   font-style: italic;
   font-weight: 400;
