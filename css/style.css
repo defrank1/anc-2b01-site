@@ -1,0 +1,651 @@
+/* === Basic Reset === */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/*base htmnl font size */
+
+html {
+  font-size: 16px;
+  /* 1rem = 16px */
+  scroll-behavior: smooth;
+}
+
+@media (max-width: 600px) {
+  html {
+    font-size: 14.5px;
+    /* Slightly smaller base on small screens */
+  }
+}
+
+
+/* === Body Styling === */
+body {
+  font-family: 'Montserrat', sans-serif;
+  background-color: #FFFFFF;
+  color: #010101;
+  line-height: 1.6;
+}
+
+/* === Skip Navigation Link for Accessibility === */
+.skip-nav {
+  position: absolute;
+  top: -40px;
+  left: 6px;
+  background: #236192;
+  color: white;
+  padding: 8px;
+  text-decoration: none;
+  z-index: 2000;
+  border-radius: 0 0 4px 4px;
+  font-weight: 600;
+  transition: top 0.3s ease;
+}
+
+.skip-nav:focus {
+  top: 0;
+  outline: 2px solid #AD7C59;
+  outline-offset: 2px;
+}
+
+/* === Screen Reader Only Text === */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* === Honeypot Field (Hidden Spam Protection) === */
+.honeypot {
+  position: absolute;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+/* === Links === */
+a {
+  color: #236192;
+  text-decoration: underline;
+  transition: color 0.3s ease;
+}
+
+a:hover,
+a:focus {
+  color: #AD7C59;
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+}
+
+a:focus {
+  outline: 2px solid #AD7C59;
+  outline-offset: 2px;
+}
+
+/* === Focus Management === */
+*:focus {
+  outline: 2px solid #AD7C59;
+  outline-offset: 2px;
+}
+
+/* Remove default focus outline only when we provide our own */
+button:focus,
+input:focus,
+textarea:focus,
+select:focus {
+  outline: none;
+}
+
+/* === Sticky Header === */
+.site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: #236192;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem 3rem;
+  border-bottom: 5px solid #AD7C59;
+  z-index: 1000;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* === Header Typography === */
+.left h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: white;
+  margin: 0.5rem 0;
+  line-height: 1.1;
+}
+
+.left .subtitle {
+  font-size: 1.75rem;
+  font-style: italic;
+  font-weight: 500;
+  color: white;
+  margin: 0.5rem 0;
+  line-height: 1.2;
+}
+
+.left h1 a {
+  color: white;
+  text-decoration: none;
+}
+
+.left h1 a:hover,
+.left h1 a:focus {
+  text-decoration: underline;
+  outline: 2px solid #AD7C59;
+  outline-offset: 2px;
+}
+
+/* === Navigation === */
+nav.right ul {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+  margin: 0;
+  padding: 0;
+}
+
+nav.right ul li a {
+  text-decoration: none;
+  color: white;
+  font-weight: 525;
+  font-size: 1.125rem;
+  transition: color 0.3s ease;
+  padding: 0.5rem;
+  border-radius: 4px;
+}
+
+nav.right ul li a:hover {
+  color: #AD7C59;
+  /* Just change text color on hover */
+}
+
+nav.right ul li a:focus {
+  color: #AD7C59;
+  text-decoration: underline;
+  /* Accessible focus style */
+  outline: none;
+  /* Remove default focus outline box */
+}
+
+/* === Header Spacer === */
+.header-spacer {
+  width: 100%;
+  min-height: 90px;
+  /* fallback in case JS fails */
+}
+
+/* === Container === */
+.container {
+  max-width: 1150px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+/* === Main Sections === */
+main section {
+  padding: 3rem 0;
+}
+
+.section-band {
+  padding: 4rem 0;
+}
+
+.bg-light {
+  background-color: #e0e0e0;
+}
+
+.bg-lighter {
+  background-color: #d3d3d3;
+}
+
+/* === Typography === */
+h3 {
+  color: #236192;
+  margin-bottom: 1rem;
+  font-weight: 700;
+  font-size: 1.75rem;
+}
+
+main p {
+  font-size: 1.125rem;
+  line-height: 1.7;
+  margin-bottom: 1.2rem;
+}
+
+/* === Headshot Image === */
+.headshot-container {
+  float: right;
+  max-width: 250px;
+  margin: 0 0 1rem 2rem;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border: 1px solid #ddd;
+}
+
+/* === ANC Map Image === */
+.anc-map-container {
+  float: right;
+  max-width: 250px;
+  margin: 0 0 1rem 2rem;
+  /* Removed: border-radius, overflow, box-shadow, border */
+}
+
+.headshot-image {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.anc-map-image {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border: 1px solid #ddd;
+}
+
+/* Clear float after about section */
+#about .container::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* === Map Container === */
+.map-container {
+  max-width: 850px;
+  margin: 2rem auto;
+  /* Remove these styles from container */
+  /* border-radius: 16px; */
+  /* overflow: hidden; */
+  /* box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); */
+  /* border: 1px solid #ddd; */
+}
+
+/* === Add border, radius, shadow to the iframe itself === */
+.map-container iframe {
+  display: block;
+  width: 100%;
+  height: 500px;
+  border: 1px solid #ddd;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* === Google Docs Iframe Container === */
+.iframe-container {
+  max-width: 850px;
+  margin: 2rem auto;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border: 1px solid #ddd;
+}
+
+.clipped-sheet {
+  height: 500px;
+  overflow: hidden;
+  position: relative;
+}
+
+.clipped-sheet iframe {
+  transform: translateY(-27px);
+  height: 600px;
+  border: none;
+  width: 100%;
+}
+
+/* === Form Styling === */
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+  color: #010101;
+  font-size: 1.125rem;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group textarea {
+  width: 100%;
+  padding: 14px 16px;
+  border: 2px solid #236192;
+  border-radius: 8px;
+  font-size: 1.125rem;
+  font-family: 'Montserrat', sans-serif;
+  transition: all 0.3s ease;
+  background-color: white;
+  color: #010101;
+}
+
+.form-group input[type="text"]:focus,
+.form-group input[type="email"]:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: #236192;
+  box-shadow: 0 0 0 3px rgba(173, 124, 89, 0.2);
+}
+
+/* Form validation states */
+.form-group input[type="text"]:invalid,
+.form-group input[type="email"]:invalid,
+.form-group textarea:invalid {
+  border-color: #236192;
+}
+
+.form-group input[type="text"]:valid,
+.form-group input[type="email"]:valid,
+.form-group textarea:valid {
+  border-color: #236192;
+}
+
+.form-group textarea {
+  height: 140px;
+  resize: vertical;
+  line-height: 1.6;
+}
+
+/* === Error Messages === */
+.error-message {
+  color: #dc3545;
+  font-size: 0.875rem;
+  margin-top: 0.25rem;
+  display: block;
+  min-height: 1.2rem;
+}
+
+.error-message:empty {
+  display: none;
+}
+
+/* === Form Status Messages === */
+.form-status {
+  margin-top: 1rem;
+  padding: 0.75rem;
+  border-radius: 4px;
+  font-weight: 500;
+  min-height: 1.2rem;
+}
+
+.form-status.success {
+  background-color: #d4edda;
+  color: #155724;
+  border: 1px solid #c3e6cb;
+}
+
+.form-status.error {
+  background-color: #f8d7da;
+  color: #721c24;
+  border: 1px solid #f5c6cb;
+}
+
+.form-status:empty {
+  display: none;
+}
+
+.submit-btn {
+  background-color: #236192;
+  color: white;
+  padding: 16px 32px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1.125rem;
+  font-weight: 600;
+  font-family: 'Montserrat', sans-serif;
+  transition: all 0.3s ease;
+  width: 100%;
+  margin-top: 1rem;
+}
+
+.submit-btn:hover {
+  background-color: #1e4f73;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(35, 97, 146, 0.2);
+}
+
+.submit-btn:focus {
+  outline: 3px solid #AD7C59;
+  outline-offset: 2px;
+}
+
+.submit-btn:active {
+  transform: translateY(0);
+}
+
+.submit-btn:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+.required {
+  color: #AD7C59;
+  font-weight: 600;
+}
+
+/* === Footer === */
+footer {
+  background-color: #236192;
+  color: white;
+  padding: 1rem 2rem;
+  border-top: 5px solid #AD7C59;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+/*css for styling captions*/
+
+figure {
+  margin: 0 0 1.5rem 0;
+}
+
+/* === figcaption stays outside the box, just text below === */
+figcaption {
+  font-size: 0.8rem;
+  color: #333;
+  text-align: right;
+  margin-top: 0.5rem;
+}
+
+
+/* === High Contrast Mode Support === */
+@media (prefers-contrast: high) {
+  .site-header {
+    border-bottom: 8px solid #AD7C59;
+  }
+
+  a:focus,
+  button:focus,
+  input:focus,
+  textarea:focus {
+    outline: 3px solid;
+    outline-offset: 3px;
+  }
+}
+
+@media (max-width: 1325px) {
+
+  /* === Header layout shift === */
+  .site-header {
+    padding: 1.5rem 2rem;
+    flex-direction: column;
+    align-items: flex-start;
+    transition: all 0.3s ease;
+  }
+
+  .headshot-container {
+    float: none;
+    margin: 0 auto 2rem auto;
+    display: block;
+  }
+
+  .anc-map-container {
+    float: none;
+    margin: 0 auto 2rem auto;
+    display: block;
+  }
+
+  .left {
+    text-align: left;
+    margin-bottom: 1rem;
+    align-self: flex-start;
+    border-bottom: 5px solid #AD7C59;
+    padding: 0 2rem 1rem 2rem;
+    width: calc(100% + 4rem);
+    margin-left: -2rem;
+    position: relative;
+  }
+
+  .left h1 {
+    font-size: 2rem;
+  }
+
+  .left .subtitle {
+    font-size: 1.25rem;
+  }
+
+  /* Navigation layout: switch to dynamic grid */
+  nav.right {
+    display: block;
+    position: static;
+    background-color: transparent;
+    border: none;
+    box-shadow: none;
+    width: 100%;
+  }
+
+  nav.right ul {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.5rem;
+  }
+
+  nav.right ul li a {
+    display: block;
+    padding: 0.25rem 0.5rem;
+    font-size: 1rem;
+    white-space: normal;
+    /* ✅ allow wrapping */
+    border-radius: 4px;
+    text-align: center;
+  }
+
+  nav.right ul li a:hover,
+  nav.right ul li a:focus {
+    color: #AD7C59;
+    outline: none;
+  }
+}
+
+/* mobile nav css */
+
+/* Hide hamburger toggle by default (desktop and larger) */
+.menu-toggle {
+  display: none;
+}
+
+/* Show hamburger toggle only on small screens */
+@media (max-width: 600px) {
+  .menu-toggle {
+    display: block;
+  }
+}
+
+@media (max-width: 600px) {
+  .menu-toggle {
+    display: block;
+    background: none;
+    border: none;
+    font-size: 2rem;
+    color: white;
+    cursor: pointer;
+  }
+
+  .header-spacer {
+    display: none;
+  }
+
+
+  nav.right ul {
+    display: none;
+  }
+
+  nav.right ul.open {
+    display: block;
+    /* block for natural flow */
+    width: 100%;
+    margin: 0.5rem 0 0 0;
+    /* small margin above */
+    padding: 0.5rem 0;
+    background-color: #236192;
+    border-radius: 0 0 8px 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    justify-items: center;
+    /* keep your centering */
+  }
+
+  nav.right ul.open li a {
+    display: block;
+    padding: 0.75rem 1rem;
+    font-size: 1.125rem;
+    border-radius: 4px;
+    text-align: center;
+    color: white;
+  }
+
+  /* Center the header content on mobile */
+  .site-header {
+    position: relative;
+    /* change from fixed to relative on mobile */
+    flex-direction: column;
+    width: 100%;
+    max-width: 100vw;
+    box-sizing: border-box;
+    align-items: center;
+    text-align: center;
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+    padding-bottom: 0;
+    /* remove extra bottom padding */
+    z-index: 1000;
+  }
+
+  /* Center the title block text */
+  .left {
+    text-align: center;
+    width: 100%;
+    border: none;
+    /* remove bottom border if you don't want a dividing line */
+    padding: 0;
+    margin: 0;
+  }
+
+  /* Center the nav links */
+  nav.right ul.open {
+    justify-items: center;
+  }
+}
