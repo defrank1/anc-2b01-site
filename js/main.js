@@ -52,8 +52,12 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     // Optional: set focus for accessibility — without jumping the scroll again
     // Use setTimeout to wait until scroll is done (roughly)
     setTimeout(() => {
-      target.setAttribute('tabindex', '-1'); // ensure it's focusable
-      target.focus({ preventScroll: true }); // don't re-jump viewport
-    }, 500); // match the scroll animation duration
+      target.setAttribute('tabindex', '-1');
+      target.focus({ preventScroll: true });
+      target.addEventListener('blur', () => {
+        target.removeAttribute('tabindex');
+      }, { once: true });
+    }, 500);
   });
 });
+

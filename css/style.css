@@ -254,15 +254,6 @@ main p {
   display: block;
 }
 
-.anc-map-image {
-  width: 100%;
-  height: auto;
-  display: block;
-  border-radius: 16px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  border: 1px solid #ddd;
-}
-
 /* Clear float after about section */
 #about .container::after {
   content: "";
@@ -274,11 +265,6 @@ main p {
 .map-container {
   max-width: 850px;
   margin: 2rem auto;
-  /* Remove these styles from container */
-  /* border-radius: 16px; */
-  /* overflow: hidden; */
-  /* box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); */
-  /* border: 1px solid #ddd; */
 }
 
 /* === Add border, radius, shadow to the iframe itself === */
@@ -568,13 +554,6 @@ figcaption {
   display: none;
 }
 
-/* Show hamburger toggle only on small screens */
-@media (max-width: 600px) {
-  .menu-toggle {
-    display: block;
-  }
-}
-
 @media (max-width: 600px) {
   .menu-toggle {
     display: block;
@@ -583,10 +562,6 @@ figcaption {
     font-size: 2rem;
     color: white;
     cursor: pointer;
-  }
-
-  .header-spacer {
-    display: none;
   }
 
 
