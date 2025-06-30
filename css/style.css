@@ -152,6 +152,11 @@ select:focus {
   outline-offset: 2px;
 }
 
+.left h1 a:visited {
+  color: white;
+  text-decoration: none;
+}
+
 /* === Navigation === */
 nav.right ul {
   list-style: none;
