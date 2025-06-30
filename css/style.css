@@ -528,65 +528,23 @@ figcaption {
 }
 
 .anc-map-container {
-  float: none;
-  margin: 0 auto 2rem auto;
-  display: block;
+  float: right;
+  max-width: 250px;
+  margin: 0 0 1rem 2rem;
   border-radius: 16px;
   overflow: hidden;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   border: 1px solid #ddd;
+}
 
-  .left {
-    text-align: left;
-    margin-bottom: 1rem;
-    align-self: flex-start;
-    border-bottom: 5px solid #AD7C59;
-    padding: 0 2rem 1rem 2rem;
-    width: calc(100% + 4rem);
-    margin-left: -2rem;
-    position: relative;
-  }
-
-  .left h1 {
-    font-size: 2rem;
-  }
-
-  .left .subtitle {
-    font-size: 1.25rem;
-  }
-
-  /* Navigation layout: switch to dynamic grid */
-  nav.right {
+@media (max-width: 1325px) {
+  .anc-map-container {
+    float: none;
+    margin: 0 auto 2rem auto;
     display: block;
-    position: static;
-    background-color: transparent;
-    border: none;
-    box-shadow: none;
-    width: 100%;
-  }
-
-  nav.right ul {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 0.5rem;
-  }
-
-  nav.right ul li a {
-    display: block;
-    padding: 0.25rem 0.5rem;
-    font-size: 1rem;
-    white-space: normal;
-    /* ✅ allow wrapping */
-    border-radius: 4px;
-    text-align: center;
-  }
-
-  nav.right ul li a:hover,
-  nav.right ul li a:focus {
-    color: #AD7C59;
-    outline: none;
   }
 }
+
 
 /* mobile nav css */
 
