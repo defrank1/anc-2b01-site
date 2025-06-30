@@ -457,6 +457,39 @@ figcaption {
   margin-top: 0.5rem;
 }
 
+.homepage-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin: 2rem 0;
+}
+
+.homepage-buttons .cta-button {
+  background-color: #236192;
+  color: white;
+  padding: 0.75rem 1.25rem;
+  font-size: 1.125rem;
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: 8px;
+  text-align: center;
+  flex: 1 1 200px;
+  /* grow nicely and wrap on smaller screens */
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.homepage-buttons .cta-button:hover,
+.homepage-buttons .cta-button:focus {
+  background-color: #1e4f73;
+  transform: translateY(-2px);
+  outline: none;
+}
+
+.homepage-buttons .cta-button:focus {
+  outline: 3px solid #AD7C59;
+  outline-offset: 2px;
+}
+
 
 /* === High Contrast Mode Support === */
 @media (prefers-contrast: high) {
