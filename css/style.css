@@ -147,10 +147,14 @@ select:focus {
 
 .left h1 a:hover,
 .left h1 a:focus {
-  text-decoration: underline;
-  outline: 2px solid #AD7C59;
-  outline-offset: 2px;
+  color: #AD7C59;
+  /* Turn text gold */
+  text-decoration: none;
+  /* Remove underline */
+  outline: none;
+  /* Remove gold outline box */
 }
+
 
 .left h1 a:visited {
   color: white;
