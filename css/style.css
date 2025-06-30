@@ -490,14 +490,29 @@ figcaption {
 .homepage-buttons .cta-button:hover,
 .homepage-buttons .cta-button:focus {
   background-color: #1e4f73;
+  color: #AD7C59;
+  /* Gold text */
   transform: translateY(-2px);
   outline: none;
 }
+
 
 .homepage-buttons .cta-button:focus {
   outline: 3px solid #AD7C59;
   outline-offset: 2px;
 }
+
+.cta-contact {
+  background-color: #AD7C59;
+  color: white;
+}
+
+.cta-contact:hover,
+.cta-contact:focus {
+  background-color: #236192;
+  color: white;
+}
+
 
 
 /* === High Contrast Mode Support === */
