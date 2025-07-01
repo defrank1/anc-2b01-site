@@ -633,6 +633,16 @@ figcaption.credit {
 }
 
 @media (max-width: 600px) {
+
+  /* Make nav.right flex container, center its contents */
+  nav.right {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+
+  /* The menu toggle button */
   .menu-toggle {
     display: block;
     background: none;
@@ -642,26 +652,22 @@ figcaption.credit {
     cursor: pointer;
   }
 
+  /* When open, display menu items block */
+  nav.right ul.open {
+    display: block;
+    width: 100%;
+    margin-top: 0.5rem;
+    background-color: #236192;
+    border-radius: none;
+    box-shadow: none;
+  }
+
   h3 {
     text-align: center;
   }
 
   nav.right ul {
     display: none;
-  }
-
-  nav.right ul.open {
-    display: block;
-    /* block for natural flow */
-    width: 100%;
-    margin: 0.5rem 0 0 0;
-    /* small margin above */
-    padding: 0.5rem 0;
-    background-color: #236192;
-    border-radius: 0 0 8px 8px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-    justify-items: center;
-    /* keep your centering */
   }
 
   nav.right ul.open li a {
