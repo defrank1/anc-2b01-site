@@ -575,28 +575,36 @@ figcaption .credit {
   float: right;
   max-width: 250px;
   margin: 0 0 1rem 2rem;
-  border-radius: 16px;
-  overflow: hidden;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  border: 1px solid #ddd;
-  background-color: white;
+  /* Remove border, background, box-shadow here */
+  border: none;
+  box-shadow: none;
+  background-color: transparent;
+  border-radius: 0;
+  overflow: visible;
+  /* so caption won't be clipped */
 }
 
-/* Image inside figure */
 .anc-map-container img {
   display: block;
   width: 100%;
   height: auto;
-  border-radius: 16px 16px 0 0;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border: 1px solid #ddd;
 }
 
-/* Normal figcaption styling */
+/* Caption styles stay the same */
 .anc-map-container figcaption {
   font-size: 0.8rem;
   color: #333;
   text-align: right;
   margin-top: 0.5rem;
+  /* No box-shadow or border */
+  background: none;
+  border: none;
+  box-shadow: none;
 }
+
 
 .anc-map-container figcaption .credit {
   display: block;
