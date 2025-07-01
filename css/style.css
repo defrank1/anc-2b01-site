@@ -570,6 +570,7 @@ figcaption .credit {
 }
 
 /* === ANC Map Figure (desktop) === */
+/* Figure floats right */
 .anc-map-container {
   float: right;
   max-width: 250px;
@@ -589,25 +590,18 @@ figcaption .credit {
   border-radius: 16px 16px 0 0;
 }
 
-/* Caption below the image, inside the figure */
-.anc-map-caption {
-  max-width: 250px;
-  margin: 0 0 1.5rem 2rem;
-  font-size: 0.875rem;
+/* Normal figcaption styling */
+.anc-map-container figcaption {
+  font-size: 0.8rem;
   color: #333;
-  font-style: normal;
-  float: none;
-  clear: right;
-  line-height: 1.3;
   text-align: right;
+  margin-top: 0.5rem;
 }
 
-
-/* Credit styling inside caption */
-.anc-map-caption .credit {
+.anc-map-container figcaption .credit {
   display: block;
   font-size: 0.75rem;
-  color: #666666;
+  color: #666;
   font-style: italic;
   margin-top: 0.15rem;
 }
