@@ -273,12 +273,40 @@ figure.anc-map-container img {
   border: 1px solid #ddd;
 }
 
-figure.anc-map-container figcaption {
-  font-size: 0.8rem;
-  color: #333;
-  text-align: right;
-  margin-top: 0.5rem;
+.anc-map-container {
+  float: right;
+  max-width: 250px;
+  margin: 0 0 1rem 2rem;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border: 1px solid #ddd;
+  background-color: white;
+  /* keeps the image container white */
 }
+
+.anc-map-caption {
+  max-width: 250px;
+  margin: 0 0 1.5rem 2rem;
+  /* match horizontal spacing */
+  font-size: 0.875rem;
+  color: #333;
+  font-style: normal;
+  float: right;
+  clear: right;
+  /* make sure it clears the float above */
+  line-height: 1.3;
+  text-align: right;
+}
+
+.anc-map-caption .credit {
+  display: block;
+  font-size: 0.75rem;
+  color: #666666;
+  font-style: italic;
+  margin-top: 0.15rem;
+}
+
 
 
 .headshot-image {
@@ -487,15 +515,6 @@ figcaption {
   color: #333;
   text-align: right;
   margin-top: 0.5rem;
-}
-
-figcaption {
-  font-size: 0.8rem;
-  color: #333;
-  text-align: right;
-  margin-top: 0.5rem;
-  line-height: 1.3;
-  /* add some line height for readability */
 }
 
 figcaption .credit {
