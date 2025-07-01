@@ -570,20 +570,20 @@ figcaption .credit {
 }
 
 /* === ANC Map Figure (desktop) === */
-/* Figure floats right */
+/* Remove all box styling from the figure */
 .anc-map-container {
   float: right;
   max-width: 250px;
   margin: 0 0 1rem 2rem;
-  /* Remove border, background, box-shadow here */
-  border: none;
-  box-shadow: none;
-  background-color: transparent;
-  border-radius: 0;
   overflow: visible;
-  /* so caption won't be clipped */
+  /* important so caption isn't clipped */
+  border: none;
+  background: none;
+  box-shadow: none;
+  border-radius: 0;
 }
 
+/* Add the box styling to the image */
 .anc-map-container img {
   display: block;
   width: 100%;
@@ -593,17 +593,14 @@ figcaption .credit {
   border: 1px solid #ddd;
 }
 
-/* Caption styles stay the same */
+/* Caption styling stays as is */
 .anc-map-container figcaption {
   font-size: 0.8rem;
   color: #333;
   text-align: right;
   margin-top: 0.5rem;
-  /* No box-shadow or border */
-  background: none;
-  border: none;
-  box-shadow: none;
 }
+
 
 
 .anc-map-container figcaption .credit {
