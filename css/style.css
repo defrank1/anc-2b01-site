@@ -473,19 +473,13 @@ figcaption {
   margin-top: 0.5rem;
 }
 
-figcaption .credit {
+figcaption.credit {
   display: block;
-  /* forces credit to a new line */
   font-size: 0.75rem;
-  /* slightly smaller font */
   color: #666666;
-  /* lighter gray for credit */
   font-style: italic;
-  /* italic to visually separate credit */
   margin-top: 0.15rem;
-  /* small spacing above credit */
 }
-
 
 .homepage-buttons {
   display: flex;
