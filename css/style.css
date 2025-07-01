@@ -5,8 +5,7 @@
   padding: 0;
 }
 
-/*base htmnl font size */
-
+/*base html font size */
 html {
   font-size: 16px;
   /* 1rem = 16px */
@@ -19,7 +18,6 @@ html {
     /* Slightly smaller base on small screens */
   }
 }
-
 
 /* === Body Styling === */
 body {
@@ -154,7 +152,6 @@ select:focus {
   outline: none;
   /* Remove gold outline box */
 }
-
 
 .left h1 a:visited {
   color: white;
@@ -453,7 +450,6 @@ footer {
 }
 
 /*css for styling captions*/
-
 figure {
   margin: 0 0 1.5rem 0;
 }
@@ -496,7 +492,6 @@ figcaption {
   outline: none;
 }
 
-
 .homepage-buttons .cta-button:focus {
   outline: 3px solid #AD7C59;
   outline-offset: 2px;
@@ -512,8 +507,6 @@ figcaption {
   background-color: #236192;
   color: white;
 }
-
-
 
 /* === High Contrast Mode Support === */
 @media (prefers-contrast: high) {
@@ -569,7 +562,6 @@ figcaption {
   }
 }
 
-
 /* mobile nav css */
 
 /* Hide hamburger toggle by default (desktop and larger) */
@@ -586,7 +578,6 @@ figcaption {
     color: white;
     cursor: pointer;
   }
-
 
   nav.right ul {
     display: none;
@@ -613,23 +604,6 @@ figcaption {
     border-radius: 4px;
     text-align: center;
     color: white;
-  }
-
-  /* Center the header content on mobile */
-  .site-header {
-    position: relative;
-    /* change from fixed to relative on mobile */
-    flex-direction: column;
-    width: 100%;
-    max-width: 100vw;
-    box-sizing: border-box;
-    align-items: center;
-    text-align: center;
-    padding-left: 0.75rem;
-    padding-right: 0.75rem;
-    padding-bottom: 0;
-    /* remove extra bottom padding */
-    z-index: 1000;
   }
 
   /* Center the title block text */
