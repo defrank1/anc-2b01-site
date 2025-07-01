@@ -629,6 +629,10 @@ figcaption .credit {
     cursor: pointer;
   }
 
+  h3 {
+    text-align: center;
+  }
+
   nav.right ul {
     display: none;
   }
