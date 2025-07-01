@@ -296,7 +296,7 @@ figure.anc-map-container figcaption {
 
 /* === Map Container === */
 .map-container {
-  max-width: 850px;
+  max-width: 1150px;
   margin: 2rem auto;
 }
 
@@ -312,7 +312,7 @@ figure.anc-map-container figcaption {
 
 /* === Google Docs Iframe Container === */
 .iframe-container {
-  max-width: 850px;
+  max-width: 1150px;
   margin: 2rem auto;
   border-radius: 16px;
   overflow: hidden;
