@@ -591,14 +591,17 @@ figcaption .credit {
 
 /* Caption below the image, inside the figure */
 .anc-map-caption {
+  max-width: 250px;
+  margin: 0 0 1.5rem 2rem;
   font-size: 0.875rem;
   color: #333;
+  font-style: normal;
+  float: none;
+  clear: right;
   line-height: 1.3;
   text-align: right;
-  padding: 0.5rem 1rem;
-  background-color: white;
-  /* optional: keeps same white bg under caption */
 }
+
 
 /* Credit styling inside caption */
 .anc-map-caption .credit {
