@@ -256,14 +256,6 @@ main p {
   border: 1px solid #ddd;
 }
 
-/* === ANC Map Image === */
-figure.anc-map-container {
-  float: right;
-  max-width: 250px;
-  margin: 0 0 1rem 2rem;
-  display: block;
-}
-
 figure.anc-map-container img {
   display: block;
   width: 100%;
@@ -272,42 +264,6 @@ figure.anc-map-container img {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   border: 1px solid #ddd;
 }
-
-.anc-map-container {
-  float: right;
-  max-width: 250px;
-  margin: 0 0 1rem 2rem;
-  border-radius: 16px;
-  overflow: hidden;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  border: 1px solid #ddd;
-  background-color: white;
-  /* keeps the image container white */
-}
-
-.anc-map-caption {
-  max-width: 250px;
-  margin: 0 0 1.5rem 2rem;
-  /* match horizontal spacing */
-  font-size: 0.875rem;
-  color: #333;
-  font-style: normal;
-  float: right;
-  clear: right;
-  /* make sure it clears the float above */
-  line-height: 1.3;
-  text-align: right;
-}
-
-.anc-map-caption .credit {
-  display: block;
-  font-size: 0.75rem;
-  color: #666666;
-  font-style: italic;
-  margin-top: 0.15rem;
-}
-
-
 
 .headshot-image {
   width: 100%;
@@ -613,6 +569,7 @@ figcaption .credit {
   }
 }
 
+/* === ANC Map Figure (desktop) === */
 .anc-map-container {
   float: right;
   max-width: 250px;
@@ -621,14 +578,55 @@ figcaption .credit {
   overflow: hidden;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   border: 1px solid #ddd;
+  background-color: white;
 }
 
+/* Image inside figure */
+.anc-map-container img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 16px 16px 0 0;
+}
+
+/* Caption below the image, inside the figure */
+.anc-map-caption {
+  font-size: 0.875rem;
+  color: #333;
+  line-height: 1.3;
+  text-align: right;
+  padding: 0.5rem 1rem;
+  background-color: white;
+  /* optional: keeps same white bg under caption */
+}
+
+/* Credit styling inside caption */
+.anc-map-caption .credit {
+  display: block;
+  font-size: 0.75rem;
+  color: #666666;
+  font-style: italic;
+  margin-top: 0.15rem;
+}
+
+/* Responsive: stack figure centered below text */
 @media (max-width: 1325px) {
   .anc-map-container {
     float: none;
     margin: 0 auto 2rem auto;
     display: block;
   }
+}
+
+
+.anc-map-container {
+  float: right;
+  max-width: 250px;
+  margin: 0 0 1rem 2rem;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border: 1px solid #ddd;
 }
 
 /* mobile nav css */
