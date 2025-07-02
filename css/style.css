@@ -312,7 +312,7 @@ nav.right ul li a:focus {
 
 /* === Google Docs Iframe Container === */
 .iframe-container {
-  max-width: 1150px;
+  max-width: 1145px;
   margin: 2rem auto;
   border-radius: 16px;
   overflow: hidden;
