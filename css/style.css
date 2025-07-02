@@ -97,11 +97,6 @@ a:focus {
   outline-offset: 2px;
 }
 
-a:focus {
-  outline: 2px solid #AD7C59;
-  outline-offset: 2px;
-}
-
 /*css for styling captions*/
 figure {
   margin: 0 0 1.5rem 0;
@@ -668,10 +663,7 @@ select:focus {
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     border: 1px solid #ddd;
   }
-}
 
-/* Responsive: stack figure centered below text */
-@media (max-width: 1325px) {
   .anc-map-container {
     float: none;
     margin: 0 auto 2rem auto;
@@ -679,6 +671,7 @@ select:focus {
   }
 }
 
+/* mobile nav css */
 @media (max-width: 600px) {
   html {
     font-size: 14.5px;
@@ -686,8 +679,8 @@ select:focus {
   }
 }
 
-/* mobile nav css */
-@media (max-width: 600px) {
+@media (max-width:600px) {
+
 
   /* Make nav.right flex container, center its contents */
   nav.right {
