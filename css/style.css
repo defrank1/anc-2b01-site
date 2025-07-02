@@ -685,6 +685,14 @@ figcaption.credit {
 
   nav.right ul {
     display: none;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  nav.right ul.open {
+    display: block;
+    justify-items: center;
+    opacity: 1;
   }
 
   nav.right ul.open li a {
@@ -706,10 +714,6 @@ figcaption.credit {
     margin: 0;
   }
 
-  /* Center the nav links */
-  nav.right ul.open {
-    justify-items: center;
-  }
 }
 
 .left h1 a:hover,
