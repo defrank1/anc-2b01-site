@@ -1,3 +1,32 @@
+:root {
+  /* Colors */
+  --primary-blue: #236192;
+  --accent-gold: #AD7C59;
+  --text-dark: #010101;
+  --text-light: #333;
+  --text-muted: #666;
+  --white: #FFFFFF;
+
+  /* Spacing */
+  --header-padding: 2rem 3rem;
+  --section-padding: 4rem 0;
+  --container-max-width: 1150px;
+
+  /* Border radius */
+  --border-radius-sm: 4px;
+  --border-radius-md: 8px;
+  --border-radius-lg: 16px;
+
+  /* Shadows */
+  --shadow-light: 0 4px 12px rgba(0, 0, 0, 0.1);
+  --shadow-header: 0 2px 5px rgba(0, 0, 0, 0.2);
+
+  /* Typography */
+  --font-family: 'Montserrat', sans-serif;
+  --font-size-base: 1.125rem;
+  --line-height-base: 1.6;
+}
+
 /* === Basic Reset === */
 * {
   box-sizing: border-box;
@@ -564,7 +593,6 @@ figcaption.credit {
 }
 
 /* === ANC Map Figure (desktop) === */
-/* Remove all box styling from the figure */
 .anc-map-container {
   float: right;
   max-width: 250px;
@@ -612,17 +640,6 @@ figcaption.credit {
     margin: 0 auto 2rem auto;
     display: block;
   }
-}
-
-
-.anc-map-container {
-  float: right;
-  max-width: 250px;
-  margin: 0 0 1rem 2rem;
-  border-radius: 16px;
-  overflow: hidden;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  border: 1px solid #ddd;
 }
 
 /* mobile nav css */
