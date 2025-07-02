@@ -667,23 +667,21 @@ select:focus {
 }
 
 /* mobile nav css */
+
 @media (max-width: 600px) {
   html {
     font-size: 14.5px;
     /* Slightly smaller base on small screens */
   }
+
+  nav.right {
+    display: block;
+    width: 100%;
+  }
+
 }
 
 @media (max-width:600px) {
-
-
-  /* Make nav.right flex container, center its contents */
-  nav.right {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-  }
 
   /* The menu toggle button */
   .menu-toggle {
