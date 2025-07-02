@@ -125,19 +125,6 @@
 
   <!-- JavaScript for functionality -->
   <script src="js/main.js"></script>
-  <script>
-    function adjustHeaderSpacer() {
-      const header = document.querySelector('.site-header');
-      const spacer = document.querySelector('.header-spacer');
-      if (header && spacer) {
-        spacer.style.minHeight = header.offsetHeight + 'px';
-      }
-    }
-
-    window.addEventListener('load', adjustHeaderSpacer);
-    window.addEventListener('resize', adjustHeaderSpacer);
-  </script>
-
 </body>
 
 </html>

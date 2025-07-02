@@ -228,26 +228,21 @@ nav.right ul {
 }
 
 nav.right ul li a {
-  text-decoration: none;
   color: white;
   font-weight: 525;
   font-size: 1.125rem;
-  transition: color 0.3s ease;
   padding: 0.5rem;
   border-radius: 4px;
+  transition: color 0.3s ease, font-weight 0.3s ease;
+  text-decoration: none;
 }
 
-nav.right ul li a:hover {
-  color: #AD7C59;
-  /* Just change text color on hover */
-}
-
+nav.right ul li a:hover,
 nav.right ul li a:focus {
   color: #AD7C59;
-  text-decoration: underline;
-  /* Accessible focus style */
+  text-decoration: none;
   outline: none;
-  /* Remove default focus outline box */
+  font-weight: 600;
 }
 
 /* Hide hamburger toggle by default (desktop and larger) */
@@ -700,6 +695,12 @@ select:focus {
     cursor: pointer;
   }
 
+  nav.right ul {
+    display: none;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
   /* When open, display menu items block */
   nav.right ul.open {
     display: block;
@@ -710,11 +711,6 @@ select:focus {
     box-shadow: none;
   }
 
-  nav.right ul {
-    display: none;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-  }
 
   nav.right ul.open {
     display: block;
@@ -729,6 +725,11 @@ select:focus {
     border-radius: 4px;
     text-align: center;
     color: white;
+  }
+
+  nav.right ul.open li a:hover,
+  nav.right ul.open li a:focus {
+    color: #AD7C59;
   }
 
   /* Center the title block text */

@@ -9,6 +9,8 @@ document.addEventListener('DOMContentLoaded', () => {
     spacer.style.height = header.offsetHeight + 'px';
   }
 
+  toggle.setAttribute('aria-expanded', menu.classList.contains('open') ? 'true' : 'false');
+
   // Update spacer height on resize
   window.addEventListener('resize', () => {
     if (header && spacer) {
