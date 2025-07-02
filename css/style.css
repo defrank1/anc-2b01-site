@@ -34,20 +34,15 @@
    2. Global Reset and Base Elements
    ========================================================================== */
 
-html,
-body {
-  height: 100%;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  flex-direction: column;
-}
-
 body {
   font-family: 'Montserrat', sans-serif;
   background-color: #FFFFFF;
   color: #010101;
   line-height: 1.6;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
 }
 
 /* === Basic Reset === */
@@ -62,6 +57,7 @@ html {
   font-size: 16px;
   /* 1rem = 16px */
   scroll-behavior: smooth;
+  height: 100%;
 }
 
 /* ==========================================================================
@@ -89,10 +85,15 @@ a {
   transition: color 0.3s ease;
 }
 
-a:hover,
-a:focus {
+a:hover {
   color: #AD7C59;
   outline: 2px solid transparent;
+  outline-offset: 2px;
+}
+
+a:focus {
+  color: #AD7C59;
+  outline: 2px solid #AD7C59;
   outline-offset: 2px;
 }
 
@@ -556,10 +557,6 @@ figure.anc-map-container img {
 
 footer {
   flex-shrink: 0;
-}
-
-/* === Footer === */
-footer {
   background-color: #236192;
   color: white;
   padding: 1rem 2rem;
@@ -682,6 +679,13 @@ select:focus {
   }
 }
 
+@media (max-width: 600px) {
+  html {
+    font-size: 14.5px;
+    /* Slightly smaller base on small screens */
+  }
+}
+
 /* mobile nav css */
 @media (max-width: 600px) {
 
@@ -744,11 +748,4 @@ select:focus {
     margin: 0;
   }
 
-}
-
-@media (max-width: 600px) {
-  html {
-    font-size: 14.5px;
-    /* Slightly smaller base on small screens */
-  }
 }
