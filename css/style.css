@@ -312,7 +312,7 @@ nav.right ul li a:focus {
 
 /* === Google Docs Iframe Container === */
 .iframe-container {
-  max-width: 1145px;
+  max-width: 1150px;
   margin: 2rem auto;
   border-radius: 16px;
   overflow: hidden;
@@ -699,53 +699,54 @@ select:focus {
   .menu-toggle:focus {
     color: #AD7C59;
     /* gold */
+
+
   }
+}
 
-  nav.right ul {
-    display: none;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-  }
+nav.right ul {
+  display: none;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
 
-  /* When open, display menu items block */
-  nav.right ul.open {
-    display: block;
-    width: 100%;
-    margin-top: 0.5rem;
-    background-color: #236192;
-    border-radius: none;
-    box-shadow: none;
-  }
+/* When open, display menu items block */
+nav.right ul.open {
+  display: block;
+  width: 100%;
+  margin-top: 0.5rem;
+  background-color: #236192;
+  border-radius: none;
+  box-shadow: none;
+}
 
 
-  nav.right ul.open {
-    display: block;
-    justify-items: center;
-    opacity: 1;
-  }
+nav.right ul.open {
+  display: block;
+  justify-items: center;
+  opacity: 1;
+}
 
-  nav.right ul.open li a {
-    display: block;
-    padding: 0.75rem 1rem;
-    font-size: 1.125rem;
-    border-radius: 4px;
-    text-align: center;
-    color: white;
-  }
+nav.right ul.open li a {
+  display: block;
+  padding: 0.75rem 1rem;
+  font-size: 1.125rem;
+  border-radius: 4px;
+  text-align: center;
+  color: white;
+}
 
-  nav.right ul.open li a:hover,
-  nav.right ul.open li a:focus {
-    color: #AD7C59;
-  }
+nav.right ul.open li a:hover,
+nav.right ul.open li a:focus {
+  color: #AD7C59;
+}
 
-  /* Center the title block text */
-  .left {
-    text-align: center;
-    width: 100%;
-    border: none;
-    /* remove bottom border if you don't want a dividing line */
-    padding: 0;
-    margin: 0;
-  }
-
+/* Center the title block text */
+.left {
+  text-align: center;
+  width: 100%;
+  border: none;
+  /* remove bottom border if you don't want a dividing line */
+  padding: 0;
+  margin: 0;
 }
