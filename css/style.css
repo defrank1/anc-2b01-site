@@ -639,14 +639,25 @@ select:focus {
   }
 }
 
-@media (max-width: 1325px) {
+/* mobile nav css */
 
-  /* === Header layout shift === */
+@media (max-width: 1150px) {
+
   .site-header {
     padding: 1.5rem 2rem;
     flex-direction: column;
     align-items: flex-start;
     transition: all 0.3s ease;
+  }
+
+  html {
+    font-size: 14.5px;
+    /* Slightly smaller base on small screens */
+  }
+
+  nav.right {
+    display: block;
+    width: 100%;
   }
 
   .headshot-container {
@@ -664,24 +675,6 @@ select:focus {
     margin: 0 auto 2rem auto;
     display: block;
   }
-}
-
-/* mobile nav css */
-
-@media (max-width: 900px) {
-  html {
-    font-size: 14.5px;
-    /* Slightly smaller base on small screens */
-  }
-
-  nav.right {
-    display: block;
-    width: 100%;
-  }
-
-}
-
-@media (max-width: 900px) {
 
   /* The menu toggle button */
   .menu-toggle {
