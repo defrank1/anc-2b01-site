@@ -668,7 +668,7 @@ select:focus {
 
 /* mobile nav css */
 
-@media (max-width: 600px) {
+@media (max-width: 900px) {
   html {
     font-size: 14.5px;
     /* Slightly smaller base on small screens */
@@ -681,7 +681,7 @@ select:focus {
 
 }
 
-@media (max-width:600px) {
+@media (max-width: 900px) {
 
   /* The menu toggle button */
   .menu-toggle {
