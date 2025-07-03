@@ -630,6 +630,10 @@ select:focus {
     border-bottom: 8px solid #AD7C59;
   }
 
+  .header-spacer {
+    display: none;
+  }
+
   a:focus,
   button:focus,
   input:focus,
@@ -648,6 +652,8 @@ select:focus {
     flex-direction: column;
     align-items: flex-start;
     transition: all 0.3s ease;
+    position: static;
+
   }
 
   html {
@@ -694,9 +700,6 @@ select:focus {
     /* gold */
   }
 
-
-
-
   nav.right ul {
     display: none;
     opacity: 0;
@@ -712,7 +715,6 @@ select:focus {
     border-radius: none;
     box-shadow: none;
   }
-
 
   nav.right ul.open {
     display: block;
