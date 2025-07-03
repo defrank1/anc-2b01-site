@@ -703,7 +703,10 @@ select:focus {
   nav.right ul {
     display: none;
     opacity: 0;
-    transition: opacity 0.3s ease;
+    transition: opacity 0.3s ease, max-height 0.4s ease;
+    overflow: hidden;
+    max-height: 0;
+
   }
 
   /* When open, display menu items block */
@@ -714,6 +717,8 @@ select:focus {
     background-color: #236192;
     border-radius: none;
     box-shadow: none;
+    max-height: 500px;
+    opacity: 1;
   }
 
   nav.right ul.open {
