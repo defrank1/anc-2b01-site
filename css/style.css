@@ -686,60 +686,66 @@ select:focus {
   /* The menu toggle button */
   .menu-toggle {
     display: block;
+    margin: 0 auto;
     background: none;
     border: none;
     font-size: 2rem;
     color: white;
     cursor: pointer;
-    margin: 0 auto;
+    transition: transform 0.3s ease, color 0.3s ease;
   }
-}
 
-nav.right ul {
-  display: none;
-  opacity: 0;
-  transition: opacity 0.3s ease;
-}
+  .menu-toggle:hover,
+  .menu-toggle:focus {
+    color: #AD7C59;
+    /* gold */
+  }
 
-/* When open, display menu items block */
-nav.right ul.open {
-  display: block;
-  width: 100%;
-  margin-top: 0.5rem;
-  background-color: #236192;
-  border-radius: none;
-  box-shadow: none;
-}
+  nav.right ul {
+    display: none;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  /* When open, display menu items block */
+  nav.right ul.open {
+    display: block;
+    width: 100%;
+    margin-top: 0.5rem;
+    background-color: #236192;
+    border-radius: none;
+    box-shadow: none;
+  }
 
 
-nav.right ul.open {
-  display: block;
-  justify-items: center;
-  opacity: 1;
-}
+  nav.right ul.open {
+    display: block;
+    justify-items: center;
+    opacity: 1;
+  }
 
-nav.right ul.open li a {
-  display: block;
-  padding: 0.75rem 1rem;
-  font-size: 1.125rem;
-  border-radius: 4px;
-  text-align: center;
-  color: white;
-}
+  nav.right ul.open li a {
+    display: block;
+    padding: 0.75rem 1rem;
+    font-size: 1.125rem;
+    border-radius: 4px;
+    text-align: center;
+    color: white;
+  }
 
-nav.right ul.open li a:hover,
-nav.right ul.open li a:focus {
-  color: #AD7C59;
-}
+  nav.right ul.open li a:hover,
+  nav.right ul.open li a:focus {
+    color: #AD7C59;
+  }
 
-/* Center the title block text */
-.left {
-  text-align: center;
-  width: 100%;
-  border: none;
-  /* remove bottom border if you don't want a dividing line */
-  padding: 0;
-  margin: 0;
-}
+  /* Center the title block text */
+  .left {
+    text-align: center;
+    width: 100%;
+    border: none;
+    /* remove bottom border if you don't want a dividing line */
+    padding: 0;
+    margin: 0;
+  }
 
 }
