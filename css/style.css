@@ -656,6 +656,10 @@ select:focus {
 
   }
 
+  .header-spacer {
+    display: none;
+  }
+
   html {
     font-size: 14.5px;
     /* Slightly smaller base on small screens */
