@@ -6,7 +6,7 @@
   --primary-blue: #1A4063;
   --primary-blue-hover: #1A4063;
   --action-red: #A12334;
-  --accent-gold: #7db597;
+  --accent-green: #7db597;
   --text-dark: #010101;
   --text-light: #333;
   --text-muted: #666;
@@ -88,14 +88,14 @@ a {
 }
 
 a:hover {
-  color: var(--accent-gold);
+  color: var(--accent-green);
   outline: 2px solid transparent;
   outline-offset: 2px;
 }
 
 a:focus {
-  color: var(--accent-gold);
-  outline: 2px solid var(--accent-gold);
+  color: var(--accent-green);
+  outline: 2px solid var(--accent-green);
   outline-offset: 2px;
 }
 
@@ -171,12 +171,12 @@ main {
   left: 0;
   right: 0;
   background-color: var(--primary-blue);
-  color: white;
+  color: var(--white);
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 2rem 3rem;
-  border-bottom: 5px solid var(--accent-gold);
+  border-bottom: 5px solid var(--accent-green);
   z-index: 1000;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
@@ -187,7 +187,7 @@ main {
   font-size: 1.75rem;
   font-style: italic;
   font-weight: 500;
-  color: white;
+  color: var(--white);
   margin: 0.5rem 0;
   line-height: 1.2;
 }
@@ -195,7 +195,7 @@ main {
 .left h1 {
   font-size: 2.5rem;
   font-weight: 700;
-  color: white;
+  color: var(--white);
   margin: 0.5rem 0;
   line-height: 1.1;
 }
@@ -206,18 +206,18 @@ main {
 }
 
 .left h1 a:visited {
-  color: var(--accent-gold);
+  color: var(--white);
   text-decoration: none;
 }
 
 .left h1 a:hover,
 .left h1 a:focus {
-  color: var(--accent-gold);
-  /* Turn text gold */
+  color: var(--accent-green);
+  /* Turn text green */
   text-decoration: none;
   /* Remove underline */
   outline: none;
-  /* Remove gold outline box */
+  /* Remove green outline box */
 }
 
 /* === Navigation === */
@@ -241,7 +241,7 @@ nav.right ul li a {
 
 nav.right ul li a:hover,
 nav.right ul li a:focus {
-  color: var(--accent-gold);
+  color: var(--accent-green);
   text-decoration: none;
   outline: none;
   font-weight: 600;
@@ -331,7 +331,7 @@ nav.right ul li a:focus {
 
 .homepage-buttons .cta-button {
   background-color: var(--primary-blue);
-  color: white;
+  color: var(--white);
   padding: 0.75rem 1.25rem;
   font-size: 1.125rem;
   font-weight: 600;
@@ -346,14 +346,14 @@ nav.right ul li a:focus {
 .homepage-buttons .cta-button:hover,
 .homepage-buttons .cta-button:focus {
   background-color: var(--primary-blue-hover);
-  color: var(--accent-gold);
+  color: var(--accent-green);
   /* Gold text */
   transform: translateY(-2px);
   outline: none;
 }
 
 .homepage-buttons .cta-button:focus {
-  outline: 3px solid var(--accent-gold);
+  outline: 3px solid var(--accent-green);
   outline-offset: 2px;
 }
 
@@ -401,14 +401,14 @@ figure.anc-map-container img {
 }
 
 .cta-contact {
-  background-color: var(--accent-gold);
-  color: white;
+  background-color: var(--accent-green);
+  color: var(--white);
 }
 
 .cta-contact:hover,
 .cta-contact:focus {
   background-color: var(--primary-blue-hover);
-  color: white;
+  color: var(--white);
 }
 
 /* ==========================================================================
@@ -437,7 +437,7 @@ figure.anc-map-container img {
   font-size: 1.125rem;
   font-family: 'Montserrat', sans-serif;
   transition: all 0.3s ease;
-  background-color: white;
+  background-color: var(--white);
   color: var(--text-dark);
 }
 
@@ -470,7 +470,7 @@ figure.anc-map-container img {
 
 .submit-btn {
   background-color: var(--primary-blue);
-  color: white;
+  color: var(--white);
   padding: 16px 32px;
   border: none;
   border-radius: 8px;
@@ -490,7 +490,7 @@ figure.anc-map-container img {
 }
 
 .submit-btn:focus {
-  outline: 3px solid var(--accent-gold);
+  outline: 3px solid var(--accent-green);
   outline-offset: 2px;
 }
 
@@ -550,9 +550,9 @@ figure.anc-map-container img {
 footer {
   flex-shrink: 0;
   background-color: var(--primary-blue);
-  color: white;
+  color: var(--white);
   padding: 1rem 2rem;
-  border-top: 5px solid var(--accent-gold);
+  border-top: 5px solid var(--accent-green);
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
@@ -566,7 +566,7 @@ footer {
   top: -40px;
   left: 6px;
   background: var(--primary-blue);
-  color: white;
+  color: var(--white);
   padding: 8px;
   text-decoration: none;
   z-index: 2000;
@@ -577,7 +577,7 @@ footer {
 
 .skip-nav:focus {
   top: 0;
-  outline: 2px solid var(--accent-gold);
+  outline: 2px solid var(--accent-green);
   outline-offset: 2px;
 }
 
@@ -604,13 +604,13 @@ footer {
 }
 
 .required {
-  color: var(--accent-gold);
+  color: var(--accent-green);
   font-weight: 600;
 }
 
 /* === Focus Management === */
 *:focus {
-  outline: 2px solid var(--accent-gold);
+  outline: 2px solid var(--accent-green);
   outline-offset: 2px;
 }
 
@@ -629,7 +629,7 @@ select:focus {
 /* === High Contrast Mode Support === */
 @media (prefers-contrast: high) {
   .site-header {
-    border-bottom: 8px solid var(--accent-gold);
+    border-bottom: 8px solid var(--accent-green);
   }
 
   .header-spacer {
@@ -695,15 +695,15 @@ select:focus {
     background: none;
     border: none;
     font-size: 2rem;
-    color: white;
+    color: var(--white);
     cursor: pointer;
     transition: transform 0.3s ease, color 0.3s ease;
   }
 
   .menu-toggle:hover,
   .menu-toggle:focus {
-    color: var(--accent-gold);
-    /* gold */
+    color: var(--accent-green);
+    /* green */
   }
 
   nav.right ul {
@@ -739,12 +739,12 @@ select:focus {
     font-size: 1.125rem;
     border-radius: 4px;
     text-align: center;
-    color: white;
+    color: var(--white);
   }
 
   nav.right ul.open li a:hover,
   nav.right ul.open li a:focus {
-    color: var(--accent-gold);
+    color: var(--accent-green);
   }
 
   /* Center the title block text */
