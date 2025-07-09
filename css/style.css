@@ -3,12 +3,14 @@
    ========================================================================== */
 :root {
   /* Colors */
-  --primary-blue: #236192;
-  --accent-gold: #AD7C59;
+  --primary-blue: #1A4063;
+  --primary-blue-hover: #1A4063;
+  --action-red: #A12334;
+  --accent-gold: #7db597;
   --text-dark: #010101;
   --text-light: #333;
   --text-muted: #666;
-  --white: #FFFFFF;
+  --white: #f1edea;
 
   /* Spacing */
   --header-padding: 2rem 3rem;
@@ -36,8 +38,8 @@
 
 body {
   font-family: 'Montserrat', sans-serif;
-  background-color: #FFFFFF;
-  color: #010101;
+  background-color: var(--white);
+  color: var(--text-dark);
   line-height: 1.6;
   margin: 0;
   padding: 0;
@@ -65,7 +67,7 @@ html {
    ========================================================================== */
 
 h3 {
-  color: #236192;
+  color: var(--primary-blue);
   margin-bottom: 1rem;
   text-align: center;
   font-weight: 700;
@@ -80,20 +82,20 @@ main p {
 
 /* === Links === */
 a {
-  color: #236192;
+  color: var(--primary-blue);
   text-decoration: underline;
   transition: color 0.3s ease;
 }
 
 a:hover {
-  color: #AD7C59;
+  color: var(--accent-gold);
   outline: 2px solid transparent;
   outline-offset: 2px;
 }
 
 a:focus {
-  color: #AD7C59;
-  outline: 2px solid #AD7C59;
+  color: var(--accent-gold);
+  outline: 2px solid var(--accent-gold);
   outline-offset: 2px;
 }
 
@@ -105,7 +107,7 @@ figure {
 /* === figcaption stays outside the box, just text below === */
 figcaption {
   font-size: 0.8rem;
-  color: #333;
+  color: var(--text-light);
   text-align: right;
   margin-top: 0.5rem;
 }
@@ -113,7 +115,7 @@ figcaption {
 figcaption.credit {
   display: block;
   font-size: 0.75rem;
-  color: #666666;
+  color: var(--text-muted)666;
   font-style: italic;
   margin-top: 0.15rem;
 }
@@ -140,11 +142,11 @@ figcaption.credit {
 }
 
 .bg-light {
-  background-color: #ffffff;
+  background-color: var(--white);
 }
 
 .bg-lighter {
-  background-color: #ffffff;
+  background-color: var(--white);
 }
 
 /* === Header Spacer === */
@@ -168,13 +170,13 @@ main {
   top: 0;
   left: 0;
   right: 0;
-  background-color: #236192;
+  background-color: var(--primary-blue);
   color: white;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 2rem 3rem;
-  border-bottom: 5px solid #AD7C59;
+  border-bottom: 5px solid var(--accent-gold);
   z-index: 1000;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
@@ -199,18 +201,18 @@ main {
 }
 
 .left h1 a {
-  color: white;
+  color: var(--white);
   text-decoration: none;
 }
 
 .left h1 a:visited {
-  color: white;
+  color: var(--accent-gold);
   text-decoration: none;
 }
 
 .left h1 a:hover,
 .left h1 a:focus {
-  color: #AD7C59;
+  color: var(--accent-gold);
   /* Turn text gold */
   text-decoration: none;
   /* Remove underline */
@@ -228,7 +230,7 @@ nav.right ul {
 }
 
 nav.right ul li a {
-  color: white;
+  color: var(--white);
   font-weight: 525;
   font-size: 1.125rem;
   padding: 0.5rem;
@@ -239,7 +241,7 @@ nav.right ul li a {
 
 nav.right ul li a:hover,
 nav.right ul li a:focus {
-  color: #AD7C59;
+  color: var(--accent-gold);
   text-decoration: none;
   outline: none;
   font-weight: 600;
@@ -297,7 +299,7 @@ nav.right ul li a:focus {
 /* Caption styling stays as is */
 .anc-map-container figcaption {
   font-size: 0.8rem;
-  color: #333;
+  color: var(--text-light);
   text-align: right;
   margin-top: 0.5rem;
 }
@@ -305,7 +307,7 @@ nav.right ul li a:focus {
 .anc-map-container figcaption .credit {
   display: block;
   font-size: 0.75rem;
-  color: #666;
+  color: var(--text-muted);
   font-style: italic;
   margin-top: 0.15rem;
 }
@@ -328,7 +330,7 @@ nav.right ul li a:focus {
 }
 
 .homepage-buttons .cta-button {
-  background-color: #236192;
+  background-color: var(--primary-blue);
   color: white;
   padding: 0.75rem 1.25rem;
   font-size: 1.125rem;
@@ -343,15 +345,15 @@ nav.right ul li a:focus {
 
 .homepage-buttons .cta-button:hover,
 .homepage-buttons .cta-button:focus {
-  background-color: #1e4f73;
-  color: #AD7C59;
+  background-color: var(--primary-blue-hover);
+  color: var(--accent-gold);
   /* Gold text */
   transform: translateY(-2px);
   outline: none;
 }
 
 .homepage-buttons .cta-button:focus {
-  outline: 3px solid #AD7C59;
+  outline: 3px solid var(--accent-gold);
   outline-offset: 2px;
 }
 
@@ -399,13 +401,13 @@ figure.anc-map-container img {
 }
 
 .cta-contact {
-  background-color: #AD7C59;
+  background-color: var(--accent-gold);
   color: white;
 }
 
 .cta-contact:hover,
 .cta-contact:focus {
-  background-color: #236192;
+  background-color: var(--primary-blue-hover);
   color: white;
 }
 
@@ -421,7 +423,7 @@ figure.anc-map-container img {
   display: block;
   margin-bottom: 8px;
   font-weight: 600;
-  color: #010101;
+  color: var(--text-dark);
   font-size: 1.125rem;
 }
 
@@ -430,20 +432,20 @@ figure.anc-map-container img {
 .form-group textarea {
   width: 100%;
   padding: 14px 16px;
-  border: 2px solid #236192;
+  border: 2px solid var(--primary-blue);
   border-radius: 8px;
   font-size: 1.125rem;
   font-family: 'Montserrat', sans-serif;
   transition: all 0.3s ease;
   background-color: white;
-  color: #010101;
+  color: var(--text-dark);
 }
 
 .form-group input[type="text"]:focus,
 .form-group input[type="email"]:focus,
 .form-group textarea:focus {
   outline: none;
-  border-color: #236192;
+  border-color: var(--primary-blue);
   box-shadow: 0 0 0 3px rgba(173, 124, 89, 0.2);
 }
 
@@ -451,13 +453,13 @@ figure.anc-map-container img {
 .form-group input[type="text"]:invalid,
 .form-group input[type="email"]:invalid,
 .form-group textarea:invalid {
-  border-color: #236192;
+  border-color: var(--primary-blue);
 }
 
 .form-group input[type="text"]:valid,
 .form-group input[type="email"]:valid,
 .form-group textarea:valid {
-  border-color: #236192;
+  border-color: var(--primary-blue);
 }
 
 .form-group textarea {
@@ -467,7 +469,7 @@ figure.anc-map-container img {
 }
 
 .submit-btn {
-  background-color: #236192;
+  background-color: var(--primary-blue);
   color: white;
   padding: 16px 32px;
   border: none;
@@ -482,13 +484,13 @@ figure.anc-map-container img {
 }
 
 .submit-btn:hover {
-  background-color: #1e4f73;
+  background-color: var(--primary-blue-hover);
   transform: translateY(-1px);
   box-shadow: 0 4px 12px rgba(35, 97, 146, 0.2);
 }
 
 .submit-btn:focus {
-  outline: 3px solid #AD7C59;
+  outline: 3px solid var(--accent-gold);
   outline-offset: 2px;
 }
 
@@ -547,10 +549,10 @@ figure.anc-map-container img {
 
 footer {
   flex-shrink: 0;
-  background-color: #236192;
+  background-color: var(--primary-blue);
   color: white;
   padding: 1rem 2rem;
-  border-top: 5px solid #AD7C59;
+  border-top: 5px solid var(--accent-gold);
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
@@ -563,7 +565,7 @@ footer {
   position: absolute;
   top: -40px;
   left: 6px;
-  background: #236192;
+  background: var(--primary-blue);
   color: white;
   padding: 8px;
   text-decoration: none;
@@ -575,7 +577,7 @@ footer {
 
 .skip-nav:focus {
   top: 0;
-  outline: 2px solid #AD7C59;
+  outline: 2px solid var(--accent-gold);
   outline-offset: 2px;
 }
 
@@ -602,13 +604,13 @@ footer {
 }
 
 .required {
-  color: #AD7C59;
+  color: var(--accent-gold);
   font-weight: 600;
 }
 
 /* === Focus Management === */
 *:focus {
-  outline: 2px solid #AD7C59;
+  outline: 2px solid var(--accent-gold);
   outline-offset: 2px;
 }
 
@@ -627,7 +629,7 @@ select:focus {
 /* === High Contrast Mode Support === */
 @media (prefers-contrast: high) {
   .site-header {
-    border-bottom: 8px solid #AD7C59;
+    border-bottom: 8px solid var(--accent-gold);
   }
 
   .header-spacer {
@@ -700,7 +702,7 @@ select:focus {
 
   .menu-toggle:hover,
   .menu-toggle:focus {
-    color: #AD7C59;
+    color: var(--accent-gold);
     /* gold */
   }
 
@@ -718,7 +720,7 @@ select:focus {
     display: block;
     width: 100%;
     margin-top: 0.5rem;
-    background-color: #236192;
+    background-color: var(--primary-blue);
     border-radius: none;
     box-shadow: none;
     max-height: 500px;
@@ -742,7 +744,7 @@ select:focus {
 
   nav.right ul.open li a:hover,
   nav.right ul.open li a:focus {
-    color: #AD7C59;
+    color: var(--accent-gold);
   }
 
   /* Center the title block text */
