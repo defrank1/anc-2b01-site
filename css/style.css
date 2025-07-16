@@ -185,8 +185,8 @@ main {
 
 .left .subtitle {
   font-size: 1.75rem;
-  font-style: italic;
   font-weight: 700;
+  font-style: italic;
   color: var(--white);
   margin: 0.5rem 0;
   line-height: 1.2;
