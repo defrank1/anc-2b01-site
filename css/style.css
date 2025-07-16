@@ -181,24 +181,7 @@ main {
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
-.left img {
-  max-width: 100%;
-  height: auto;
-  display: block;
-}
-
-.logo-desktop {
-  display: block;
-}
-
-.logo-mobile {
-  display: none;
-}
-
-
-/* === Header Typography (UNUSED) === */
-
-/*
+/* === Header Typography === */
 
 .left .subtitle {
   font-size: 1.75rem;
@@ -220,7 +203,6 @@ main {
 .left h1 a {
   color: var(--white);
   text-decoration: none;
-  text-shadow: 2px 2px 0 var(--accent-green);
 }
 
 .left h1 a:visited {
@@ -231,11 +213,12 @@ main {
 .left h1 a:hover,
 .left h1 a:focus {
   color: var(--accent-green);
+  /* Turn text green */
   text-decoration: none;
+  /* Remove underline */
   outline: none;
+  /* Remove green outline box */
 }
-
-*/
 
 /* === Navigation === */
 nav.right ul {
@@ -673,17 +656,6 @@ select:focus {
     transition: all 0.3s ease;
     position: static;
 
-  }
-
-  .logo-desktop {
-    display: none;
-  }
-
-  .logo-mobile {
-    display: block;
-    max-width: 100%;
-    height: auto;
-    margin: 0 auto;
   }
 
   .header-spacer {
