@@ -201,7 +201,7 @@ main {
 }
 
 .left h1 a {
-  color: var(--accent-green);
+  color: var(--white);
   text-decoration: none;
   text-shadow: 2px 2px 0 var(--accent-green);
   transition:
@@ -210,8 +210,10 @@ main {
 }
 
 .left h1 a:visited {
-  color: var(--accent-green);
+  color: var(--white);
   text-decoration: none;
+  text-shadow: 2px 2px 0 var(--accent-green);
+
 }
 
 .left h1 a:hover,
