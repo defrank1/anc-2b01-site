@@ -181,7 +181,24 @@ main {
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
-/* === Header Typography === */
+.left img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+.logo-desktop {
+  display: block;
+}
+
+.logo-mobile {
+  display: none;
+}
+
+
+/* === Header Typography (UNUSED) === */
+
+/*
 
 .left .subtitle {
   font-size: 1.75rem;
@@ -215,11 +232,13 @@ main {
 .left h1 a:focus {
   color: var(--accent-green);
   /* Turn text green */
-  text-decoration: none;
-  /* Remove underline */
-  outline: none;
-  /* Remove green outline box */
+text-decoration: none;
+/* Remove underline */
+outline: none;
+/* Remove green outline box */
 }
+
+*/
 
 /* === Navigation === */
 nav.right ul {
@@ -657,6 +676,17 @@ select:focus {
     transition: all 0.3s ease;
     position: static;
 
+  }
+
+  .logo-desktop {
+    display: none;
+  }
+
+  .logo-mobile {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    margin: 0 auto;
   }
 
   .header-spacer {
