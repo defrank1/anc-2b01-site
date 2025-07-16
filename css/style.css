@@ -201,12 +201,16 @@ main {
 }
 
 .left h1 a {
-  color: var(--white);
+  color: var(--accent-green);
   text-decoration: none;
+
+  /* NOT USING DROP SHADOW */
+  /*
   text-shadow: 2px 2px 0 var(--accent-green);
   transition:
     color 0.3s ease,
     text-shadow 0.3s ease;
+    */
 }
 
 .left h1 a:visited {
@@ -219,7 +223,10 @@ main {
 .left h1 a:hover,
 .left h1 a:focus {
   color: var(--accent-green);
-  text-shadow: none;
+  text-shadow: 2px 2px 0 var(--white);
+  transition:
+    color 0.3s ease,
+    text-shadow 0.3s ease;
 }
 
 /* === Navigation === */
