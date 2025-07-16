@@ -218,7 +218,7 @@ main {
 
 .left h1 a:hover,
 .left h1 a:focus {
-  color: var(--white);
+  color: var(--accent-green);
   text-shadow: none;
 }
 
