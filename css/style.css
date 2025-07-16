@@ -231,11 +231,8 @@ main {
 .left h1 a:hover,
 .left h1 a:focus {
   color: var(--accent-green);
-  /* Turn text green */
-text-decoration: none;
-/* Remove underline */
-outline: none;
-/* Remove green outline box */
+  text-decoration: none;
+  outline: none;
 }
 
 */
