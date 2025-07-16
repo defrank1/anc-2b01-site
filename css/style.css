@@ -214,19 +214,13 @@ main {
 }
 
 .left h1 a:visited {
-  color: var(--white);
+  color: var(--accent-green);
   text-decoration: none;
-  text-shadow: 2px 2px 0 var(--accent-green);
-
 }
 
 .left h1 a:hover,
 .left h1 a:focus {
   color: var(--accent-green);
-  text-shadow: 2px 2px 0 var(--white);
-  transition:
-    color 0.3s ease,
-    text-shadow 0.3s ease;
 }
 
 /* === Navigation === */
