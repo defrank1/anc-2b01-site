@@ -247,7 +247,7 @@ nav.right ul li a:focus {
   color: var(--accent-green);
   text-decoration: none;
   outline: none;
-  font-weight: 600;
+  font-weight: 500;
 }
 
 /* Hide hamburger toggle by default (desktop and larger) */
