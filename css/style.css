@@ -206,7 +206,7 @@ main {
 }
 
 .left h1 a:visited {
-  color: var(--accent-green);
+  color: var(--white);
   text-decoration: none;
 }
 
