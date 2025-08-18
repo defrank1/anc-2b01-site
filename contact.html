@@ -7,26 +7,88 @@
   <meta name="description"
     content="Andrew DeFrank serves as ANC 2B01 Commissioner for North Dupont Circle. Contact your local Advisory Neighborhood Commissioner for community concerns, questions, and civic engagement in Washington DC.">
 
-
-  <!-- SEO Meta Tags -->
   <title>Contact - Commissioner Andrew DeFrank - ANC 2B01</title>
 
-  <!-- Canonical URL -->
   <link rel="canonical" href="https://anc2b01.org" />
-
-  <!--  favicon  -->
   <link rel="icon" type="image/png" sizes="96x96" href="/images/favicon-96x96.png" />
   <link rel="icon" type="image/svg+xml" href="/images/favicon.svg" />
   <link rel="shortcut icon" href="/images/favicon.ico" />
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png" />
   <link rel="manifest" href="/images/site.webmanifest" />
 
-
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet" />
 
   <!-- CSS -->
   <link rel="stylesheet" href="css/style.css" />
+
+  <style>
+    /* Newsletter form styling to match contact form */
+    #GD-snippet-form {
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 20px;
+      border-radius: 12px;
+      background-color: #edebed;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 16px;
+      line-height: 1.6;
+    }
+
+    #GD-snippet-form .form-group,
+    #GD-snippet-form .input_group,
+    #GD-snippet-form .email_fields,
+    #GD-snippet-form .wireless_fields {
+      margin-bottom: 1rem;
+    }
+
+    #GD-snippet-form label {
+      display: block;
+      margin-bottom: 0.3rem;
+      font-weight: 600;
+      color: #1A4063;
+    }
+
+    #GD-snippet-form input[type="email"],
+    #GD-snippet-form input[type="tel"],
+    #GD-snippet-form select,
+    #GD-snippet-form .long,
+    #GD-snippet-form .medium {
+      width: 100%;
+      padding: 0.6em 0.8em;
+      border: 1px solid #ccc;
+      border-radius: 0.5rem;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1rem;
+      box-sizing: border-box;
+      color: #1A4063;
+      background-color: #fff;
+    }
+
+    #GD-snippet-form select {
+      appearance: none;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      background-image: url('data:image/svg+xml;utf8,<svg fill="%231A4063" height="12" viewBox="0 0 24 24" width="12" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/></svg>');
+      background-repeat: no-repeat;
+      background-position: right 0.8em center;
+      background-size: 1em;
+    }
+
+    #GD-snippet-form .button_panel input[type="submit"] {
+      padding: 0.7em 1.5em;
+      background-color: #1A4063;
+      color: #fff;
+      border: none;
+      border-radius: 0.5rem;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+
+    #GD-snippet-form .button_panel input[type="submit"]:hover {
+      background-color: #163354;
+    }
+  </style>
 
   <!-- Preload Images -->
   <link rel="preload" href="images/anc-headshot.jpg" as="image" type="image/png" />
@@ -35,26 +97,18 @@
 </head>
 
 <body>
-  <!-- The rest of your page here -->
-
-  <!-- Skip Navigation Link for Accessibility -->
   <a href="#main-content" class="skip-nav">Skip to main content</a>
-
   <a id="top"></a>
-  <!-- Fixed header that remains visible as you scroll -->
+
   <header class="site-header" role="banner">
     <div class="left">
-      <!-- Left side of the header: title and role -->
       <h1><a href="index.html">Andrew DeFrank</a></h1>
       <h2 class="subtitle">Commissioner, ANC 2B01</h2>
     </div>
 
     <nav class="right" role="navigation" id="main-navigation" aria-label="Main navigation">
-      <!-- Hamburger button -->
       <button class="menu-toggle" aria-controls="primary-menu" aria-label="Toggle navigation menu"
-        aria-expanded="false">
-
-      </button>
+        aria-expanded="false"></button>
 
       <ul id="primary-menu">
         <li><a href="about-me.html">About Me</a></li>
@@ -64,69 +118,57 @@
         <li><a href="news.html">News</a></li>
         <li><a href="contact.html">Contact</a></li>
       </ul>
-
     </nav>
   </header>
 
-  <!-- Dynamic spacer set to match height of fixed header (prevents content overlap) -->
   <div class="header-spacer"></div>
 
-  <!-- Main content of the page -->
   <main id="main-content" role="main">
 
     <!-- GovDelivery Newsletter Embed -->
     <section id="newsletter-signup" class="section-band bg-lighter">
       <div class="container">
-        <h3>Subscribe</h3>
+        <h3>Subscribe for Updates</h3>
         <p>Stay current with ANC news and events by signing up below:</p>
 
         <form id="GD-snippet-form" action="https://public.govdelivery.com/accounts/DCWASHOANC/subscribers/qualify"
-          accept-charset="UTF-8" method="post" novalidate>
+          accept-charset="UTF-8" method="post">
           <input name="utf8" type="hidden" value="&#x2713;" />
           <input type="hidden" name="topic_id" id="topic_id" value="DCWASHOANC_53" />
-
           <fieldset>
-            <legend class="sr-only">Email, Newsletter, and Alerts</legend>
-
-            <div class="form-group">
-              <p><span>To stay current with ANC news and events</span>, please enter your contact information below.
-                <span>To receive communication for both email and text, you must enter your contact information for each
-                  subscription type.</span>
-              </p>
-              <p><span>For SMS: Message and data rates may apply. Reply HELP for help, STOP to cancel. <a
-                    href="https://lnks.gd/2/235Wx5h" target="_blank" rel="noopener">Terms & Conditions</a>. Message
-                  frequency may vary.</span></p>
-            </div>
+            <legend>Email, Newsletter, and Alerts</legend>
 
             <div class="form-group">
               <label for="subscription_type">Subscription Type</label>
-              <select name="subscription_type" id="subscription_type" class="full-width">
+              <select name="subscription_type" id="subscription_type">
                 <option value="email" selected>Email</option>
                 <option value="phone">SMS/Text Message</option>
               </select>
             </div>
 
-            <!-- Email fields -->
-            <div class="form-group email_fields">
-              <label for="email">Email Address <span class="required" aria-label="required">*</span></label>
-              <input type="email" name="email" id="email" class="full-width" required />
-            </div>
-
-            <!-- Wireless fields -->
             <div class="form-group wireless_fields" style="display: none;">
-              <label for="phone">Wireless Number <span class="required" aria-label="required">*</span></label>
-              <div class="input_group">
+              <label for="phone">Wireless Number</label>
+              <div class='input_group'>
                 <select name="country_code_display" id="country_code_display" disabled="disabled"
                   aria-label="Country code">
                   <option value="1 (US)">1 (US)</option>
                   <option value="1">1</option>
                 </select>
-                <input type="tel" name="phone" id="phone" class="full-width" placeholder="e.g. 4165551212" disabled
-                  pattern="[0-9]{10}" />
+                <input type="hidden" name="country_code" id="country_code" value="1" />
+                <input type="tel" name="phone" id="phone" class="medium wireless_text_field"
+                  placeholder="e.g. 4165551212" disabled="disabled" pattern="[0-9]{10}" />
               </div>
             </div>
 
-            <button type="submit" class="submit-btn">Subscribe</button>
+            <div class="form-group email_fields" style="display: block;">
+              <label for="email">Email Address</label>
+              <input type="email" name="email" id="email" class="long email_text_field" required="required" />
+            </div>
+
+            <div class='button_panel'>
+              <input type="submit" name="commit" value="Submit" class="sr-button reverse" data-disable-with="Submit" />
+            </div>
+
           </fieldset>
         </form>
 
@@ -134,38 +176,38 @@
           var GOVDSNIPPET = function () {
             var form = document.getElementById('GD-snippet-form');
             var typeSelect = form.querySelector('#subscription_type');
-            var toggleType = function () {
-              var showEmail = typeSelect.value === 'email';
-              form.querySelector('.email_fields').style.display = showEmail ? 'block' : 'none';
-              form.querySelector('.email_fields input').required = showEmail;
-              form.querySelector('.email_fields input').disabled = !showEmail;
-
-              var showPhone = typeSelect.value === 'phone';
-              form.querySelector('.wireless_fields').style.display = showPhone ? 'block' : 'none';
-              form.querySelector('.wireless_fields select').required = showPhone;
-              form.querySelector('.wireless_fields select').disabled = !showPhone;
-              form.querySelector('.wireless_fields input').required = showPhone;
-              form.querySelector('.wireless_fields input').disabled = !showPhone;
+            var getStyleType = function (type) {
+              return typeSelect.value === type ? 'block' : 'none';
             };
-            typeSelect.addEventListener('change', toggleType);
+            var toggleType = function () {
+              form.querySelector('.email_fields').style.display = getStyleType('email');
+              form.querySelector('.email_text_field').required = getStyleType('email') == 'none' ? false : 'required';
+              form.querySelector('.email_text_field').disabled = getStyleType('email') == 'none' ? 'disabled' : false;
+              form.querySelector('.wireless_fields').style.display = getStyleType('phone');
+              form.querySelector('#country_code_display').required = getStyleType('phone') == 'none' ? false : 'required';
+              form.querySelector('.wireless_text_field').required = getStyleType('phone') == 'none' ? false : 'required';
+              form.querySelector('#country_code_display').disabled = getStyleType('phone') == 'none' ? 'disabled' : false;
+              form.querySelector('.wireless_text_field').disabled = getStyleType('phone') == 'none' ? 'disabled' : false;
+            };
+            if (typeSelect.addEventListener) {
+              typeSelect.addEventListener('change', toggleType);
+            } else if (typeSelect.attachEvent) {
+              typeSelect.attachEvent('onchange', toggleType);
+            }
           }();
         </script>
       </div>
     </section>
 
-
     <!-- Contact details -->
     <section id="contact" class="section-band bg-lighter">
       <div class="container">
         <h3>Contact</h3>
-
-
         <p> Get in touch via email at <strong><a href="mailto:2b01@anc.dc.gov">2b01@anc.dc.gov</a></strong>,
-          by call/text
-          at <strong><a href="tel:+12024555364">(202) 455-5364</a></strong>, or by filling out the form below:</p>
+          by call/text at <strong><a href="tel:+12024555364">(202) 455-5364</a></strong>, or by filling out the form
+          below:</p>
 
         <div class="container">
-          <!-- Contact form with enhanced accessibility -->
           <form action="https://formspree.io/f/mblyzged" method="POST" novalidate
             aria-labelledby="contact-form-heading">
             <h3 id="contact-form-heading" class="sr-only">Contact Form</h3>
@@ -194,11 +236,9 @@
               <div id="message-error" class="error-message" role="alert" aria-live="polite"></div>
             </div>
 
-            <!-- Hidden fields for Formspree -->
             <input type="hidden" name="_replyto">
             <input type="hidden" name="_subject" value="New contact form submission from ANC 2B01 website">
 
-            <!-- Honeypot field for spam protection -->
             <div class="honeypot" aria-hidden="true">
               <label for="website">Website (leave blank)</label>
               <input type="text" id="website" name="website" tabindex="-1" autocomplete="off">
@@ -208,20 +248,18 @@
             <div id="form-status" class="form-status" role="status" aria-live="polite"></div>
           </form>
         </div>
-        <p></p>
+
         <p>You can also find contact information for other commissioners in Dupont Circle ANC 2B <a
             href="https://www.dupontcircleanc.net/wordpress/about/commissioners/" target="_blank"
             rel="noopener noreferrer">here</a>.</p>
       </div>
-    </section> <!-- End of contact section -->
+    </section>
   </main>
 
-  <!-- Footer area -->
   <footer role="contentinfo">
     <p>&copy; 2025 Andrew DeFrank, all rights reserved</p>
   </footer>
 
-  <!-- JavaScript for functionality -->
   <script src="js/main.js"></script>
 </body>
 
