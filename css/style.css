@@ -524,6 +524,13 @@ figure.anc-map-container img {
   box-shadow: none !important;
 }
 
+#GD-snippet-form fieldset {
+  border: none;
+  margin: 0;
+  padding: 0;
+}
+
+
 .wireless_text_field {
   width: calc(100% - 80px);
   /* adjust if needed to fit next to country select */
