@@ -77,54 +77,56 @@
     <!-- GovDelivery Newsletter Embed -->
     <section id="newsletter-signup" class="section-band bg-lighter">
       <div class="container">
-        <h3>Subscribe for Updates</h3>
+        <h3>Subscribe</h3>
         <p>Stay current with ANC news and events by signing up below:</p>
 
         <form id="GD-snippet-form" action="https://public.govdelivery.com/accounts/DCWASHOANC/subscribers/qualify"
-          accept-charset="UTF-8" method="post">
+          accept-charset="UTF-8" method="post" novalidate>
           <input name="utf8" type="hidden" value="&#x2713;" />
           <input type="hidden" name="topic_id" id="topic_id" value="DCWASHOANC_53" />
+
           <fieldset>
-            <legend>Email, Newsletter, and Alerts</legend>
-            <div>
+            <legend class="sr-only">Email, Newsletter, and Alerts</legend>
+
+            <div class="form-group">
               <p><span>To stay current with ANC news and events</span>, please enter your contact information below.
                 <span>To receive communication for both email and text, you must enter your contact information for each
-                  subscription type.</span></p>
-              <p><span>For SMS: Message and data rates may apply. Reply HELP for help, STOP to cancel. To view terms and
-                  conditions, visit <a href="https://lnks.gd/2/235Wx5h" target="_blank"
-                    rel="noopener">https://lnks.gd/2/235Wx5h</a>. Message frequency may vary.</span></p>
+                  subscription type.</span>
+              </p>
+              <p><span>For SMS: Message and data rates may apply. Reply HELP for help, STOP to cancel. <a
+                    href="https://lnks.gd/2/235Wx5h" target="_blank" rel="noopener">Terms & Conditions</a>. Message
+                  frequency may vary.</span></p>
             </div>
-            <ol class='form'>
-              <li>
-                <label for="subscription_type">Subscription Type</label>
-                <div class='input_group'>
-                  <select name="subscription_type" id="subscription_type">
-                    <option selected="selected" value="email">Email</option>
-                    <option value="phone">SMS/Text Message</option>
-                  </select>
-                </div>
-              </li>
-              <li class='wireless_fields' style='display: none'>
-                <label for="phone">Wireless Number</label>
-                <div class='input_group'>
-                  <select name="country_code_display" id="country_code_display" disabled="disabled"
-                    aria-label="Country code">
-                    <option value="1 (US)">1 (US)</option>
-                    <option value="1">1</option>
-                  </select>
-                  <input type="hidden" name="country_code" id="country_code" value="1" />
-                  <input type="tel" name="phone" id="phone" class="medium wireless_text_field"
-                    placeholder="e.g. 4165551212" disabled="disabled" pattern="[0-9]{10}" />
-                </div>
-              </li>
-              <li class='email_fields' style='display: block'>
-                <label for="email">Email Address</label>
-                <input type="email" name="email" id="email" class="long email_text_field" required="required" />
-              </li>
-            </ol>
-            <div class='button_panel'>
-              <input type="submit" name="commit" value="Submit" class="sr-button reverse" data-disable-with="Submit" />
+
+            <div class="form-group">
+              <label for="subscription_type">Subscription Type</label>
+              <select name="subscription_type" id="subscription_type" class="full-width">
+                <option value="email" selected>Email</option>
+                <option value="phone">SMS/Text Message</option>
+              </select>
             </div>
+
+            <!-- Email fields -->
+            <div class="form-group email_fields">
+              <label for="email">Email Address <span class="required" aria-label="required">*</span></label>
+              <input type="email" name="email" id="email" class="full-width" required />
+            </div>
+
+            <!-- Wireless fields -->
+            <div class="form-group wireless_fields" style="display: none;">
+              <label for="phone">Wireless Number <span class="required" aria-label="required">*</span></label>
+              <div class="input_group">
+                <select name="country_code_display" id="country_code_display" disabled="disabled"
+                  aria-label="Country code">
+                  <option value="1 (US)">1 (US)</option>
+                  <option value="1">1</option>
+                </select>
+                <input type="tel" name="phone" id="phone" class="full-width" placeholder="e.g. 4165551212" disabled
+                  pattern="[0-9]{10}" />
+              </div>
+            </div>
+
+            <button type="submit" class="submit-btn">Subscribe</button>
           </fieldset>
         </form>
 
@@ -132,28 +134,25 @@
           var GOVDSNIPPET = function () {
             var form = document.getElementById('GD-snippet-form');
             var typeSelect = form.querySelector('#subscription_type');
-            var getStyleType = function (type) {
-              return typeSelect.value === type ? 'block' : 'none';
-            };
             var toggleType = function () {
-              form.querySelector('.email_fields').style.display = getStyleType('email');
-              form.querySelector('.email_text_field').required = getStyleType('email') == 'none' ? false : 'required';
-              form.querySelector('.email_text_field').disabled = getStyleType('email') == 'none' ? 'disabled' : false;
-              form.querySelector('.wireless_fields').style.display = getStyleType('phone');
-              form.querySelector('#country_code_display').required = getStyleType('phone') == 'none' ? false : 'required';
-              form.querySelector('.wireless_text_field').required = getStyleType('phone') == 'none' ? false : 'required';
-              form.querySelector('#country_code_display').disabled = getStyleType('phone') == 'none' ? 'disabled' : false;
-              form.querySelector('.wireless_text_field').disabled = getStyleType('phone') == 'none' ? 'disabled' : false;
+              var showEmail = typeSelect.value === 'email';
+              form.querySelector('.email_fields').style.display = showEmail ? 'block' : 'none';
+              form.querySelector('.email_fields input').required = showEmail;
+              form.querySelector('.email_fields input').disabled = !showEmail;
+
+              var showPhone = typeSelect.value === 'phone';
+              form.querySelector('.wireless_fields').style.display = showPhone ? 'block' : 'none';
+              form.querySelector('.wireless_fields select').required = showPhone;
+              form.querySelector('.wireless_fields select').disabled = !showPhone;
+              form.querySelector('.wireless_fields input').required = showPhone;
+              form.querySelector('.wireless_fields input').disabled = !showPhone;
             };
-            if (typeSelect.addEventListener) {
-              typeSelect.addEventListener('change', toggleType);
-            } else if (typeSelect.attachEvent) {
-              typeSelect.attachEvent('onchange', toggleType);
-            }
+            typeSelect.addEventListener('change', toggleType);
           }();
         </script>
       </div>
     </section>
+
 
     <!-- Contact details -->
     <section id="contact" class="section-band bg-lighter">
