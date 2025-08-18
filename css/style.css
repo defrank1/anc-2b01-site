@@ -452,6 +452,7 @@ figure.anc-map-container img {
 
 .form-group input[type="text"],
 .form-group input[type="email"],
+.form-group input[type="tel"],
 .form-group textarea {
   width: 100%;
   padding: 14px 16px;
@@ -463,10 +464,9 @@ figure.anc-map-container img {
   color: var(--text-dark);
   transition: all 0.3s ease;
   box-shadow: none;
-  /* remove any browser default shadow */
   outline: none;
-  /* remove default focus outline */
 }
+
 
 .form-group select {
   width: 100%;
@@ -523,6 +523,34 @@ figure.anc-map-container img {
   border: none !important;
   box-shadow: none !important;
 }
+
+.wireless_text_field {
+  width: calc(100% - 80px);
+  /* adjust if needed to fit next to country select */
+  padding: 14px 16px;
+  border: 2px solid var(--primary-blue);
+  border-radius: 8px;
+  font-size: 1.125rem;
+  font-family: 'Montserrat', sans-serif;
+  background-color: var(--white);
+  color: var(--text-dark);
+  box-shadow: none;
+  outline: none;
+}
+
+
+.input_group select {
+  width: auto;
+  padding: 14px;
+  border: 2px solid var(--primary-blue);
+  border-radius: 8px;
+  font-size: 1.125rem;
+  font-family: 'Montserrat', sans-serif;
+  background-color: var(--white);
+  color: var(--text-dark);
+  margin-right: 8px;
+}
+
 
 #GD-snippet-form input,
 #GD-snippet-form select,
