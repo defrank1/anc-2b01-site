@@ -433,7 +433,11 @@ figure.anc-map-container img {
 #GD-snippet-form .email_fields,
 #GD-snippet-form .wireless_fields {
   margin-bottom: 1rem;
+  /* keep spacing */
+  width: 100%;
+  /* ensure full width */
 }
+
 
 #GD-snippet-form label {
   display: block;
