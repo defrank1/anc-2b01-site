@@ -418,121 +418,170 @@ figure.anc-map-container img {
    7. Forms
    ========================================================================== */
 
-/* =============================
-   GovDelivery Form Styling
-   ============================= */
+/* ==========================================================================
+   7. Forms — Updated for GovDelivery Subscribe Form
+   ========================================================================== */
+
+/* Wrapper */
 #GD-snippet-form {
-  max-width: 600px;
-  margin: 0 auto;
+  max-width: 1150px;
+  margin: 2rem auto;
   padding: 2rem;
-  background-color: #ffffff;
-  border-radius: 8px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-  font-family: 'Arial', sans-serif;
-  font-size: 1rem;
-  line-height: 1.5;
+  background-color: var(--white);
+  border-radius: 16px;
+  box-shadow: var(--shadow-light);
+  font-family: var(--font-family);
 }
 
+/* Form List Items */
+#GD-snippet-form ol.form {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+#GD-snippet-form ol.form li {
+  margin-bottom: 1.5rem;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Labels */
 #GD-snippet-form label {
   display: block;
-  margin-bottom: 0.5rem;
   font-weight: 600;
-  color: #333;
-  font-size: 1rem;
+  color: var(--text-dark);
+  margin-bottom: 0.5rem;
+  font-size: 1.125rem;
 }
 
+/* Required asterisk */
+#GD-snippet-form .required {
+  color: var(--accent-green);
+  font-weight: 600;
+  margin-left: 0.25rem;
+}
+
+/* Input and Select Fields */
 #GD-snippet-form input[type="email"],
 #GD-snippet-form input[type="tel"],
 #GD-snippet-form select {
   width: 100%;
-  padding: 0.75rem 1rem;
-  border: 2px solid #007bff;
+  padding: 14px 16px;
+  font-size: 1.125rem;
+  font-family: var(--font-family);
+  line-height: 1.6;
+  border: 2px solid var(--primary-blue);
   border-radius: 8px;
-  font-family: 'Arial', sans-serif;
-  font-size: 1rem;
-  color: #333;
-  background-color: #ffffff;
-  box-sizing: border-box;
+  background-color: var(--white);
+  color: var(--text-dark);
   transition: all 0.3s ease;
+  box-sizing: border-box;
 }
 
+/* Focus / Hover States */
 #GD-snippet-form input[type="email"]:focus,
 #GD-snippet-form input[type="tel"]:focus,
 #GD-snippet-form select:focus {
   outline: none;
-  border-color: #0056b3;
-  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.2);
+  border-color: var(--primary-blue);
+  box-shadow: 0 0 0 3px rgba(173, 124, 89, 0.2);
 }
 
-#GD-snippet-form .button_panel input[type="submit"] {
+/* Validation */
+#GD-snippet-form input:invalid {
+  border-color: var(--primary-blue);
+}
+
+/* Email & Wireless Fields Wrapper */
+#GD-snippet-form .email_fields,
+#GD-snippet-form .wireless_fields {
   width: 100%;
-  padding: 0.75rem 1rem;
-  font-size: 1rem;
-  font-weight: 600;
-  background-color: #007bff;
-  color: #ffffff;
+}
+
+/* Input Group */
+#GD-snippet-form .input_group {
+  width: 100%;
+}
+
+/* Submit Button */
+#GD-snippet-form .sr-button.reverse {
+  width: 100%;
+  padding: 16px 32px;
+  background-color: var(--primary-blue);
+  color: var(--white);
   border: none;
   border-radius: 8px;
+  font-size: 1.125rem;
+  font-weight: 600;
+  font-family: var(--font-family);
   cursor: pointer;
   transition: all 0.3s ease;
+  margin-top: 1rem;
+  display: inline-block;
+  text-align: center;
 }
 
-#GD-snippet-form .button_panel input[type="submit"]:hover,
-#GD-snippet-form .button_panel input[type="submit"]:focus {
-  color: #28a745;
-  background-color: #0056b3;
-  outline: 3px solid #28a745;
+#GD-snippet-form .sr-button.reverse:hover,
+#GD-snippet-form .sr-button.reverse:focus {
+  background-color: var(--primary-blue-hover);
+  color: var(--accent-green);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(35, 97, 146, 0.2);
+  outline: none;
+}
+
+#GD-snippet-form .sr-button.reverse:focus {
+  outline: 3px solid var(--accent-green);
   outline-offset: 2px;
 }
 
-/* Required field icon */
-#GD-snippet-form img.required {
-  display: inline-block;
-  margin-left: 0.25rem;
-  vertical-align: middle;
+#GD-snippet-form .sr-button.reverse:active {
+  transform: translateY(0);
 }
 
-/* Responsive adjustments */
-
-
-
-/* === Form Status Messages === */
-.form-status {
-  margin-top: 1rem;
-  padding: 0.75rem;
-  border-radius: 4px;
-  font-weight: 500;
-  min-height: 1.2rem;
+#GD-snippet-form .sr-button.reverse:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+  box-shadow: none;
+  transform: none;
 }
 
-.form-status.success {
-  background-color: #d4edda;
-  color: #155724;
-  border: 1px solid #c3e6cb;
+/* Paragraph Text / Instructions */
+#GD-snippet-form>fieldset>div>p {
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  line-height: 1.6;
+  color: var(--text-dark);
 }
 
-.form-status.error {
-  background-color: #f8d7da;
-  color: #721c24;
-  border: 1px solid #f5c6cb;
+#GD-snippet-form>fieldset>div>p span {
+  font-weight: 400;
 }
 
-.form-status:empty {
-  display: none;
+/* Links inside instructions */
+#GD-snippet-form a {
+  color: var(--primary-blue);
+  text-decoration: underline;
 }
 
-/* === Error Messages === */
-.error-message {
-  color: #dc3545;
-  font-size: 0.875rem;
-  margin-top: 0.25rem;
-  display: block;
-  min-height: 1.2rem;
+#GD-snippet-form a:hover,
+#GD-snippet-form a:focus {
+  color: var(--accent-green);
 }
 
-.error-message:empty {
-  display: none;
+/* Hide default list styling */
+#GD-snippet-form ol.form li::marker {
+  content: none;
 }
+
+/* Responsive — small screens */
+@media (max-width: 768px) {
+  #GD-snippet-form {
+    padding: 1.5rem;
+  }
+}
+
 
 /* ==========================================================================
    8. Footer
