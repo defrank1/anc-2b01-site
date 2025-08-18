@@ -430,6 +430,10 @@ figure.anc-map-container img {
   font-size: 1.125rem;
 }
 
+#GD-snippet-form .form-group {
+  margin-bottom: 1.5rem;
+}
+
 .form-group input[type="text"],
 .form-group input[type="email"],
 .form-group textarea {
