@@ -519,6 +519,10 @@ figure.anc-map-container img {
   margin-top: 1rem;
 }
 
+#GD-snippet-form iframe {
+  border: none !important;
+  box-shadow: none !important;
+}
 
 
 .form-group input[type="text"]:focus,
