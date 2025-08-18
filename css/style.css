@@ -423,15 +423,15 @@ figure.anc-map-container img {
    ============================= */
 #GD-snippet-form {
   max-width: 600px;
-  /* match your contact form container */
+  /* Matches the width of the contact form */
   margin: 0 auto;
   padding: 2rem;
-  background-color: var(--white);
-  border-radius: var(--border-radius-md);
-  box-shadow: var(--shadow-light);
-  font-family: var(--font-family);
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  font-family: 'Arial', sans-serif;
   font-size: 1rem;
-  line-height: var(--line-height-base);
+  line-height: 1.5;
 }
 
 /* Field Groups */
@@ -448,7 +448,7 @@ figure.anc-map-container img {
   display: block;
   margin-bottom: 0.5rem;
   font-weight: 600;
-  color: var(--text-dark);
+  color: #333;
   font-size: 1rem;
 }
 
@@ -459,12 +459,12 @@ figure.anc-map-container img {
 #GD-snippet-form select {
   width: 100%;
   padding: 0.75rem 1rem;
-  border: 2px solid var(--primary-blue);
-  border-radius: var(--border-radius-md);
-  font-family: var(--font-family);
+  border: 2px solid #007bff;
+  border-radius: 8px;
+  font-family: 'Arial', sans-serif;
   font-size: 1rem;
-  color: var(--text-dark);
-  background-color: var(--white);
+  color: #333;
+  background-color: #ffffff;
   box-sizing: border-box;
   transition: all 0.3s ease;
 }
@@ -472,8 +472,8 @@ figure.anc-map-container img {
 #GD-snippet-form input:focus,
 #GD-snippet-form select:focus {
   outline: none;
-  border-color: var(--primary-blue);
-  box-shadow: 0 0 0 3px rgba(173, 124, 89, 0.2);
+  border-color: #0056b3;
+  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.2);
 }
 
 /* Select arrow styling */
@@ -493,19 +493,19 @@ figure.anc-map-container img {
   padding: 0.75rem 1rem;
   font-size: 1rem;
   font-weight: 600;
-  background-color: var(--primary-blue);
-  color: var(--white);
+  background-color: #007bff;
+  color: #ffffff;
   border: none;
-  border-radius: var(--border-radius-md);
+  border-radius: 8px;
   cursor: pointer;
   transition: all 0.3s ease;
 }
 
 #GD-snippet-form .button_panel input[type="submit"]:hover,
 #GD-snippet-form .button_panel input[type="submit"]:focus {
-  color: var(--accent-green);
-  background-color: var(--primary-blue-hover);
-  outline: 3px solid var(--accent-green);
+  color: #28a745;
+  background-color: #0056b3;
+  outline: 3px solid #28a745;
   outline-offset: 2px;
 }
 
