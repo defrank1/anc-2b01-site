@@ -423,7 +423,6 @@ figure.anc-map-container img {
    ============================= */
 #GD-snippet-form {
   max-width: 600px;
-  /* Matches the width of the contact form */
   margin: 0 auto;
   padding: 2rem;
   background-color: #ffffff;
@@ -434,16 +433,6 @@ figure.anc-map-container img {
   line-height: 1.5;
 }
 
-/* Field Groups */
-#GD-snippet-form .form-group,
-#GD-snippet-form .input_group,
-#GD-snippet-form .email_fields,
-#GD-snippet-form .wireless_fields {
-  width: 100%;
-  margin-bottom: 1.5rem;
-}
-
-/* Labels */
 #GD-snippet-form label {
   display: block;
   margin-bottom: 0.5rem;
@@ -452,8 +441,6 @@ figure.anc-map-container img {
   font-size: 1rem;
 }
 
-/* Inputs & Selects */
-#GD-snippet-form input[type="text"],
 #GD-snippet-form input[type="email"],
 #GD-snippet-form input[type="tel"],
 #GD-snippet-form select {
@@ -469,25 +456,14 @@ figure.anc-map-container img {
   transition: all 0.3s ease;
 }
 
-#GD-snippet-form input:focus,
+#GD-snippet-form input[type="email"]:focus,
+#GD-snippet-form input[type="tel"]:focus,
 #GD-snippet-form select:focus {
   outline: none;
   border-color: #0056b3;
   box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.2);
 }
 
-/* Select arrow styling */
-#GD-snippet-form select {
-  appearance: none;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  background-image: url('data:image/svg+xml;utf8,<svg fill="%231A4063" height="12" viewBox="0 0 24 24" width="12" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/></svg>');
-  background-repeat: no-repeat;
-  background-position: right 1rem center;
-  background-size: 1em;
-}
-
-/* Submit Button */
 #GD-snippet-form .button_panel input[type="submit"] {
   width: 100%;
   padding: 0.75rem 1rem;
@@ -516,26 +492,8 @@ figure.anc-map-container img {
   vertical-align: middle;
 }
 
-/* Field visibility controlled by JS remains intact */
-#GD-snippet-form .email_fields,
-#GD-snippet-form .wireless_fields {
-  width: 100%;
-  display: block;
-  /* overridden by JS for toggling */
-}
-
 /* Responsive adjustments */
-@media (max-width: 768px) {
-  #GD-snippet-form {
-    padding: 1.5rem;
-  }
 
-  #GD-snippet-form input,
-  #GD-snippet-form select,
-  #GD-snippet-form .button_panel input[type="submit"] {
-    font-size: 0.95rem;
-  }
-}
 
 
 /* === Form Status Messages === */
