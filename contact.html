@@ -69,9 +69,9 @@
           <input type="hidden" name="topic_id" id="topic_id" value="DCWASHOANC_53" />
           <fieldset>
             <div class="form-group">
-              <label for="name">Subscription Type <span class="required" aria-label="required">*</span></label>
-              <select name="subscription_type" id="subscription_type">
-                <label for="name">Full Name <span class="required" aria-label="required">*</span></label>
+              <label for="name">Full Name <span class="required" aria-label="required">*</span></label>
+              <input type="text" id="name" name="name" required aria-describedby="name-error" autocomplete="name">
+              <div id="name-error" class="error-message" role="alert" aria-live="polite"></div>
             </div>
 
             <div class="form-group wireless_fields" style="display: none;">
@@ -88,10 +88,12 @@
               </div>
             </div>
 
-            <div class="form-group email_fields" style="display: block;">
-              <label for="name">Email Address<span class="required" aria-label="required">*</span></label>
-              <input type="email" name="email" id="email" class="long email_text_field" required="required" />
+            <div class="form-group">
+              <label for="email">Email Address <span class="required" aria-label="required">*</span></label>
+              <input type="email" id="email" name="email" required aria-describedby="email-error" autocomplete="email">
+              <div id="email-error" class="error-message" role="alert" aria-live="polite"></div>
             </div>
+
 
             <div class='button_panel'>
               <input type="submit" name="commit" value="Submit" class="sr-button reverse" data-disable-with="Submit" />
@@ -151,18 +153,17 @@
               <input type="email" id="email" name="email" required aria-describedby="email-error" autocomplete="email">
               <div id="email-error" class="error-message" role="alert" aria-live="polite"></div>
             </div>
-
             <div class="form-group">
               <label for="subject">Subject</label>
               <input type="text" id="subject" name="subject" autocomplete="off">
             </div>
-
             <div class="form-group">
               <label for="message">Message <span class="required" aria-label="required">*</span></label>
               <textarea id="message" name="message" placeholder="Please enter your message here..." required
                 aria-describedby="message-error"></textarea>
               <div id="message-error" class="error-message" role="alert" aria-live="polite"></div>
             </div>
+
 
             <input type="hidden" name="_replyto">
             <input type="hidden" name="_subject" value="New contact form submission from ANC 2B01 website">

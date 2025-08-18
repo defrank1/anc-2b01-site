@@ -419,102 +419,74 @@ figure.anc-map-container img {
    ========================================================================== */
 
 /* ==========================================================================
-   7. Forms — Updated for GovDelivery Subscribe Form
+   Contact Form Styling
    ========================================================================== */
 
-/* Wrapper */
-#GD-snippet-form {
-  max-width: 1150px;
+/* Contact form wrapper */
+#contact form {
+  max-width: 600px;
   margin: 2rem auto;
   padding: 2rem;
   background-color: var(--white);
-  border-radius: 16px;
+  border-radius: var(--border-radius-md);
   box-shadow: var(--shadow-light);
   font-family: var(--font-family);
 }
 
-/* Form List Items */
-#GD-snippet-form ol.form {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-#GD-snippet-form ol.form li {
+/* Form Groups */
+#contact form .form-group {
+  width: 100%;
   margin-bottom: 1.5rem;
   display: flex;
   flex-direction: column;
 }
 
 /* Labels */
-#GD-snippet-form label {
-  display: block;
+#contact form label {
+  font-size: 1.125rem;
+  /* same as Subscription Type */
   font-weight: 600;
   color: var(--text-dark);
   margin-bottom: 0.5rem;
-  font-size: 1.125rem;
 }
 
-/* Required asterisk */
-#GD-snippet-form .required {
-  color: var(--accent-green);
-  font-weight: 600;
-  margin-left: 0.25rem;
-}
-
-/* Input and Select Fields */
-#GD-snippet-form input[type="email"],
-#GD-snippet-form input[type="tel"],
-#GD-snippet-form select {
+/* Inputs and Textareas */
+#contact form input[type="text"],
+#contact form input[type="email"],
+#contact form textarea {
   width: 100%;
   padding: 14px 16px;
   font-size: 1.125rem;
-  font-family: var(--font-family);
-  line-height: 1.6;
+  font-weight: 400;
   border: 2px solid var(--primary-blue);
-  border-radius: 8px;
+  border-radius: var(--border-radius-md);
   background-color: var(--white);
   color: var(--text-dark);
+  line-height: 1.6;
   transition: all 0.3s ease;
   box-sizing: border-box;
+  font-family: var(--font-family);
+  resize: vertical;
 }
 
-/* Focus / Hover States */
-#GD-snippet-form input[type="email"]:focus,
-#GD-snippet-form input[type="tel"]:focus,
-#GD-snippet-form select:focus {
+/* Focus state */
+#contact form input:focus,
+#contact form textarea:focus {
   outline: none;
   border-color: var(--primary-blue);
-  box-shadow: 0 0 0 3px rgba(173, 124, 89, 0.2);
+  box-shadow: 0 0 0 3px rgba(26, 64, 99, 0.2);
 }
 
-/* Validation */
-#GD-snippet-form input:invalid {
-  border-color: var(--primary-blue);
-}
-
-/* Email & Wireless Fields Wrapper */
-#GD-snippet-form .email_fields,
-#GD-snippet-form .wireless_fields {
+/* Submit button */
+#contact form .submit-btn {
   width: 100%;
-}
-
-/* Input Group */
-#GD-snippet-form .input_group {
-  width: 100%;
-}
-
-/* Submit Button */
-#GD-snippet-form .sr-button.reverse {
-  width: 100%;
-  padding: 16px 32px;
+  padding: 16px 0;
   background-color: var(--primary-blue);
   color: var(--white);
   border: none;
-  border-radius: 8px;
+  border-radius: var(--border-radius-md);
   font-size: 1.125rem;
   font-weight: 600;
-  font-family: var(--font-family);
   cursor: pointer;
   transition: all 0.3s ease;
   margin-top: 1rem;
@@ -522,65 +494,25 @@ figure.anc-map-container img {
   text-align: center;
 }
 
-#GD-snippet-form .sr-button.reverse:hover,
-#GD-snippet-form .sr-button.reverse:focus {
-  background-color: var(--primary-blue-hover);
+#contact form .submit-btn:hover,
+#contact form .submit-btn:focus {
   color: var(--accent-green);
+  background-color: var(--primary-blue);
   transform: translateY(-1px);
   box-shadow: 0 4px 12px rgba(35, 97, 146, 0.2);
-  outline: none;
 }
 
-#GD-snippet-form .sr-button.reverse:focus {
+#contact form .submit-btn:focus {
   outline: 3px solid var(--accent-green);
   outline-offset: 2px;
 }
 
-#GD-snippet-form .sr-button.reverse:active {
-  transform: translateY(0);
+#contact form .error-message {
+  font-size: 0.9rem;
+  color: var(--action-red);
+  margin-top: 0.25rem;
 }
 
-#GD-snippet-form .sr-button.reverse:disabled {
-  background-color: #cccccc;
-  cursor: not-allowed;
-  box-shadow: none;
-  transform: none;
-}
-
-/* Paragraph Text / Instructions */
-#GD-snippet-form>fieldset>div>p {
-  font-size: 1rem;
-  margin-bottom: 1rem;
-  line-height: 1.6;
-  color: var(--text-dark);
-}
-
-#GD-snippet-form>fieldset>div>p span {
-  font-weight: 400;
-}
-
-/* Links inside instructions */
-#GD-snippet-form a {
-  color: var(--primary-blue);
-  text-decoration: underline;
-}
-
-#GD-snippet-form a:hover,
-#GD-snippet-form a:focus {
-  color: var(--accent-green);
-}
-
-/* Hide default list styling */
-#GD-snippet-form ol.form li::marker {
-  content: none;
-}
-
-/* Responsive — small screens */
-@media (max-width: 768px) {
-  #GD-snippet-form {
-    padding: 1.5rem;
-  }
-}
 
 
 /* ==========================================================================
