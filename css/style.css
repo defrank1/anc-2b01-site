@@ -434,9 +434,16 @@ figure.anc-map-container img {
   margin-bottom: 1.5rem;
 }
 
+/* Remove black boxes or shadows on focus for any form field */
 #GD-snippet-form input:focus,
 #GD-snippet-form select:focus,
-#GD-snippet-form textarea:focus,
+#GD-snippet-form textarea:focus {
+  outline: none !important;
+  box-shadow: none !important;
+  border-color: var(--primary-blue);
+  /* keeps border color consistent */
+}
+
 #GD-snippet-form .submit-btn:focus {
   outline: none !important;
   box-shadow: none !important;
@@ -452,9 +459,13 @@ figure.anc-map-container img {
   border-radius: 8px;
   font-size: 1.125rem;
   font-family: 'Montserrat', sans-serif;
-  transition: all 0.3s ease;
   background-color: var(--white);
   color: var(--text-dark);
+  transition: all 0.3s ease;
+  box-shadow: none;
+  /* remove any browser default shadow */
+  outline: none;
+  /* remove default focus outline */
 }
 
 .form-group select {
