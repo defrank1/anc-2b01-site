@@ -506,7 +506,7 @@ figure.anc-map-container img {
 .form-group textarea:focus {
   outline: none;
   border-color: var(--primary-blue);
-  box-shadow: 0 0 0 3px rgba(173, 124, 89, 0.2);
+  box-shadow: none;
 }
 
 /* Form validation states */
