@@ -434,6 +434,15 @@ figure.anc-map-container img {
   margin-bottom: 1.5rem;
 }
 
+#GD-snippet-form input:focus,
+#GD-snippet-form select:focus,
+#GD-snippet-form textarea:focus,
+#GD-snippet-form .submit-btn:focus {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+
 .form-group input[type="text"],
 .form-group input[type="email"],
 .form-group textarea {
