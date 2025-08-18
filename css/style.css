@@ -419,57 +419,37 @@ figure.anc-map-container img {
    ========================================================================== */
 
 /* ================================
-   GovDelivery Subscription Form
+   GovDelivery Phone Input Group
    ================================ */
-#GD-snippet-form {
-  max-width: 600px;
-  /* keeps form contained */
-  margin: 0 auto;
-  padding: 20px;
+#GD-snippet-form .input_group {
+  display: flex;
+  gap: 0.5rem;
+  /* space between country code and phone field */
+  width: 100%;
+}
+
+#GD-snippet-form .input_group select {
+  flex: 0 0 100px;
+  /* fixed width for country code dropdown */
+  padding: 0.6em 0.8em;
+  border: 1px solid #ccc;
+  border-radius: 0.5rem;
   background-color: #edebed;
   font-family: 'Montserrat', sans-serif;
-  font-size: 16px;
-  line-height: 1.6;
+  font-size: 1rem;
 }
 
-/* Ensure all form groups, email, and wireless fields take full width */
-#GD-snippet-form .form-group,
-#G
-
-/* === Form Styling === */
-.form-group {
-  margin-bottom: 1.5rem;
-}
-
-.form-group label {
-  display: block;
-  margin-bottom: 8px;
-  font-weight: 600;
-  color: var(--text-dark);
-  font-size: 1.125rem;
-}
-
-.form-group input[type="text"],
-.form-group input[type="email"],
-.form-group textarea {
-  width: 100%;
-  padding: 14px 16px;
-  border: 2px solid var(--primary-blue);
-  border-radius: 8px;
-  font-size: 1.125rem;
+#GD-snippet-form .input_group input[type="tel"] {
+  flex: 1;
+  /* take remaining space */
+  padding: 0.6em 0.8em;
+  border: 1px solid #ccc;
+  border-radius: 0.5rem;
   font-family: 'Montserrat', sans-serif;
-  transition: all 0.3s ease;
-  background-color: var(--white);
-  color: var(--text-dark);
+  font-size: 1rem;
+  background-color: #edebed;
 }
 
-.form-group input[type="text"]:focus,
-.form-group input[type="email"]:focus,
-.form-group textarea:focus {
-  outline: none;
-  border-color: var(--primary-blue);
-  box-shadow: 0 0 0 3px rgba(173, 124, 89, 0.2);
-}
 
 /* Form validation states */
 .form-group input[type="text"]:invalid,
@@ -666,6 +646,15 @@ select:focus {
     outline-offset: 3px;
   }
 }
+
+/*for the signup form */
+
+@media (max-width: 768px) {
+  #GD-snippet-form .form-group {
+    width: 100%;
+  }
+}
+
 
 /* mobile nav css */
 
