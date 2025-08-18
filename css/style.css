@@ -524,6 +524,29 @@ figure.anc-map-container img {
   box-shadow: none !important;
 }
 
+#GD-snippet-form input,
+#GD-snippet-form select,
+#GD-snippet-form textarea {
+  width: 100%;
+  padding: 14px 16px;
+  border: 2px solid var(--primary-blue);
+  border-radius: 8px;
+  font-size: 1.125rem;
+  font-family: 'Montserrat', sans-serif;
+  background-color: var(--white);
+  color: var(--text-dark);
+  box-shadow: none;
+  transition: all 0.3s ease;
+}
+
+#GD-snippet-form input:focus,
+#GD-snippet-form select:focus,
+#GD-snippet-form textarea:focus {
+  outline: none;
+  border-color: var(--primary-blue);
+  box-shadow: none;
+}
+
 
 .form-group input[type="text"]:focus,
 .form-group input[type="email"]:focus,
