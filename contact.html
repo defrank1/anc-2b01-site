@@ -73,10 +73,94 @@
 
   <!-- Main content of the page -->
   <main id="main-content" role="main">
+
+    <!-- GovDelivery Newsletter Embed -->
+    <section id="newsletter-signup" class="section-band bg-lighter">
+      <div class="container">
+        <h3>Subscribe for Updates</h3>
+        <p>Stay current with ANC news and events by signing up below:</p>
+
+        <form id="GD-snippet-form" action="https://public.govdelivery.com/accounts/DCWASHOANC/subscribers/qualify"
+          accept-charset="UTF-8" method="post">
+          <input name="utf8" type="hidden" value="&#x2713;" />
+          <input type="hidden" name="topic_id" id="topic_id" value="DCWASHOANC_53" />
+          <fieldset>
+            <legend>Email, Newsletter, and Alerts</legend>
+            <div>
+              <p><span>To stay current with ANC news and events</span>, please enter your contact information below.
+                <span>To receive communication for both email and text, you must enter your contact information for each
+                  subscription type.</span></p>
+              <p><span>For SMS: Message and data rates may apply. Reply HELP for help, STOP to cancel. To view terms and
+                  conditions, visit <a href="https://lnks.gd/2/235Wx5h" target="_blank"
+                    rel="noopener">https://lnks.gd/2/235Wx5h</a>. Message frequency may vary.</span></p>
+            </div>
+            <ol class='form'>
+              <li>
+                <label for="subscription_type">Subscription Type</label>
+                <div class='input_group'>
+                  <select name="subscription_type" id="subscription_type">
+                    <option selected="selected" value="email">Email</option>
+                    <option value="phone">SMS/Text Message</option>
+                  </select>
+                </div>
+              </li>
+              <li class='wireless_fields' style='display: none'>
+                <label for="phone">Wireless Number</label>
+                <div class='input_group'>
+                  <select name="country_code_display" id="country_code_display" disabled="disabled"
+                    aria-label="Country code">
+                    <option value="1 (US)">1 (US)</option>
+                    <option value="1">1</option>
+                  </select>
+                  <input type="hidden" name="country_code" id="country_code" value="1" />
+                  <input type="tel" name="phone" id="phone" class="medium wireless_text_field"
+                    placeholder="e.g. 4165551212" disabled="disabled" pattern="[0-9]{10}" />
+                </div>
+              </li>
+              <li class='email_fields' style='display: block'>
+                <label for="email">Email Address</label>
+                <input type="email" name="email" id="email" class="long email_text_field" required="required" />
+              </li>
+            </ol>
+            <div class='button_panel'>
+              <input type="submit" name="commit" value="Submit" class="sr-button reverse" data-disable-with="Submit" />
+            </div>
+          </fieldset>
+        </form>
+
+        <script type='text/javascript'>
+          var GOVDSNIPPET = function () {
+            var form = document.getElementById('GD-snippet-form');
+            var typeSelect = form.querySelector('#subscription_type');
+            var getStyleType = function (type) {
+              return typeSelect.value === type ? 'block' : 'none';
+            };
+            var toggleType = function () {
+              form.querySelector('.email_fields').style.display = getStyleType('email');
+              form.querySelector('.email_text_field').required = getStyleType('email') == 'none' ? false : 'required';
+              form.querySelector('.email_text_field').disabled = getStyleType('email') == 'none' ? 'disabled' : false;
+              form.querySelector('.wireless_fields').style.display = getStyleType('phone');
+              form.querySelector('#country_code_display').required = getStyleType('phone') == 'none' ? false : 'required';
+              form.querySelector('.wireless_text_field').required = getStyleType('phone') == 'none' ? false : 'required';
+              form.querySelector('#country_code_display').disabled = getStyleType('phone') == 'none' ? 'disabled' : false;
+              form.querySelector('.wireless_text_field').disabled = getStyleType('phone') == 'none' ? 'disabled' : false;
+            };
+            if (typeSelect.addEventListener) {
+              typeSelect.addEventListener('change', toggleType);
+            } else if (typeSelect.attachEvent) {
+              typeSelect.attachEvent('onchange', toggleType);
+            }
+          }();
+        </script>
+      </div>
+    </section>
+
     <!-- Contact details -->
     <section id="contact" class="section-band bg-lighter">
       <div class="container">
         <h3>Contact</h3>
+
+
         <p> Get in touch via email at <strong><a href="mailto:2b01@anc.dc.gov">2b01@anc.dc.gov</a></strong>,
           by call/text
           at <strong><a href="tel:+12024555364">(202) 455-5364</a></strong>, or by filling out the form below:</p>
