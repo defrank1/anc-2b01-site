@@ -22,87 +22,6 @@
   <!-- CSS -->
   <link rel="stylesheet" href="css/style.css" />
 
-  <style>
-    /* Newsletter form styling to match contact form */
-    #GD-snippet-form {
-      max-width: 600px;
-      margin: 0 auto;
-      padding: 20px;
-      background-color: #edebed;
-      font-family: 'Montserrat', sans-serif;
-      font-size: 16px;
-      line-height: 1.6;
-    }
-
-    #GD-snippet-form .form-group,
-    #GD-snippet-form .input_group,
-    #GD-snippet-form .email_fields,
-    #GD-snippet-form .wireless_fields {
-      margin-bottom: 1rem;
-    }
-
-    #GD-snippet-form label {
-      display: block;
-      margin-bottom: 0.3rem;
-      font-weight: 600;
-      color: #1A4063;
-    }
-
-    #GD-snippet-form input[type="email"],
-    #GD-snippet-form input[type="tel"],
-    #GD-snippet-form select,
-    #GD-snippet-form .long,
-    #GD-snippet-form .medium {
-      width: 100%;
-      padding: 0.6em 0.8em;
-      border: 1px solid #ccc;
-      border-radius: 0.5rem;
-      font-family: 'Montserrat', sans-serif;
-      font-size: 1rem;
-      box-sizing: border-box;
-      color: #1A4063;
-      background-color: #edebed;
-    }
-
-    #GD-snippet-form select {
-      appearance: none;
-      -webkit-appearance: none;
-      -moz-appearance: none;
-      background-image: url('data:image/svg+xml;utf8,<svg fill="%231A4063" height="12" viewBox="0 0 24 24" width="12" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/></svg>');
-      background-repeat: no-repeat;
-      background-position: right 0.8em center;
-      background-size: 1em;
-    }
-
-    #GD-snippet-form .button_panel input[type="submit"] {
-      padding: 0.7em 1.5em;
-      background-color: #1A4063;
-      color: #edebed;
-      border: none;
-      border-radius: 0.5rem;
-      font-size: 1rem;
-      cursor: pointer;
-    }
-
-    #GD-snippet-form .button_panel input[type="submit"]:hover {
-      background-color: #163354;
-    }
-
-    /* Remove fieldset border */
-    #GD-snippet-form fieldset {
-      border: none;
-      padding: 0;
-      margin: 0;
-    }
-
-    #GD-snippet-form legend {
-      font-weight: 600;
-      color: #1A4063;
-      margin-bottom: 1rem;
-      font-size: 1rem;
-    }
-  </style>
-
   <!-- Preload Images -->
   <link rel="preload" href="images/anc-headshot.jpg" as="image" type="image/png" />
   <link rel="preload" href="images/anc-map.png" as="image" type="image/png" />
@@ -149,18 +68,14 @@
           <input name="utf8" type="hidden" value="&#x2713;" />
           <input type="hidden" name="topic_id" id="topic_id" value="DCWASHOANC_53" />
           <fieldset>
-            <legend>Email, Newsletter, and Alerts</legend>
-
             <div class="form-group">
-              <label for="subscription_type">Subscription Type</label>
+              <label for="name">Subscription Type <span class="required" aria-label="required">*</span></label>
               <select name="subscription_type" id="subscription_type">
-                <option value="email" selected>Email</option>
-                <option value="phone">SMS/Text Message</option>
-              </select>
+                <label for="name">Full Name <span class="required" aria-label="required">*</span></label>
             </div>
 
             <div class="form-group wireless_fields" style="display: none;">
-              <label for="phone">Wireless Number</label>
+              <label for="name">Wireless Number <span class="required" aria-label="required">*</span></label>
               <div class='input_group'>
                 <select name="country_code_display" id="country_code_display" disabled="disabled"
                   aria-label="Country code">
@@ -174,7 +89,7 @@
             </div>
 
             <div class="form-group email_fields" style="display: block;">
-              <label for="email">Email Address</label>
+              <label for="name">Email Address<span class="required" aria-label="required">*</span></label>
               <input type="email" name="email" id="email" class="long email_text_field" required="required" />
             </div>
 

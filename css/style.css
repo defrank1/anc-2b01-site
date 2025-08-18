@@ -417,6 +417,98 @@ figure.anc-map-container img {
 /* ==========================================================================
    7. Forms
    ========================================================================== */
+
+#GD-snippet-form {
+  max-width: 1150px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #edebed;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+#GD-snippet-form .form-group,
+#GD-snippet-form .input_group,
+#GD-snippet-form .email_fields,
+#GD-snippet-form .wireless_fields {
+  margin-bottom: 1rem;
+}
+
+#GD-snippet-form label {
+  display: block;
+  margin-bottom: 0.3rem;
+  font-weight: 600;
+  color: #1A4063;
+}
+
+#GD-snippet-form input[type="email"],
+#GD-snippet-form input[type="tel"],
+#GD-snippet-form select,
+#GD-snippet-form .long,
+#GD-snippet-form .medium {
+  width: 100%;
+  padding: 0.6em 0.8em;
+  border: 1px solid #ccc;
+  border-radius: 0.5rem;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1rem;
+  box-sizing: border-box;
+  color: #1A4063;
+  background-color: #edebed;
+}
+
+
+#GD-snippet-form select {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-image: url('data:image/svg+xml;utf8,<svg fill="%231A4063" height="12" viewBox="0 0 24 24" width="12" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/></svg>');
+  background-repeat: no-repeat;
+  background-position: right 0.8em center;
+  background-size: 1em;
+}
+
+#GD-snippet-form .button_panel input[type="submit"] {
+  padding: 0.7em 1.5em;
+  background-color: #1A4063;
+  color: #edebed;
+  border: none;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+#GD-snippet-form .button_panel input[type="submit"]:hover {
+  color: var(--accent-green);
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+}
+
+#GD-snippet-form .button_panel input[type="submit"] {
+  padding: 0.7em 1.5em;
+  background-color: #1A4063;
+  color: #edebed;
+  border: none;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+#GD-snippet-form fieldset {
+  border: none;
+  padding: 0;
+  margin: 0;
+}
+
+#GD-snippet-form legend {
+  font-weight: 600;
+  color: #1A4063;
+  margin-bottom: 1rem;
+  font-size: 1rem;
+}
+
+
 /* === Form Styling === */
 .form-group {
   margin-bottom: 1.5rem;
@@ -487,9 +579,9 @@ figure.anc-map-container img {
 }
 
 .submit-btn:hover {
-  background-color: var(--primary-blue-hover);
-  transform: translateY(-1px);
-  box-shadow: 0 4px 12px rgba(35, 97, 146, 0.2);
+  color: var(--accent-green);
+  outline: 2px solid transparent;
+  outline-offset: 2px;
 }
 
 .submit-btn:focus {
