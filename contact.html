@@ -22,9 +22,91 @@
   <!-- CSS -->
   <link rel="stylesheet" href="css/style.css" />
 
+  <style>
+    /* Newsletter form styling to match contact form */
+    #GD-snippet-form {
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 20px;
+      background-color: #edebed;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 16px;
+      line-height: 1.6;
+    }
+
+    #GD-snippet-form .form-group,
+    #GD-snippet-form .input_group,
+    #GD-snippet-form .email_fields,
+    #GD-snippet-form .wireless_fields {
+      margin-bottom: 1rem;
+    }
+
+    #GD-snippet-form label {
+      display: block;
+      margin-bottom: 0.3rem;
+      font-weight: 600;
+      color: #1A4063;
+    }
+
+    #GD-snippet-form input[type="email"],
+    #GD-snippet-form input[type="tel"],
+    #GD-snippet-form select,
+    #GD-snippet-form .long,
+    #GD-snippet-form .medium {
+      width: 100%;
+      padding: 0.6em 0.8em;
+      border: 1px solid #ccc;
+      border-radius: 0.5rem;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1rem;
+      box-sizing: border-box;
+      color: #1A4063;
+      background-color: #edebed;
+    }
+
+    #GD-snippet-form select {
+      appearance: none;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      background-image: url('data:image/svg+xml;utf8,<svg fill="%231A4063" height="12" viewBox="0 0 24 24" width="12" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/></svg>');
+      background-repeat: no-repeat;
+      background-position: right 0.8em center;
+      background-size: 1em;
+    }
+
+    #GD-snippet-form .button_panel input[type="submit"] {
+      padding: 0.7em 1.5em;
+      background-color: #1A4063;
+      color: #edebed;
+      border: none;
+      border-radius: 0.5rem;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+
+    #GD-snippet-form .button_panel input[type="submit"]:hover {
+      background-color: #163354;
+    }
+
+    /* Remove fieldset border */
+    #GD-snippet-form fieldset {
+      border: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    #GD-snippet-form legend {
+      font-weight: 600;
+      color: #1A4063;
+      margin-bottom: 1rem;
+      font-size: 1rem;
+    }
+  </style>
+
   <!-- Preload Images -->
   <link rel="preload" href="images/anc-headshot.jpg" as="image" type="image/png" />
   <link rel="preload" href="images/anc-map.png" as="image" type="image/png" />
+
 </head>
 
 <body>
@@ -56,7 +138,7 @@
 
   <main id="main-content" role="main">
 
-    <!-- Newsletter Form -->
+    <!-- GovDelivery Newsletter Embed -->
     <section id="newsletter-signup" class="section-band bg-lighter">
       <div class="container">
         <h3>Subscribe</h3>
@@ -70,9 +152,8 @@
             <legend>Email, Newsletter, and Alerts</legend>
 
             <div class="form-group">
-              <label for="subscription_type">Subscription Type <span class="required"
-                  aria-label="required">*</span></label>
-              <select name="subscription_type" id="subscription_type" required>
+              <label for="subscription_type">Subscription Type</label>
+              <select name="subscription_type" id="subscription_type">
                 <option value="email" selected>Email</option>
                 <option value="phone">SMS/Text Message</option>
               </select>
@@ -92,24 +173,50 @@
               </div>
             </div>
 
-            <div class="form-group email_fields">
-              <label for="email">Email Address <span class="required" aria-label="required">*</span></label>
-              <input type="email" name="email" id="email" class="long email_text_field" required />
+            <div class="form-group email_fields" style="display: block;">
+              <label for="email">Email Address</label>
+              <input type="email" name="email" id="email" class="long email_text_field" required="required" />
             </div>
 
             <div class='button_panel'>
-              <input type="submit" name="commit" value="Submit" class="submit-btn" />
+              <input type="submit" name="commit" value="Submit" class="sr-button reverse" data-disable-with="Submit" />
             </div>
+
           </fieldset>
         </form>
+
+        <script type='text/javascript'>
+          var GOVDSNIPPET = function () {
+            var form = document.getElementById('GD-snippet-form');
+            var typeSelect = form.querySelector('#subscription_type');
+            var getStyleType = function (type) {
+              return typeSelect.value === type ? 'block' : 'none';
+            };
+            var toggleType = function () {
+              form.querySelector('.email_fields').style.display = getStyleType('email');
+              form.querySelector('.email_text_field').required = getStyleType('email') == 'none' ? false : 'required';
+              form.querySelector('.email_text_field').disabled = getStyleType('email') == 'none' ? 'disabled' : false;
+              form.querySelector('.wireless_fields').style.display = getStyleType('phone');
+              form.querySelector('#country_code_display').required = getStyleType('phone') == 'none' ? false : 'required';
+              form.querySelector('.wireless_text_field').required = getStyleType('phone') == 'none' ? false : 'required';
+              form.querySelector('#country_code_display').disabled = getStyleType('phone') == 'none' ? 'disabled' : false;
+              form.querySelector('.wireless_text_field').disabled = getStyleType('phone') == 'none' ? 'disabled' : false;
+            };
+            if (typeSelect.addEventListener) {
+              typeSelect.addEventListener('change', toggleType);
+            } else if (typeSelect.attachEvent) {
+              typeSelect.attachEvent('onchange', toggleType);
+            }
+          }();
+        </script>
       </div>
     </section>
 
-    <!-- Contact Form -->
+    <!-- Contact details -->
     <section id="contact" class="section-band bg-lighter">
       <div class="container">
         <h3>Contact</h3>
-        <p>Get in touch via email at <strong><a href="mailto:2b01@anc.dc.gov">2b01@anc.dc.gov</a></strong>,
+        <p> Get in touch via email at <strong><a href="mailto:2b01@anc.dc.gov">2b01@anc.dc.gov</a></strong>,
           by call/text at <strong><a href="tel:+12024555364">(202) 455-5364</a></strong>, or by filling out the form
           below:</p>
 
@@ -167,7 +274,6 @@
   </footer>
 
   <script src="js/main.js"></script>
-  <script src="js/newsletter.js"></script>
 </body>
 
 </html>

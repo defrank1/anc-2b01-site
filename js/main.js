@@ -59,38 +59,4 @@ document.addEventListener('DOMContentLoaded', () => {
       }, 500);
     });
   });
-
-  // Newsletter form toggle logic
-  const newsletterForm = document.getElementById('GD-snippet-form');
-  if (newsletterForm) {
-    const typeSelect = newsletterForm.querySelector('#subscription_type');
-    const emailFields = newsletterForm.querySelector('.email_fields');
-    const emailInput = newsletterForm.querySelector('.email_text_field');
-    const wirelessFields = newsletterForm.querySelector('.wireless_fields');
-    const wirelessInput = newsletterForm.querySelector('.wireless_text_field');
-    const countrySelect = newsletterForm.querySelector('#country_code_display');
-
-    const toggleNewsletterFields = () => {
-      if (typeSelect.value === 'email') {
-        emailFields.style.display = 'block';
-        emailInput.required = true;
-        emailInput.disabled = false;
-        wirelessFields.style.display = 'none';
-        wirelessInput.required = false;
-        wirelessInput.disabled = true;
-        countrySelect.disabled = true;
-      } else {
-        emailFields.style.display = 'none';
-        emailInput.required = false;
-        emailInput.disabled = true;
-        wirelessFields.style.display = 'block';
-        wirelessInput.required = true;
-        wirelessInput.disabled = false;
-        countrySelect.disabled = false;
-      }
-    };
-
-    typeSelect.addEventListener('change', toggleNewsletterFields);
-    toggleNewsletterFields(); // initialize on load
-  }
 });

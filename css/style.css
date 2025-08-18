@@ -1,202 +1,763 @@
-/* General Body & Typography */
-body {
-  font-family: 'Montserrat', sans-serif;
-  background-color: #edebed;
-  color: #1A4063;
-  margin: 0;
-  padding: 0;
-  line-height: 1.6;
+/* ==========================================================================
+   1. Variables and Root Styles
+   ========================================================================== */
+:root {
+  /* Colors */
+  --primary-blue: #1A4063;
+  --primary-blue-hover: #1A4063;
+  --action-red: #A12334;
+  --accent-green: #7db597;
+  --text-dark: #010101;
+  --text-light: #333;
+  --text-muted: #666;
+  --white: #edebed;
+
+  /* Spacing */
+  --header-padding: 2rem 3rem;
+  --section-padding: 4rem 0;
+  --container-max-width: 1150px;
+
+  /* Border radius */
+  --border-radius-sm: 4px;
+  --border-radius-md: 8px;
+  --border-radius-lg: 16px;
+
+  /* Shadows */
+  --shadow-light: 0 4px 12px rgba(0, 0, 0, 0.1);
+  --shadow-header: 0 2px 5px rgba(0, 0, 0, 0.2);
+
+  /* Typography */
+  --font-family: 'Montserrat', sans-serif;
+  --font-size-base: 1.125rem;
+  --line-height-base: 1.6;
 }
 
+/* ==========================================================================
+   2. Global Reset and Base Elements
+   ========================================================================== */
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  background-color: var(--white);
+  color: var(--text-dark);
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+/* === Basic Reset === */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/*base html font size */
+html {
+  font-size: 16px;
+  /* 1rem = 16px */
+  scroll-behavior: smooth;
+  height: 100%;
+}
+
+/* ==========================================================================
+   3. Typography
+   ========================================================================== */
+
+h3 {
+  color: var(--primary-blue);
+  margin-bottom: 1rem;
+  text-align: center;
+  font-weight: 700;
+  font-size: 1.75rem;
+}
+
+main p {
+  font-size: 1.125rem;
+  line-height: 1.7;
+  margin-bottom: 1.2rem;
+}
+
+/* === Links === */
 a {
-  color: #7db597;
-  text-decoration: none;
+  color: var(--primary-blue);
+  text-decoration: underline;
+  transition: color 0.3s ease;
 }
 
 a:hover {
-  text-decoration: underline;
+  color: var(--accent-green);
+  outline: 2px solid transparent;
+  outline-offset: 2px;
 }
 
-/* Header */
+a:focus {
+  color: var(--accent-green);
+  outline: 2px solid var(--accent-green);
+  outline-offset: 2px;
+}
+
+/*css for styling captions*/
+figure {
+  margin: 0 0 1.5rem 0;
+}
+
+/* === figcaption stays outside the box, just text below === */
+figcaption {
+  font-size: 0.8rem;
+  color: var(--text-light);
+  text-align: right;
+  margin-top: 0.5rem;
+}
+
+figcaption.credit {
+  display: block;
+  font-size: 0.75rem;
+  color: var(--text-muted)666;
+  font-style: italic;
+  margin-top: 0.15rem;
+}
+
+/* ==========================================================================
+   4. Layout Containers
+   ========================================================================== */
+/* === Container === */
+.container {
+  max-width: 1150px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+/* Clear float after about section */
+#about .container::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.section-band {
+  padding: 4rem 0;
+}
+
+.bg-light {
+  background-color: var(--white);
+}
+
+.bg-lighter {
+  background-color: var(--white);
+}
+
+/* === Header Spacer === */
+.header-spacer {
+  width: 100%;
+  min-height: 90px;
+  /* fallback in case JS fails */
+}
+
+main {
+  flex: 1 0 auto;
+}
+
+/* ==========================================================================
+   5. Header and Navigation
+   ========================================================================== */
+
+/* === Sticky Header === */
 .site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: var(--primary-blue);
+  color: var(--white);
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem 2rem;
-  background-color: #fff;
+  padding: 2rem 3rem;
+  border-bottom: 7px solid var(--accent-green);
+  z-index: 1000;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
-.site-header h1 a {
-  color: #1A4063;
+/* === Header Typography === */
+
+.left h2.subtitle {
+  font-size: 1.75rem;
+  font-style: italic;
+  font-weight: 600;
+  color: var(--white);
+  margin: 0.5rem 0;
+  line-height: 1.2;
+}
+
+.left h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--accent-green);
+  margin: 0.5rem 0;
+  line-height: 1.1;
+}
+
+.left h1 a {
+  color: var(--accent-green);
+  text-decoration: none;
+
+  /* NOT USING DROP SHADOW */
+  /*
+  text-shadow: 2px 2px 0 var(--accent-green);
+  transition:
+    color 0.3s ease,
+    text-shadow 0.3s ease;
+    */
+}
+
+.left h1 a:visited {
+  color: var(--accent-green);
   text-decoration: none;
 }
 
-.site-header .subtitle {
-  font-weight: 400;
-  font-size: 0.9rem;
-  color: #1A4063;
+.left h1 a:hover,
+.left h1 a:focus {
+  color: var(--accent-green);
 }
 
-/* Navigation */
-#primary-menu {
+/* === Navigation === */
+nav.right ul {
   list-style: none;
   display: flex;
-  gap: 1rem;
+  gap: 1.5rem;
   margin: 0;
   padding: 0;
 }
 
-#primary-menu li a {
-  color: #1A4063;
-  font-weight: 600;
+nav.right ul li a {
+  color: var(--white);
+  font-weight: 525;
+  font-size: 1.125rem;
+  padding: 0.5rem;
+  border-radius: 4px;
+  transition: color 0.3s ease, font-weight 0.3s ease;
+  text-decoration: none;
 }
 
-/* Skip link */
+nav.right ul li a:hover,
+nav.right ul li a:focus {
+  color: var(--accent-green);
+  text-decoration: none;
+  outline: none;
+  font-weight: 500;
+}
+
+/* Hide hamburger toggle by default (desktop and larger) */
+.menu-toggle {
+  display: none;
+}
+
+/* ==========================================================================
+   6. Main Content Specific Styles
+   ========================================================================== */
+
+/* === Headshot Image === */
+.headshot-container {
+  float: right;
+  max-width: 250px;
+  margin: 0 0 1rem 2rem;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border: 1px solid #ddd;
+}
+
+.headshot-image {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* === ANC Map Figure (desktop) === */
+.anc-map-container {
+  float: right;
+  max-width: 250px;
+  margin: 0 0 1rem 2rem;
+  overflow: visible;
+  /* important so caption isn't clipped */
+  border: none;
+  background: none;
+  box-shadow: none;
+  border-radius: 0;
+}
+
+/* Add the box styling to the image */
+.anc-map-container img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border: 1px solid #ddd;
+}
+
+/* Caption styling stays as is */
+.anc-map-container figcaption {
+  font-size: 0.8rem;
+  color: var(--text-light);
+  text-align: right;
+  margin-top: 0.5rem;
+}
+
+.anc-map-container figcaption .credit {
+  display: block;
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  font-style: italic;
+  margin-top: 0.15rem;
+}
+
+/* === Google Docs Iframe Container === */
+.iframe-container {
+  max-width: 1150px;
+  margin: 2rem auto;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border: 1px solid #ddd;
+}
+
+.homepage-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin: 2rem 0;
+}
+
+.homepage-buttons .cta-button {
+  background-color: var(--primary-blue);
+  color: var(--white);
+  padding: 0.75rem 1.25rem;
+  font-size: 1.125rem;
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: 8px;
+  text-align: center;
+  flex: 1 1 200px;
+  /* grow nicely and wrap on smaller screens */
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.homepage-buttons .cta-button:hover,
+.homepage-buttons .cta-button:focus {
+  background-color: var(--primary-blue-hover);
+  color: var(--accent-green);
+  /* Gold text */
+  transform: translateY(-2px);
+  outline: none;
+}
+
+.homepage-buttons .cta-button:focus {
+  outline: 3px solid var(--accent-green);
+  outline-offset: 2px;
+}
+
+/* === Main Sections === */
+main section {
+  padding: 3rem 0;
+}
+
+figure.anc-map-container img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border: 1px solid #ddd;
+}
+
+/* === Map Container === */
+.map-container {
+  max-width: 1150px;
+  margin: 2rem auto;
+}
+
+/* === Add border, radius, shadow to the iframe itself === */
+.map-container iframe {
+  display: block;
+  width: 100%;
+  height: 500px;
+  border: 1px solid #ddd;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.clipped-sheet {
+  height: 500px;
+  overflow: hidden;
+  position: relative;
+}
+
+.clipped-sheet iframe {
+  transform: translateY(-27px);
+  height: 600px;
+  border: none;
+  width: 100%;
+}
+
+.cta-contact {
+  background-color: var(--accent-green);
+  color: var(--white);
+}
+
+.cta-contact:hover,
+.cta-contact:focus {
+  background-color: var(--primary-blue-hover);
+  color: var(--white);
+}
+
+/* ==========================================================================
+   7. Forms
+   ========================================================================== */
+/* === Form Styling === */
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+  color: var(--text-dark);
+  font-size: 1.125rem;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group textarea {
+  width: 100%;
+  padding: 14px 16px;
+  border: 2px solid var(--primary-blue);
+  border-radius: 8px;
+  font-size: 1.125rem;
+  font-family: 'Montserrat', sans-serif;
+  transition: all 0.3s ease;
+  background-color: var(--white);
+  color: var(--text-dark);
+}
+
+.form-group input[type="text"]:focus,
+.form-group input[type="email"]:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: var(--primary-blue);
+  box-shadow: 0 0 0 3px rgba(173, 124, 89, 0.2);
+}
+
+/* Form validation states */
+.form-group input[type="text"]:invalid,
+.form-group input[type="email"]:invalid,
+.form-group textarea:invalid {
+  border-color: var(--primary-blue);
+}
+
+.form-group input[type="text"]:valid,
+.form-group input[type="email"]:valid,
+.form-group textarea:valid {
+  border-color: var(--primary-blue);
+}
+
+.form-group textarea {
+  height: 140px;
+  resize: vertical;
+  line-height: 1.6;
+}
+
+.submit-btn {
+  background-color: var(--primary-blue);
+  color: var(--white);
+  padding: 16px 32px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1.125rem;
+  font-weight: 600;
+  font-family: 'Montserrat', sans-serif;
+  transition: all 0.3s ease;
+  width: 100%;
+  margin-top: 1rem;
+}
+
+.submit-btn:hover {
+  background-color: var(--primary-blue-hover);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(35, 97, 146, 0.2);
+}
+
+.submit-btn:focus {
+  outline: 3px solid var(--accent-green);
+  outline-offset: 2px;
+}
+
+.submit-btn:active {
+  transform: translateY(0);
+}
+
+.submit-btn:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+/* === Form Status Messages === */
+.form-status {
+  margin-top: 1rem;
+  padding: 0.75rem;
+  border-radius: 4px;
+  font-weight: 500;
+  min-height: 1.2rem;
+}
+
+.form-status.success {
+  background-color: #d4edda;
+  color: #155724;
+  border: 1px solid #c3e6cb;
+}
+
+.form-status.error {
+  background-color: #f8d7da;
+  color: #721c24;
+  border: 1px solid #f5c6cb;
+}
+
+.form-status:empty {
+  display: none;
+}
+
+/* === Error Messages === */
+.error-message {
+  color: #dc3545;
+  font-size: 0.875rem;
+  margin-top: 0.25rem;
+  display: block;
+  min-height: 1.2rem;
+}
+
+.error-message:empty {
+  display: none;
+}
+
+/* ==========================================================================
+   8. Footer
+   ========================================================================== */
+
+footer {
+  flex-shrink: 0;
+  background-color: var(--primary-blue);
+  color: var(--white);
+  padding: 1rem 2rem;
+  border-top: 7px solid var(--accent-green);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* ==========================================================================
+   9. Utilities and Helpers
+   ========================================================================== */
+
+/* === Skip Navigation Link for Accessibility === */
 .skip-nav {
   position: absolute;
   top: -40px;
-  left: 0;
-  background: #1A4063;
-  color: #fff;
+  left: 6px;
+  background: var(--primary-blue);
+  color: var(--white);
   padding: 8px;
-  z-index: 100;
+  text-decoration: none;
+  z-index: 2000;
+  border-radius: 0 0 4px 4px;
+  font-weight: 600;
+  transition: top 0.3s ease;
 }
 
 .skip-nav:focus {
   top: 0;
+  outline: 2px solid var(--accent-green);
+  outline-offset: 2px;
 }
 
-/* Sections */
-.section-band {
-  padding: 2rem 1rem;
-}
-
-.bg-lighter {
-  background-color: #edebed;
-}
-
-.container {
-  max-width: 800px;
-  margin: 0 auto;
-}
-
-/* Headings */
-h3 {
-  color: #1A4063;
-  font-weight: 600;
-  margin-bottom: 1rem;
-}
-
-/* Forms (Contact + Newsletter) */
-form {
-  font-family: 'Montserrat', sans-serif;
-}
-
-.form-group {
-  margin-bottom: 1rem;
-}
-
-label {
-  display: block;
-  margin-bottom: 0.3rem;
-  font-weight: 600;
-  color: #1A4063;
-}
-
-input[type="text"],
-input[type="email"],
-input[type="tel"],
-textarea,
-select {
-  width: 100%;
-  padding: 0.6em 0.8em;
-  border: 1px solid #ccc;
-  border-radius: 0.5rem;
-  font-family: 'Montserrat', sans-serif;
-  font-size: 1rem;
-  box-sizing: border-box;
-  color: #1A4063;
-  background-color: #edebed;
-  /* soft white background for all fields */
-}
-
-textarea {
-  min-height: 120px;
-}
-
-select {
-  appearance: none;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  background-image: url('data:image/svg+xml;utf8,<svg fill="%231A4063" height="12" viewBox="0 0 24 24" width="12" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/></svg>');
-  background-repeat: no-repeat;
-  background-position: right 0.8em center;
-  background-size: 1em;
-}
-
-/* Newsletter Form */
-#GD-snippet-form {
-  max-width: 600px;
-  margin: 0 auto;
-  padding: 20px;
-  background-color: #edebed;
-  font-size: 16px;
-  line-height: 1.6;
-}
-
-#GD-snippet-form fieldset {
-  border: none;
+/* === Screen Reader Only Text === */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
   padding: 0;
-  margin: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
 }
 
-#GD-snippet-form legend {
-  font-weight: 600;
-  color: #1A4063;
-  margin-bottom: 1rem;
-  font-size: 1rem;
-}
-
-#GD-snippet-form .form-group,
-#GD-snippet-form .input_group,
-#GD-snippet-form .email_fields,
-#GD-snippet-form .wireless_fields {
-  margin-bottom: 1rem;
-}
-
-/* Submit Buttons (both forms) */
-.submit-btn,
-#GD-snippet-form .button_panel input[type="submit"] {
-  padding: 0.7em 1.5em;
-  background-color: #1A4063;
-  color: #edebed;
-  border: none;
-  border-radius: 0.5rem;
-  font-size: 1rem;
-  cursor: pointer;
-  transition: background-color 0.2s ease;
-}
-
-.submit-btn:hover,
-#GD-snippet-form .button_panel input[type="submit"]:hover {
-  background-color: #163354;
-}
-
-/* Error messages */
-.error-message {
-  font-size: 0.85rem;
-  color: red;
-  margin-top: 0.25rem;
-}
-
-/* Honeypot */
+/* === Honeypot Field (Hidden Spam Protection) === */
 .honeypot {
-  display: none;
+  position: absolute;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
 }
 
-/* Form Status */
-.form-status {
-  margin-top: 0.5rem;
-  font-size: 0.9rem;
-  color: #1A4063;
+.required {
+  color: var(--accent-green);
+  font-weight: 600;
+}
+
+/* === Focus Management === */
+*:focus {
+  outline: 2px solid var(--accent-green);
+  outline-offset: 2px;
+}
+
+/* Remove default focus outline only when we provide our own */
+button:focus,
+input:focus,
+textarea:focus,
+select:focus {
+  outline: none;
+}
+
+/* ==========================================================================
+   10. Media Queries
+   ========================================================================== */
+
+/* === High Contrast Mode Support === */
+@media (prefers-contrast: high) {
+  .site-header {
+    border-bottom: 8px solid var(--accent-green);
+  }
+
+  .header-spacer {
+    display: none;
+  }
+
+  a:focus,
+  button:focus,
+  input:focus,
+  textarea:focus {
+    outline: 3px solid;
+    outline-offset: 3px;
+  }
+}
+
+/* mobile nav css */
+
+@media (max-width: 1150px) {
+
+  .site-header {
+    padding: 1.5rem 2rem;
+    flex-direction: column;
+    align-items: flex-start;
+    transition: all 0.3s ease;
+    position: static;
+
+  }
+
+  .header-spacer {
+    display: none;
+  }
+
+  html {
+    font-size: 14.5px;
+    /* Slightly smaller base on small screens */
+  }
+
+  nav.right {
+    display: block;
+    width: 100%;
+  }
+
+  .headshot-container {
+    float: none;
+    margin: 0 auto 2rem auto;
+    display: block;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    border: 1px solid #ddd;
+  }
+
+  .anc-map-container {
+    float: none;
+    margin: 0 auto 2rem auto;
+    display: block;
+  }
+
+  /* The menu toggle button */
+  .menu-toggle {
+    display: block;
+    margin: 0 auto;
+    background: none;
+    border: none;
+    font-size: 2rem;
+    color: var(--white);
+    cursor: pointer;
+    transition: transform 0.3s ease, color 0.3s ease;
+  }
+
+  .menu-toggle:hover,
+  .menu-toggle:focus {
+    color: var(--accent-green);
+    /* green */
+  }
+
+  nav.right ul {
+    display: none;
+    opacity: 0;
+    transition: opacity 0.3s ease, max-height 0.4s ease;
+    overflow: hidden;
+    max-height: 0;
+
+  }
+
+  /* When open, display menu items block */
+  nav.right ul.open {
+    display: block;
+    width: 100%;
+    margin-top: 0.5rem;
+    background-color: var(--primary-blue);
+    border-radius: none;
+    box-shadow: none;
+    max-height: 500px;
+    opacity: 1;
+  }
+
+  nav.right ul.open {
+    display: block;
+    justify-items: center;
+    opacity: 1;
+  }
+
+  nav.right ul.open li a {
+    display: block;
+    padding: 0.75rem 1rem;
+    font-size: 1.125rem;
+    border-radius: 4px;
+    text-align: center;
+    color: var(--white);
+  }
+
+  nav.right ul.open li a:hover,
+  nav.right ul.open li a:focus {
+    color: var(--accent-green);
+  }
+
+  /* Center the title block text */
+  .left {
+    text-align: center;
+    width: 100%;
+    border: none;
+    /* remove bottom border if you don't want a dividing line */
+    padding: 0;
+    margin: 0;
+  }
+
 }
