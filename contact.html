@@ -74,88 +74,82 @@
   <!-- Main content of the page -->
   <main id="main-content" role="main">
 
-    <!-- Subscribe details -->
-    <section id="contact" class="section-band bg-lighter">
+    <!-- GovDelivery form goes here -->
+    <section id="subscribe" class="section-band bg-lighter">
       <div class="container">
         <h3>Subscribe</h3>
         <p> Sign up for my ANC newsletter below:</p>
-        <!-- GovDelivery form goes here -->
-        <section id="subscribe" class="section-band bg-lighter">
-          <div class="container">
-            <h3>Subscribe</h3>
-            <p>Stay up to date with ANC news and events by subscribing to our email or text alerts.</p>
+        <form id="GD-snippet-form" action="https://public.govdelivery.com/accounts/DCWASHOANC/subscribers/qualify"
+          accept-charset="UTF-8" method="post">
+          <input name="utf8" type="hidden" value="&#x2713;" />
+          <input type="hidden" name="topic_id" id="topic_id" value="DCWASHOANC_53" />
 
-            <form id="GD-snippet-form" action="https://public.govdelivery.com/accounts/DCWASHOANC/subscribers/qualify"
-              accept-charset="UTF-8" method="post">
-              <input name="utf8" type="hidden" value="&#x2713;" />
-              <input type="hidden" name="topic_id" id="topic_id" value="DCWASHOANC_53" />
+          <fieldset>
+            <legend class="sr-only">Email, Newsletter, and Alerts</legend>
 
-              <fieldset>
-                <legend class="sr-only">Email, Newsletter, and Alerts</legend>
+            <div class="form-group">
+              <label for="subscription_type">Subscription Type</label>
+              <select name="subscription_type" id="subscription_type">
+                <option selected="selected" value="email">Email</option>
+                <option value="phone">SMS/Text Message</option>
+              </select>
+            </div>
 
-                <div class="form-group">
-                  <label for="subscription_type">Subscription Type</label>
-                  <select name="subscription_type" id="subscription_type">
-                    <option selected="selected" value="email">Email</option>
-                    <option value="phone">SMS/Text Message</option>
-                  </select>
-                </div>
+            <div class="form-group wireless_fields" style="display: none;">
+              <label for="phone">Wireless Number <span class="required" aria-label="required">*</span></label>
+              <div class="input_group">
+                <select name="country_code_display" id="country_code_display" disabled="disabled"
+                  aria-label="Country code">
+                  <option value="1 (US)">1 (US)</option>
+                  <option value="1">1</option>
+                </select>
+                <input type="hidden" name="country_code" id="country_code" value="1" />
+                <input type="tel" name="phone" id="phone" class="wireless_text_field" placeholder="e.g. 4165551212"
+                  disabled="disabled" pattern="[0-9]{10}" />
+              </div>
+            </div>
 
-                <div class="form-group wireless_fields" style="display: none;">
-                  <label for="phone">Wireless Number <span class="required" aria-label="required">*</span></label>
-                  <div class="input_group">
-                    <select name="country_code_display" id="country_code_display" disabled="disabled"
-                      aria-label="Country code">
-                      <option value="1 (US)">1 (US)</option>
-                      <option value="1">1</option>
-                    </select>
-                    <input type="hidden" name="country_code" id="country_code" value="1" />
-                    <input type="tel" name="phone" id="phone" class="wireless_text_field" placeholder="e.g. 4165551212"
-                      disabled="disabled" pattern="[0-9]{10}" />
-                  </div>
-                </div>
+            <div class="form-group email_fields" style="display: block;">
+              <label for="email">Email Address <span class="required" aria-label="required">*</span></label>
+              <input type="email" name="email" id="email" class="email_text_field" required
+                aria-describedby="errorExplanation" />
+            </div>
 
-                <div class="form-group email_fields" style="display: block;">
-                  <label for="email">Email Address <span class="required" aria-label="required">*</span></label>
-                  <input type="email" name="email" id="email" class="email_text_field" required
-                    aria-describedby="errorExplanation" />
-                </div>
+            <div class="button_panel form-group">
+              <input type="submit" name="commit" value="Submit" class="submit-btn" />
+            </div>
+          </fieldset>
+        </form>
 
-                <div class="button_panel form-group">
-                  <input type="submit" name="commit" value="Submit" class="submit-btn" />
-                </div>
-              </fieldset>
-            </form>
+        <script type="text/javascript">
+          // GovDelivery form toggle script
+          var GOVDSNIPPET = function () {
+            var form = document.getElementById('GD-snippet-form');
+            var typeSelect = form.querySelector('#subscription_type');
 
-            <script type="text/javascript">
-              // GovDelivery form toggle script
-              var GOVDSNIPPET = function () {
-                var form = document.getElementById('GD-snippet-form');
-                var typeSelect = form.querySelector('#subscription_type');
+            var getStyleType = function (type) {
+              return typeSelect.value === type ? 'block' : 'none';
+            };
 
-                var getStyleType = function (type) {
-                  return typeSelect.value === type ? 'block' : 'none';
-                };
+            var toggleType = function () {
+              form.querySelector('.email_fields').style.display = getStyleType('email');
+              form.querySelector('.email_text_field').required = getStyleType('email') === 'block';
+              form.querySelector('.email_text_field').disabled = getStyleType('email') !== 'block';
+              form.querySelector('.wireless_fields').style.display = getStyleType('phone');
+              form.querySelector('.wireless_text_field').required = getStyleType('phone') === 'block';
+              form.querySelector('.wireless_text_field').disabled = getStyleType('phone') !== 'block';
+              form.querySelector('#country_code_display').disabled = getStyleType('phone') !== 'block';
+            };
 
-                var toggleType = function () {
-                  form.querySelector('.email_fields').style.display = getStyleType('email');
-                  form.querySelector('.email_text_field').required = getStyleType('email') === 'block';
-                  form.querySelector('.email_text_field').disabled = getStyleType('email') !== 'block';
-                  form.querySelector('.wireless_fields').style.display = getStyleType('phone');
-                  form.querySelector('.wireless_text_field').required = getStyleType('phone') === 'block';
-                  form.querySelector('.wireless_text_field').disabled = getStyleType('phone') !== 'block';
-                  form.querySelector('#country_code_display').disabled = getStyleType('phone') !== 'block';
-                };
-
-                if (typeSelect.addEventListener) {
-                  typeSelect.addEventListener('change', toggleType);
-                } else if (typeSelect.attachEvent) {
-                  typeSelect.attachEvent('onchange', toggleType);
-                }
-              }();
-            </script>
-          </div>
-        </section>
+            if (typeSelect.addEventListener) {
+              typeSelect.addEventListener('change', toggleType);
+            } else if (typeSelect.attachEvent) {
+              typeSelect.attachEvent('onchange', toggleType);
+            }
+          }();
+        </script>
+      </div>
+    </section>
 
     </section> <!-- End of subscribe section -->
     <!-- Contact details -->
