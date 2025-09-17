@@ -392,16 +392,25 @@ figure.anc-map-container img {
 
 .clipped-sheet {
   height: 500px;
-  overflow: hidden;
-  position: relative;
+  /* fixed container height */
+  overflow-y: auto;
+  /* enable vertical scrolling */
+  overflow-x: hidden;
+  /* prevent sideways scroll */
+  border-radius: 16px;
+  border: 1px solid #ddd;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 .clipped-sheet iframe {
-  transform: translateY(-27px);
-  height: 600px;
-  border: none;
   width: 100%;
+  /* fill container width */
+  height: 100%;
+  /* match parent height */
+  border: none;
+  display: block;
 }
+
 
 .cta-contact {
   background-color: var(--accent-green);
