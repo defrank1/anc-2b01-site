@@ -926,7 +926,7 @@ select:focus {
   /* wider than the container */
   height: 120%;
   border: none;
-  transform: scale(1.2);
+  transform: scale(2);
   /* zoom factor */
   transform-origin: top left;
 }
