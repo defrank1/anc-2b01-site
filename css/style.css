@@ -909,24 +909,3 @@ select:focus {
   }
 
 }
-
-/* =============================
-   Zoomed Google Doc iframe
-   ============================= */
-.zoomed-iframe {
-  width: 100%;
-  height: 800px;
-  /* adjust how tall it shows */
-  overflow: hidden;
-  position: relative;
-}
-
-.zoomed-iframe iframe {
-  width: 120%;
-  /* wider than the container */
-  height: 120%;
-  border: none;
-  transform: scale(2);
-  /* zoom factor */
-  transform-origin: top left;
-}
