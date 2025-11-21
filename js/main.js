@@ -9,8 +9,6 @@ document.addEventListener('DOMContentLoaded', () => {
     spacer.style.height = header.offsetHeight + 'px';
   }
 
-  toggle.setAttribute('aria-expanded', menu.classList.contains('open') ? 'true' : 'false');
-
   // Update spacer height on resize
   window.addEventListener('resize', () => {
     if (header && spacer) {
@@ -28,6 +26,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Hamburger toggle
   if (toggle && menu) {
+    toggle.setAttribute('aria-expanded', 'false');
     toggle.addEventListener('click', () => {
       const isOpen = menu.classList.toggle('open');
       toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
