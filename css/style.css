@@ -390,22 +390,25 @@ figure.anc-map-container img {
 .clipped-sheet {
   height: 500px;
   /* fixed container height */
-  overflow-y: auto;
-  /* enable vertical scrolling */
-  overflow-x: hidden;
-  /* prevent sideways scroll */
+  overflow: hidden;
+  /* hide anything outside the container */
   border-radius: 16px;
   border: 1px solid #ddd;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  position: relative;
 }
 
 .clipped-sheet iframe {
   width: 100%;
   /* fill container width */
-  height: 100%;
-  /* match parent height */
+  height: calc(100% + 120px);
+  /* extend iframe height to push bottom tab out of view */
   border: none;
   display: block;
+  margin-top: -60px;
+  /* negative margin to hide the title at the top */
+  margin-bottom: -60px;
+  /* negative margin to hide the tab at the bottom */
 }
 
 
