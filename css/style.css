@@ -10,6 +10,7 @@
   --text-light: #333;
   --text-muted: #666;
   --white: #edebed;
+  --border-color: #ddd;
 
   /* Spacing */
   --header-padding: 2rem 3rem;
@@ -36,7 +37,7 @@
    ========================================================================== */
 
 body {
-  font-family: 'Montserrat', sans-serif;
+  font-family: var(--font-family);
   background-color: var(--white);
   color: var(--text-dark);
   line-height: 1.6;
@@ -124,7 +125,7 @@ figcaption.credit {
    ========================================================================== */
 /* === Container === */
 .container {
-  max-width: 1150px;
+  max-width: var(--container-max-width);
   margin: 0 auto;
   padding: 0 2rem;
 }
@@ -252,13 +253,14 @@ nav.right ul li a:focus {
   float: right;
   max-width: 250px;
   margin: 0 0 1rem 2rem;
-  border-radius: 16px;
+  border-radius: var(--border-radius-lg);
   overflow: hidden;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  border: 1px solid #ddd;
+  box-shadow: var(--shadow-light);
+  border: 1px solid var(--border-color);
 }
 
-.headshot-image {
+.headshot-image,
+.map-image {
   width: 100%;
   height: auto;
   display: block;
@@ -315,6 +317,11 @@ nav.right ul li a:focus {
   margin: 2rem 0;
 }
 
+/* Desktop: show iframe, hide mobile link */
+.show-on-mobile {
+  display: none;
+}
+
 .homepage-buttons {
   display: flex;
   flex-wrap: wrap;
@@ -359,14 +366,14 @@ figure.anc-map-container img {
   display: block;
   width: 100%;
   height: auto;
-  border-radius: 16px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  border: 1px solid #ddd;
+  border-radius: var(--border-radius-lg);
+  box-shadow: var(--shadow-light);
+  border: 1px solid var(--border-color);
 }
 
 /* === Map Container === */
 .map-container {
-  max-width: 1150px;
+  max-width: var(--container-max-width);
   margin: 2rem auto;
 }
 
@@ -375,28 +382,47 @@ figure.anc-map-container img {
   display: block;
   width: 100%;
   height: 500px;
-  border: 1px solid #ddd;
-  border-radius: 16px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius-lg);
+  box-shadow: var(--shadow-light);
 }
 
 .clipped-sheet {
   height: 600px;
   overflow: hidden;
-  border-radius: 16px;
-  border: 1px solid #ddd;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border-radius: var(--border-radius-lg);
+  border: 1px solid var(--border-color);
+  box-shadow: var(--shadow-light);
   position: relative;
   width: 100%;
-  background: white;
+  background: var(--white);
 }
 
 .clipped-sheet iframe {
   width: 100%;
-  height: calc(100% + 175px);
+  height: 100%;
   border: none;
   display: block;
+}
+
+/* Newsletter iframe - constrain to match Bluesky embed width */
+.iframe-news-container.clipped-sheet {
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.iframe-news-container.clipped-sheet iframe {
+  width: calc(100% + 460px);
+  height: calc(100% + 175px);
   margin-top: -175px;
+  margin-left: -220px;
+}
+
+/* Actions spreadsheet iframe - no clipping needed */
+.iframe-actions-container.clipped-sheet iframe {
+  height: 100%;
+  margin-top: -30px;
 }
 
 
@@ -827,16 +853,11 @@ select:focus {
     width: 100%;
     margin-top: 0.5rem;
     background-color: var(--primary-blue);
-    border-radius: none;
+    border-radius: 0;
     box-shadow: none;
     max-height: 500px;
     opacity: 1;
-  }
-
-  nav.right ul.open {
-    display: block;
-    justify-items: center;
-    opacity: 1;
+    justify-content: center;
   }
 
   nav.right ul.open li a {
@@ -861,6 +882,37 @@ select:focus {
     /* remove bottom border if you don't want a dividing line */
     padding: 0;
     margin: 0;
+  }
+
+  /* Hide iframe on mobile, show link instead */
+  .hide-on-mobile {
+    display: none;
+  }
+
+  .show-on-mobile {
+    display: block;
+  }
+
+  .mobile-newsletter-link {
+    margin: 2rem 0;
+    text-align: center;
+  }
+
+  .mobile-newsletter-link .cta-button {
+    display: inline-block;
+    background-color: var(--primary-blue);
+    color: var(--white);
+    padding: 1rem 2rem;
+    border-radius: var(--border-radius-md);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.125rem;
+  }
+
+  .mobile-newsletter-link .cta-button:hover,
+  .mobile-newsletter-link .cta-button:focus {
+    background-color: var(--accent-green);
+    color: var(--primary-blue);
   }
 
 }

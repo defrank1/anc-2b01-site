@@ -9,11 +9,16 @@ document.addEventListener('DOMContentLoaded', () => {
     spacer.style.height = header.offsetHeight + 'px';
   }
 
-  // Update spacer height on resize
+  // Update spacer height on resize (throttled)
+  let resizeTimeout;
   window.addEventListener('resize', () => {
-    if (header && spacer) {
-      spacer.style.height = header.offsetHeight + 'px';
-    }
+    if (resizeTimeout) return;
+    resizeTimeout = setTimeout(() => {
+      if (header && spacer) {
+        spacer.style.height = header.offsetHeight + 'px';
+      }
+      resizeTimeout = null;
+    }, 150);
   });
 
   // External links open in new tab
