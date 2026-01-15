@@ -305,21 +305,14 @@ nav.right ul li a:focus {
 
 /* === Google Docs Iframe Container === */
 .iframe-actions-container {
-  max-width: 1150px;
-  margin: 2rem auto;
-  border-radius: 16px;
-  overflow: hidden;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  border: 1px solid #ddd;
+  max-width: 100%;
+  margin: 2rem 0;
 }
 
 .iframe-news-container {
-  max-width: 750px;
-  margin: 2rem auto;
-  border-radius: 16px;
-  overflow: hidden;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  border: 1px solid #ddd;
+  max-width: 100%;
+  width: 100%;
+  margin: 2rem 0;
 }
 
 .homepage-buttons {
@@ -388,27 +381,22 @@ figure.anc-map-container img {
 }
 
 .clipped-sheet {
-  height: 500px;
-  /* fixed container height */
+  height: 600px;
   overflow: hidden;
-  /* hide anything outside the container */
   border-radius: 16px;
   border: 1px solid #ddd;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   position: relative;
+  width: 100%;
+  background: white;
 }
 
 .clipped-sheet iframe {
   width: 100%;
-  /* fill container width */
-  height: calc(100% + 120px);
-  /* extend iframe height to push bottom tab out of view */
+  height: calc(100% + 175px);
   border: none;
   display: block;
-  margin-top: -60px;
-  /* negative margin to hide the title at the top */
-  margin-bottom: -60px;
-  /* negative margin to hide the tab at the bottom */
+  margin-top: -175px;
 }
 
 
