@@ -141,7 +141,6 @@ figcaption.credit {
   padding: 4rem 0;
 }
 
-.bg-light,
 .bg-lighter {
   background-color: var(--white);
 }
