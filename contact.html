@@ -119,33 +119,6 @@
           </fieldset>
         </form>
 
-        <script type="text/javascript">
-          // GovDelivery form toggle script
-          var GOVDSNIPPET = function () {
-            var form = document.getElementById('GD-snippet-form');
-            var typeSelect = form.querySelector('#subscription_type');
-
-            var getStyleType = function (type) {
-              return typeSelect.value === type ? 'block' : 'none';
-            };
-
-            var toggleType = function () {
-              form.querySelector('.email_fields').style.display = getStyleType('email');
-              form.querySelector('.email_text_field').required = getStyleType('email') === 'block';
-              form.querySelector('.email_text_field').disabled = getStyleType('email') !== 'block';
-              form.querySelector('.wireless_fields').style.display = getStyleType('phone');
-              form.querySelector('.wireless_text_field').required = getStyleType('phone') === 'block';
-              form.querySelector('.wireless_text_field').disabled = getStyleType('phone') !== 'block';
-              form.querySelector('#country_code_display').disabled = getStyleType('phone') !== 'block';
-            };
-
-            if (typeSelect.addEventListener) {
-              typeSelect.addEventListener('change', toggleType);
-            } else if (typeSelect.attachEvent) {
-              typeSelect.attachEvent('onchange', toggleType);
-            }
-          }();
-        </script>
       </div>
     </section> <!-- End of subscribe section -->
 
