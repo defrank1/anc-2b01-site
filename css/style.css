@@ -915,3 +915,82 @@ select:focus {
   }
 
 }
+
+/* ==========================================================================
+   11. Reduced Motion Support
+   ========================================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ==========================================================================
+   12. Print Styles
+   ========================================================================== */
+
+@media print {
+  /* Hide non-essential elements */
+  .site-header,
+  .header-spacer,
+  .menu-toggle,
+  .skip-nav,
+  .cta-button,
+  .submit-btn,
+  .homepage-buttons,
+  .map-container,
+  .clipped-sheet,
+  bsky-embed {
+    display: none !important;
+  }
+
+  body {
+    font-size: 12pt;
+    color: #000;
+    background: #fff;
+  }
+
+  main {
+    padding: 0;
+  }
+
+  a {
+    color: #000;
+    text-decoration: underline;
+  }
+
+  /* Show full URLs after external links */
+  a[href^="http"]::after {
+    content: " (" attr(href) ")";
+    font-size: 0.85em;
+    word-break: break-all;
+  }
+
+  /* Don't append URL for mailto/tel links */
+  a[href^="mailto"]::after,
+  a[href^="tel"]::after {
+    content: "";
+  }
+
+  footer {
+    border-top: 1px solid #000;
+    padding: 0.5rem 0;
+  }
+}
+
+/* ==========================================================================
+   13. Privacy Notice
+   ========================================================================== */
+
+.privacy-notice {
+  font-size: 0.875rem;
+  color: var(--text-muted, #555);
+  margin-top: -0.5rem;
+  margin-bottom: 1rem;
+}
