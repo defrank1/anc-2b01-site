@@ -21,6 +21,12 @@ document.addEventListener('DOMContentLoaded', () => {
     }, 150);
   });
 
+  // Auto-update copyright year
+  const copyrightYear = document.getElementById('copyright-year');
+  if (copyrightYear) {
+    copyrightYear.textContent = new Date().getFullYear();
+  }
+
   // External links open in new tab
   document.querySelectorAll('a[href^="http"]').forEach(link => {
     if (!link.href.includes(location.hostname)) {
