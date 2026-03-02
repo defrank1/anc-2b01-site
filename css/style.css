@@ -310,15 +310,32 @@ nav.right ul li a:focus {
   margin: 2rem 0;
 }
 
-.iframe-news-container {
-  max-width: 100%;
-  width: 100%;
+/* === Newsletter CTA Button === */
+.newsletter-cta {
   margin: 2rem 0;
+  text-align: center;
 }
 
-/* Desktop: show iframe, hide mobile link */
-.show-on-mobile {
-  display: none;
+.newsletter-cta .cta-button {
+  display: inline-block;
+  background-color: var(--primary-blue);
+  color: var(--white);
+  padding: 1rem 2rem;
+  border-radius: var(--border-radius-md);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.125rem;
+}
+
+.newsletter-cta .cta-button:hover,
+.newsletter-cta .cta-button:focus {
+  background-color: var(--accent-green);
+  color: var(--primary-blue);
+}
+
+.newsletter-cta .cta-button:focus {
+  outline: 3px solid var(--accent-green);
+  outline-offset: 2px;
 }
 
 .homepage-buttons {
@@ -404,14 +421,7 @@ figure.anc-map-container img {
   display: block;
 }
 
-/* Newsletter iframe - full container width, clip Google Doc top chrome */
-.iframe-news-container.clipped-sheet iframe {
-  width: 100%;
-  height: calc(100% + 175px);
-  margin-top: -175px;
-}
-
-/* Center the sign-up paragraph above the newsletter iframe */
+/* Center the sign-up paragraph above the newsletter CTA */
 .newsletter-intro {
   text-align: center;
 }
@@ -883,36 +893,6 @@ select:focus {
     margin: 0;
   }
 
-  /* Hide iframe on mobile, show link instead */
-  .hide-on-mobile {
-    display: none;
-  }
-
-  .show-on-mobile {
-    display: block;
-  }
-
-  .mobile-newsletter-link {
-    margin: 2rem 0;
-    text-align: center;
-  }
-
-  .mobile-newsletter-link .cta-button {
-    display: inline-block;
-    background-color: var(--primary-blue);
-    color: var(--white);
-    padding: 1rem 2rem;
-    border-radius: var(--border-radius-md);
-    text-decoration: none;
-    font-weight: 600;
-    font-size: 1.125rem;
-  }
-
-  .mobile-newsletter-link .cta-button:hover,
-  .mobile-newsletter-link .cta-button:focus {
-    background-color: var(--accent-green);
-    color: var(--primary-blue);
-  }
 
 }
 
