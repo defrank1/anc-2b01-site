@@ -404,24 +404,24 @@ figure.anc-map-container img {
   display: block;
 }
 
-/* Newsletter iframe - constrain to match Bluesky embed width */
-.iframe-news-container.clipped-sheet {
-  max-width: 600px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
+/* Newsletter iframe - full container width, clip Google Doc top chrome */
 .iframe-news-container.clipped-sheet iframe {
-  width: calc(100% + 460px);
+  width: 100%;
   height: calc(100% + 175px);
   margin-top: -175px;
-  margin-left: -220px;
 }
 
-/* Actions spreadsheet iframe - no clipping needed */
+/* Center the sign-up paragraph above the newsletter iframe */
+#news h3 + p {
+  text-align: center;
+}
+
+/* Actions spreadsheet iframe - clip any top/bottom chrome remnants */
 .iframe-actions-container.clipped-sheet iframe {
-  height: 100%;
+  width: 100%;
+  height: calc(100% + 50px);
   margin-top: -30px;
+  margin-bottom: -20px;
 }
 
 
