@@ -412,7 +412,7 @@ figure.anc-map-container img {
 }
 
 /* Center the sign-up paragraph above the newsletter iframe */
-#news h3 + p {
+.newsletter-intro {
   text-align: center;
 }
 
