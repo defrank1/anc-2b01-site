@@ -1,0 +1,17 @@
+{
+  "rules": {
+    "void-style": "off",
+    "no-redundant-role": "off",
+    "no-implicit-button-type": "off",
+    "no-deprecated-attr": "off",
+    "attribute-allowed-values": "off",
+    "tel-non-breaking": "off",
+    "prefer-button": "off",
+    "prefer-native-element": "off",
+    "no-inline-style": "off",
+    "aria-label-misuse": "off",
+    "attribute-boolean-style": "off",
+    "no-dup-id": "error",
+    "element-permitted-content": "error"
+  }
+}

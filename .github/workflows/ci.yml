@@ -36,6 +36,7 @@ jobs:
         uses: lycheeverse/lychee-action@v2
         with:
           args: >
+            --base "https://anc2b01.org"
             --exclude "https://public.govdelivery.com"
             --exclude "https://formspree.io"
             --exclude "https://docs.google.com"
