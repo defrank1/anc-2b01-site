@@ -61,14 +61,14 @@ All images are in `/images/`:
 
 | File | Usage |
 |------|-------|
-| `anc-headshot.jpg` | Commissioner photo (index, about-me) |
+| `anc-headshot.jpeg` | Commissioner photo (index, about-me) |
 | `anc-map.png` | DC ANC map (about-ancs) |
 | `favicon-96x96.png`, `favicon.svg`, `favicon.ico` | Browser favicons |
 | `apple-touch-icon.png` | iOS home screen icon |
 | `web-app-manifest-192x192.png`, `web-app-manifest-512x512.png` | PWA icons |
 | `header-text-desktop.png`, `header-text-mobile.png` | (Unused — can be deleted) |
 
-> **Performance note:** `anc-headshot.jpg` (~1.5 MB) and `anc-map.png` (~1.9 MB) are large. Converting to WebP would improve load times significantly.
+> **Performance note:** `anc-headshot.jpeg` (~1.5 MB) and `anc-map.png` (~1.9 MB) are large. Converting to WebP would improve load times significantly.
 
 ---
 
