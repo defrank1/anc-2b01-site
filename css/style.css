@@ -188,9 +188,7 @@ main {
   justify-content: space-between;
   align-items: center;
   padding: 2rem 3rem;
-  border-bottom: 7px solid var(--accent-green);
   z-index: 1000;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
 /* === Header Typography === */
@@ -345,6 +343,14 @@ nav.right ul li a:focus {
 
 .actions-table tbody tr:nth-child(even) {
   background-color: rgba(26, 64, 99, 0.03);
+}
+
+.actions-table td.resolution-complete {
+  background-color: #e3f1e6;
+}
+
+.actions-table td.resolution-ongoing {
+  background-color: #faf3cf;
 }
 
 .homepage-buttons {
