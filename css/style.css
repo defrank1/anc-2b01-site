@@ -320,12 +320,6 @@ nav.right ul li a:focus {
   margin-top: 0.15rem;
 }
 
-/* === Google Docs Iframe Container === */
-.iframe-actions-container {
-  max-width: 100%;
-  margin: 2rem 0;
-}
-
 /* === Actions Table === */
 .actions-table {
   width: 100%;
@@ -351,34 +345,6 @@ nav.right ul li a:focus {
 
 .actions-table tbody tr:nth-child(even) {
   background-color: rgba(26, 64, 99, 0.03);
-}
-
-/* === Newsletter CTA Button === */
-.newsletter-cta {
-  margin: 2rem 0;
-  text-align: center;
-}
-
-.newsletter-cta .cta-button {
-  display: inline-block;
-  background-color: var(--primary-blue);
-  color: var(--white);
-  padding: 1rem 2rem;
-  border-radius: var(--border-radius-md);
-  text-decoration: none;
-  font-weight: 600;
-  font-size: 1.125rem;
-}
-
-.newsletter-cta .cta-button:hover,
-.newsletter-cta .cta-button:focus {
-  background-color: var(--accent-green);
-  color: var(--primary-blue);
-}
-
-.newsletter-cta .cta-button:focus {
-  outline: 3px solid var(--accent-green);
-  outline-offset: 2px;
 }
 
 .homepage-buttons {
@@ -446,38 +412,6 @@ figure.anc-map-container img {
   box-shadow: var(--shadow-light);
 }
 
-.clipped-sheet {
-  height: 600px;
-  overflow: hidden;
-  border-radius: var(--border-radius-lg);
-  border: 1px solid var(--border-color);
-  box-shadow: var(--shadow-light);
-  position: relative;
-  width: 100%;
-  background: var(--white);
-}
-
-.clipped-sheet iframe {
-  width: 100%;
-  height: 100%;
-  border: none;
-  display: block;
-}
-
-/* Center the sign-up paragraph above the newsletter CTA */
-.newsletter-intro {
-  text-align: center;
-}
-
-/* Actions spreadsheet iframe - clip any top/bottom chrome remnants */
-.iframe-actions-container.clipped-sheet iframe {
-  width: 100%;
-  height: calc(100% + 50px);
-  margin-top: -30px;
-  margin-bottom: -20px;
-}
-
-
 .cta-contact {
   background-color: var(--accent-green);
   color: var(--white);
@@ -490,245 +424,7 @@ figure.anc-map-container img {
 }
 
 /* ==========================================================================
-   7. Forms
-   ========================================================================== */
-/* === Form Styling === */
-.form-group {
-  margin-bottom: 1.5rem;
-}
-
-.form-group label {
-  display: block;
-  margin-bottom: 8px;
-  font-weight: 600;
-  color: var(--text-dark);
-  font-size: 1.125rem;
-}
-
-#GD-snippet-form .form-group {
-  margin-bottom: 1.5rem;
-}
-
-/* Remove black boxes or shadows on focus for any form field */
-#GD-snippet-form input:focus,
-#GD-snippet-form select:focus,
-#GD-snippet-form textarea:focus {
-  outline: none !important;
-  box-shadow: none !important;
-  border-color: var(--primary-blue);
-  /* keeps border color consistent */
-}
-
-#GD-snippet-form .submit-btn:focus {
-  outline: none !important;
-  box-shadow: none !important;
-}
-
-
-.form-group input[type="text"],
-.form-group input[type="email"],
-.form-group input[type="tel"],
-.form-group textarea {
-  width: 100%;
-  padding: 14px 16px;
-  border: 2px solid var(--primary-blue);
-  border-radius: 8px;
-  font-size: 1.125rem;
-  font-family: 'Montserrat', sans-serif;
-  background-color: var(--white);
-  color: var(--text-dark);
-  transition: all 0.3s ease;
-  box-shadow: none;
-  outline: none;
-}
-
-
-.form-group select {
-  width: 100%;
-  padding: 14px 16px;
-  border: 2px solid var(--primary-blue);
-  border-radius: 8px;
-  font-size: 1.125rem;
-  font-family: 'Montserrat', sans-serif;
-  background-color: var(--white);
-  color: var(--text-dark);
-  transition: all 0.3s ease;
-}
-
-.form-group select:focus {
-  outline: none;
-  border-color: var(--primary-blue);
-  box-shadow: none;
-}
-
-#GD-snippet-form iframe {
-  border: none !important;
-  box-shadow: none !important;
-}
-
-#GD-snippet-form fieldset {
-  border: none;
-  margin: 0;
-  padding: 0;
-}
-
-
-.wireless_text_field {
-  width: calc(100% - 80px);
-  /* adjust if needed to fit next to country select */
-  padding: 14px 16px;
-  border: 2px solid var(--primary-blue);
-  border-radius: 8px;
-  font-size: 1.125rem;
-  font-family: 'Montserrat', sans-serif;
-  background-color: var(--white);
-  color: var(--text-dark);
-  box-shadow: none;
-  outline: none;
-}
-
-
-.input_group select {
-  width: auto;
-  padding: 14px;
-  border: 2px solid var(--primary-blue);
-  border-radius: 8px;
-  font-size: 1.125rem;
-  font-family: 'Montserrat', sans-serif;
-  background-color: var(--white);
-  color: var(--text-dark);
-  margin-right: 8px;
-}
-
-
-#GD-snippet-form input,
-#GD-snippet-form select,
-#GD-snippet-form textarea {
-  width: 100%;
-  padding: 14px 16px;
-  border: 2px solid var(--primary-blue);
-  border-radius: 8px;
-  font-size: 1.125rem;
-  font-family: 'Montserrat', sans-serif;
-  background-color: var(--white);
-  color: var(--text-dark);
-  box-shadow: none;
-  transition: all 0.3s ease;
-}
-
-#GD-snippet-form input:focus,
-#GD-snippet-form select:focus,
-#GD-snippet-form textarea:focus {
-  outline: none;
-  border-color: var(--primary-blue);
-  box-shadow: none;
-}
-
-
-.form-group input[type="text"]:focus,
-.form-group input[type="email"]:focus,
-.form-group textarea:focus {
-  outline: none;
-  border-color: var(--primary-blue);
-  box-shadow: none;
-}
-
-/* Form validation states */
-.form-group input[type="text"]:invalid,
-.form-group input[type="email"]:invalid,
-.form-group textarea:invalid {
-  border-color: var(--primary-blue);
-}
-
-.form-group input[type="text"]:valid,
-.form-group input[type="email"]:valid,
-.form-group textarea:valid {
-  border-color: var(--primary-blue);
-}
-
-.form-group textarea {
-  height: 140px;
-  resize: vertical;
-  line-height: 1.6;
-}
-
-.submit-btn {
-  background-color: var(--primary-blue);
-  color: var(--white);
-  padding: 16px 32px;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  font-size: 1.125rem;
-  font-weight: 600;
-  font-family: 'Montserrat', sans-serif;
-  transition: all 0.3s ease;
-  width: 100%;
-  margin-top: 1rem;
-}
-
-.submit-btn:hover {
-  background-color: var(--primary-blue);
-  transform: translateY(-1px);
-  box-shadow: 0 4px 12px rgba(35, 97, 146, 0.2);
-}
-
-.submit-btn:focus {
-  outline: 3px solid var(--accent-green);
-  outline-offset: 2px;
-}
-
-.submit-btn:active {
-  transform: translateY(0);
-}
-
-.submit-btn:disabled {
-  background-color: #cccccc;
-  cursor: not-allowed;
-  transform: none;
-  box-shadow: none;
-}
-
-/* === Form Status Messages === */
-.form-status {
-  margin-top: 1rem;
-  padding: 0.75rem;
-  border-radius: 4px;
-  font-weight: 500;
-  min-height: 1.2rem;
-}
-
-.form-status.success {
-  background-color: #d4edda;
-  color: #155724;
-  border: 1px solid #c3e6cb;
-}
-
-.form-status.error {
-  background-color: #f8d7da;
-  color: #721c24;
-  border: 1px solid #f5c6cb;
-}
-
-.form-status:empty {
-  display: none;
-}
-
-/* === Error Messages === */
-.error-message {
-  color: #dc3545;
-  font-size: 0.875rem;
-  margin-top: 0.25rem;
-  display: block;
-  min-height: 1.2rem;
-}
-
-.error-message:empty {
-  display: none;
-}
-
-/* ==========================================================================
-   8. Footer
+   7. Footer
    ========================================================================== */
 
 footer {
@@ -741,7 +437,7 @@ footer {
 }
 
 /* ==========================================================================
-   9. Utilities and Helpers
+   8. Utilities and Helpers
    ========================================================================== */
 
 /* === Skip Navigation Link for Accessibility === */
@@ -778,20 +474,6 @@ footer {
   border: 0;
 }
 
-/* === Honeypot Field (Hidden Spam Protection) === */
-.honeypot {
-  position: absolute;
-  left: -9999px;
-  width: 1px;
-  height: 1px;
-  overflow: hidden;
-}
-
-.required {
-  color: var(--accent-green);
-  font-weight: 600;
-}
-
 /* === Focus Management === */
 *:focus {
   outline: 2px solid var(--accent-green);
@@ -807,7 +489,7 @@ select:focus {
 }
 
 /* ==========================================================================
-   10. Media Queries
+   9. Media Queries
    ========================================================================== */
 
 /* === High Contrast Mode Support === */
@@ -961,7 +643,7 @@ select:focus {
 }
 
 /* ==========================================================================
-   11. Reduced Motion Support
+   10. Reduced Motion Support
    ========================================================================== */
 
 @media (prefers-reduced-motion: reduce) {
@@ -976,7 +658,7 @@ select:focus {
 }
 
 /* ==========================================================================
-   12. Print Styles
+   11. Print Styles
    ========================================================================== */
 
 @media print {
@@ -986,10 +668,8 @@ select:focus {
   .menu-toggle,
   .skip-nav,
   .cta-button,
-  .submit-btn,
   .homepage-buttons,
   .map-container,
-  .clipped-sheet,
   bsky-embed {
     display: none !important;
   }
@@ -1028,13 +708,3 @@ select:focus {
   }
 }
 
-/* ==========================================================================
-   13. Privacy Notice
-   ========================================================================== */
-
-.privacy-notice {
-  font-size: 0.875rem;
-  color: var(--text-muted, #555);
-  margin-top: -0.5rem;
-  margin-bottom: 1rem;
-}
