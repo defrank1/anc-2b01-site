@@ -6,7 +6,7 @@ This file provides persistent context for Claude Code sessions working on this r
 
 ## Project Overview
 
-**Site:** anc2b01.org — civic website for ANC 2B01 Commissioner Andrew DeFrank (North Dupont Circle, Washington DC)
+**Site:** anc2b01.org — archive site for former ANC 2B01 Commissioner Andrew DeFrank (North Dupont Circle, Washington DC). DeFrank resigned in 2026 after moving out of the District before the end of his term; the site is preserved as an archive of his tenure.
 **Repo:** github.com/defrank1/anc-2b01-site
 **Stack:** Pure static HTML/CSS/JS, GitHub Pages, no build system
 **Deployment:** Push to `main` branch → GitHub Pages auto-deploys
@@ -42,7 +42,7 @@ This file provides persistent context for Claude Code sessions working on this r
 
 ## CSS Architecture (style.css)
 
-Organized with section comments numbered 1–12:
+Organized with section comments numbered 1–14:
 1. CSS Variables (colors, spacing, typography)
 2. Reset / Global
 3. Typography
@@ -55,7 +55,8 @@ Organized with section comments numbered 1–12:
 10. Accessibility (skip-nav, sr-only, focus styles)
 11. Reduced Motion (`@media prefers-reduced-motion`)
 12. Print Styles (`@media print`)
-13. Mobile Responsive (`@media max-width: 1150px`)
+13. Privacy Notice
+14. Resignation Notice (red banner shown atop every page's `<main>`)
 
 Key CSS variables:
 - `--primary-blue: #1A4063`
@@ -135,6 +136,17 @@ Only preload images that are actually displayed above the fold on that specific 
 - `header-text-desktop.png` and `header-text-mobile.png` exist in `/images/` but are not used in any HTML file
 
 ---
+
+## Resignation Update (2026)
+
+- DeFrank resigned in April/May 2026 after moving out of the District before the end of the term
+- Every page now displays a `.resignation-notice` `<aside>` banner as the first child of `<main>`, linking to oanc.dc.gov for the current commissioner
+- Page titles and OG/Twitter metadata changed from "Commissioner Andrew DeFrank" → "Former Commissioner Andrew DeFrank"
+- Header subtitles changed from "Commissioner, ANC 2B01" → "Former Commissioner, ANC 2B01"
+- Bio copy on `index.html` and `about-me.html` rewritten in past tense; tenure dates: June 2025 – 2026
+- `index.html` JSON-LD switched from `GovernmentOffice` (with active employee/contactPoint) to `WebSite` describing an archive site
+- `contact.html` lost the GovDelivery subscribe section and direct dc.gov email/phone (those are reassigned to the successor); a personal contact form to Formspree remains, clearly captioned as personal-not-official
+- 7 broken `<a>` tags fixed across `index.html`, `about-me.html`, `anc-2b01.html` (×2), `news.html` (×2), `contact.html` — all had a stripped opening `<a` leaving stranded `href="..."` strings
 
 ## Completed Improvements (from 2026 audit)
 
