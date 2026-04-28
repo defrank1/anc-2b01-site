@@ -1,8 +1,10 @@
-# ANC 2B01 – Commissioner Andrew DeFrank
+# ANC 2B01 – Former Commissioner Andrew DeFrank
 
-Website for **Andrew DeFrank**, elected Advisory Neighborhood Commissioner for ANC 2B01 (North Dupont Circle, Washington, DC).
+Website for **Andrew DeFrank**, who served as Advisory Neighborhood Commissioner for ANC 2B01 (North Dupont Circle, Washington, DC) from June 2025 to May 2026. This site is maintained as a personal archive.
 
 **Live site:** [anc2b01.org](https://anc2b01.org)
+
+> **Archive:** This site is no longer actively maintained for current commissioner business. For current ANC 2B01 matters, contact the current commissioner at `2b01@anc.dc.gov`.
 
 ---
 
@@ -10,13 +12,13 @@ Website for **Andrew DeFrank**, elected Advisory Neighborhood Commissioner for A
 
 | File | URL | Purpose |
 |------|-----|---------|
-| `index.html` | `/` | Home / Welcome |
-| `about-me.html` | `/about-me.html` | Commissioner bio |
-| `about-ancs.html` | `/about-ancs.html` | What is an ANC? |
+| `index.html` | `/` | Home / archive welcome |
+| `about-me.html` | `/about-me.html` | Bio (past tense) |
+| `about-ancs.html` | `/about-ancs.html` | What is an ANC? (informational) |
 | `anc-2b01.html` | `/anc-2b01.html` | District info + OpenANC map |
-| `actions.html` | `/actions.html` | Initiatives tracker (Google Sheets embed) |
-| `news.html` | `/news.html` | Newsletter + Bluesky feed |
-| `contact.html` | `/contact.html` | Subscribe (GovDelivery) + contact form (Formspree) |
+| `actions.html` | `/actions.html` | Static record of initiatives worked on during term |
+| `news.html` | `/news.html` | Newsletter archive + Bluesky feed (account dormant) |
+| `contact.html` | `/contact.html` | Archive notice pointing to current commissioner |
 | `404.html` | *(on 404)* | Custom 404 error page |
 
 ---
@@ -46,12 +48,9 @@ Pure static HTML/CSS/JS. No build system, no framework, no npm dependencies.
 | Service | Used For | File(s) |
 |---------|----------|---------|
 | Google Fonts | Montserrat typeface | All pages (`<head>`) |
-| Formspree (`formspree.io/f/mblyzged`) | Contact form submission | `contact.html` |
-| GovDelivery (`public.govdelivery.com`) | Newsletter/SMS signup | `contact.html` |
 | OpenANC (`openanc.org`) | Interactive district map embed | `anc-2b01.html` |
-| Google Sheets | Actions/initiatives tracker | `actions.html` |
-| Google Docs | Newsletter embed | `news.html` |
-| Bluesky embed (`cdn.jsdelivr.net/npm/bsky-embed`) | Social feed | `news.html` |
+| Google Docs | Past newsletter editions (linked) | `news.html` |
+| Bluesky embed (`cdn.jsdelivr.net/npm/bsky-embed`) | Social feed (dormant account) | `news.html` |
 
 ---
 
@@ -66,7 +65,7 @@ All images are in `/images/`:
 | `favicon-96x96.png`, `favicon.svg`, `favicon.ico` | Browser favicons |
 | `apple-touch-icon.png` | iOS home screen icon |
 | `web-app-manifest-192x192.png`, `web-app-manifest-512x512.png` | PWA icons |
-| `header-text-desktop.png`, `header-text-mobile.png` | (Unused — can be deleted) |
+| `header-text-desktop.png`, `header-text-mobile.png` | Unused — can be deleted |
 
 > **Performance note:** `anc-headshot.jpeg` (~1.5 MB) and `anc-map.png` (~1.9 MB) are large. Converting to WebP would improve load times significantly.
 

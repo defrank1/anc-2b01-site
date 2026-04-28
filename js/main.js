@@ -21,12 +21,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }, 150);
   });
 
-  // Auto-update copyright year
-  const copyrightYear = document.getElementById('copyright-year');
-  if (copyrightYear) {
-    copyrightYear.textContent = new Date().getFullYear();
-  }
-
   // External links open in new tab
   document.querySelectorAll('a[href^="http"]').forEach(link => {
     if (!link.href.includes(location.hostname)) {
@@ -66,35 +60,6 @@ document.addEventListener('DOMContentLoaded', () => {
         closeMenu();
       }
     });
-  }
-
-  // GovDelivery subscription form toggle (email ↔ SMS) — contact.html only
-  const gdForm = document.getElementById('GD-snippet-form');
-  if (gdForm) {
-    const typeSelect = gdForm.querySelector('#subscription_type');
-    if (typeSelect) {
-      function toggleGovDeliveryType() {
-        const isEmail = typeSelect.value === 'email';
-        const emailFields = gdForm.querySelector('.email_fields');
-        const emailInput = gdForm.querySelector('.email_text_field');
-        const wirelessFields = gdForm.querySelector('.wireless_fields');
-        const wirelessInput = gdForm.querySelector('.wireless_text_field');
-        const countrySelect = gdForm.querySelector('#country_code_display');
-
-        if (emailFields) emailFields.style.display = isEmail ? 'block' : 'none';
-        if (emailInput) {
-          emailInput.required = isEmail;
-          emailInput.disabled = !isEmail;
-        }
-        if (wirelessFields) wirelessFields.style.display = isEmail ? 'none' : 'block';
-        if (wirelessInput) {
-          wirelessInput.required = !isEmail;
-          wirelessInput.disabled = isEmail;
-        }
-        if (countrySelect) countrySelect.disabled = isEmail;
-      }
-      typeSelect.addEventListener('change', toggleGovDeliveryType);
-    }
   }
 
   // Smooth scrolling for anchor links

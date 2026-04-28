@@ -152,6 +152,22 @@ figcaption.credit {
   /* fallback in case JS fails */
 }
 
+/* === Archive Notice Banner === */
+.archive-notice {
+  background-color: var(--accent-green);
+  padding: 0.75rem 2rem;
+  text-align: center;
+}
+
+.archive-notice p {
+  margin: 0;
+  color: var(--primary-blue);
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.95rem;
+  font-style: italic;
+  line-height: 1.5;
+}
+
 main {
   flex: 1 0 auto;
 }
@@ -180,7 +196,7 @@ main {
 /* === Header Typography === */
 
 .left h2.subtitle {
-  font-size: 1.75rem;
+  font-size: 1.3rem;
   font-style: italic;
   font-weight: 600;
   color: var(--white);
@@ -308,6 +324,33 @@ nav.right ul li a:focus {
 .iframe-actions-container {
   max-width: 100%;
   margin: 2rem 0;
+}
+
+/* === Actions Table === */
+.actions-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.5rem 0;
+  font-family: var(--font-family);
+  font-size: 0.95rem;
+}
+
+.actions-table th,
+.actions-table td {
+  padding: 0.75rem 1rem;
+  text-align: left;
+  vertical-align: top;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.actions-table thead th {
+  background-color: var(--primary-blue);
+  color: var(--white);
+  font-weight: 600;
+}
+
+.actions-table tbody tr:nth-child(even) {
+  background-color: rgba(26, 64, 99, 0.03);
 }
 
 /* === Newsletter CTA Button === */
@@ -797,6 +840,27 @@ select:focus {
     transition: all 0.3s ease;
     position: static;
 
+  }
+
+  .left h2.subtitle {
+    font-size: 1.1rem;
+  }
+
+  .archive-notice {
+    padding: 0.75rem 1rem;
+  }
+
+  .archive-notice p {
+    font-size: 0.85rem;
+  }
+
+  .actions-table {
+    font-size: 0.85rem;
+  }
+
+  .actions-table th,
+  .actions-table td {
+    padding: 0.5rem 0.75rem;
   }
 
   .header-spacer {
